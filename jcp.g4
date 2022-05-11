@@ -1,126 +1,353 @@
 lexer grammar jcp;
 
-WS: [ \t\r\n]+ -> skip;
+// Declarations;
+PackageDeclaration: 'package' PackageName ';';
+ImportDeclarations: ImportDeclaration | ImportDeclarations ImportDeclaration;
 
-//// Numbers
-Num: [0-9]+;
-FlPoint: Num '.' Num? | '.' Num;
+ImportDeclaration: SingleTypeImportDeclaration | TypeImportOnDemandDeclaration;
 
-//// Boolean
-Bool: 'true' | 'false';
+SingleTypeImportDeclaration: 'import' TypeName ';';
 
-Letter: [a-zA-Z];
-CharLiteral: '\'' Letter '\'';
-StrLiteral: '\"' Letter+ '\"';
+TypeImportOnDemandDeclaration: 'import' PackageName . * ';';
 
-//// Separators
+TypeDeclarations: TypeDeclaration | TypeDeclarations TypeDeclaration;
 
-COMMA: ',';
-DOT: '.';
-SEMICOL: ';';
-// parentheses
-LPAR: '(';
-RPAR: ')';
-LBRACE: '{';
-RBRACE: '}';
-LBRACK: '[';
-RBRACK: ']';
+TypeDeclaration: ClassDeclaration | InterfaceDeclaration | ';';
 
-//// Operators
+ClassDeclaration: ClassModifiers? 'class' Identifier Super? Interfaces? ClassBody;
 
-// assignment ops
-ASSIGN: '=';
-ADDAS: '+=';
-SUBAS: '-=';
-MULAS: '*=';
-DIVAS: '/=';
-MODAS: '%=';
+ClassModifiers: ClassModifier | ClassModifiers ClassModifier;
 
-// logical ops
-EQUAL: '==';
-GT: '>';
-LT: '<';
-LE: '<=';
-GE: '>=';
-NOTEQ: '!=';
-AND: '&&';
-OR: '||';
+ClassModifier: 'public' | 'abstract' | 'final';
 
-// arithmetics
-INC: '++';
-DEC: '--';
-ADD: '+';
-SUB: '-';
-MUL: '*';
-DIV: '/';
-MOD: '%';
+Super: 'extends' ClassType;
 
-// bitwise
-BITAND: '&';
-BITOR: '|';
+Interfaces: 'implements' InterfaceTypeList;
 
-//// Keywords
+InterfaceTypeList: InterfaceType | InterfaceTypeList ',' InterfaceType;
 
-// data types
-CHAR: 'char';
-DOUBLE: 'double';
-FLOAT: 'float';
-INT: 'int';
-SHORT: 'short';
-LONG: 'long';
-BOOLEAN: 'boolean';
-BYTE: 'byte';
-CONST: 'const';
+ClassBody: '{' ClassBodyDeclarations? '}';
 
-// flow control
-IF: 'if';
-ELSE: 'else';
-SWITCH: 'switch';
-CASE: 'case';
-DEFAULT: 'default';
+ClassBodyDeclarations: ClassBodyDeclaration | ClassBodyDeclarations ClassBodyDeclaration;
 
-// loop
-DO: 'do';
-WHILE: 'while';
-CONTINUE: 'continue';
-BREAK: 'break';
-FOR: 'for';
+ClassBodyDeclaration: ClassMemberDeclaration | StaticInitializer | ConstructorDeclaration;
 
-// accesc modifiers
-PUBLIC: 'public';
-PRIVATE: 'private';
-PROTECTED: 'protected';
+ClassMemberDeclaration: FieldDeclaration | MethodDeclaration;
 
-// OOP
-CLASS: 'class';
-ENUM: 'enum';
-EXTENDS: 'extends';
-IMPLEMENTS: 'implements';
-INTERFACE: 'interface';
-PACKAGE: 'package';
-THIS: 'this';
-ABSTRACT: 'abstract';
-FINAL: 'final';
-SUPER: 'super';
-IMPORT: 'import';
+StaticInitializer: 'static' Block;
 
-// error handling
-ASSERT: 'assert';
-CATCH: 'catch';
-THROW: 'throw';
-THROWS: 'throws';
-TRY: 'try';
-FINALLY: 'finally';
+ConstructorDeclaration: ConstructorModifiers? ConstructorDeclarator Throws? ConstructorBody;
 
-// others
-NEW: 'new';
-RETURN: 'return';
-STATIC: 'static';
-VOID: 'void';
+ConstructorModifiers: ConstructorModifier | ConstructorModifiers ConstructorModifier;
 
-//// Comments
+ConstructorModifier: 'public' | 'protected' | 'private';
 
-// single line
-SinComment: '//' .* -> channel(HIDDEN);
-// multi line
-MulComment: '/*' .* '*/' -> channel(HIDDEN);
+ConstructorDeclarator: SimpleTypeName '(' FormalParameterList? ')';
+
+FormalParameterList: FormalParameter | FormalParameterList ',' FormalParameter;
+
+FormalParameter: Type VariableDeclaratorId;
+
+Throws: 'throws' ClassTypeList;
+
+ClassTypeList: ClassType | ClassTypeList ',' ClassType;
+
+ConstructorBody: '{' ExplicitConstructorInvocation? BlockStatements? '}';
+
+ExplicitConstructorInvocation: 'this' '(' ArgumentList? ')' | 'super' '(' ArgumentList? ')';
+
+FieldDeclaration: FieldModifiers? Type VariableDeclarators ';';
+
+FieldModifiers: FieldModifier | FieldModifiers FieldModifier;
+
+FieldModifier: 'public' | 'protected' | 'private' | 'static' | 'final' | 'transient' | 'volatile';
+
+VariableDeclarators: VariableDeclarator | VariableDeclarators ',' VariableDeclarator;
+
+VariableDeclarator: VariableDeclaratorId | VariableDeclaratorId '=' VariableInitializer;
+
+VariableDeclaratorId: Identifier | VariableDeclaratorId '[' ']';
+
+VariableInitializer: Expression | ArrayInitializer;
+
+MethodDeclaration: MethodHeader MethodBody;
+
+MethodHeader: MethodModifiers? ResultType MethodDeclarator Throws?;
+
+ResultType: Type | 'void';
+
+MethodModifiers: MethodModifier | MethodModifiers MethodModifier;
+
+MethodModifier: 'public' | 'protected' | 'private' | 'static' | 'abstract' | 'final' | 'synchronized' | 'native';
+
+MethodDeclarator: Identifier '(' FormalParameterList? ')';
+
+MethodBody: Block | ';';
+
+InterfaceDeclaration: InterfaceModifiers? 'interface' Identifier ExtendsInterfaces? InterfaceBody;
+
+InterfaceModifiers: InterfaceModifier | InterfaceModifiers InterfaceModifier;
+
+InterfaceModifier: 'public' | 'abstract';
+
+ExtendsInterfaces: 'extends' InterfaceType | ExtendsInterfaces ',' InterfaceType;
+
+InterfaceBody: '{' InterfaceMemberDeclarations? '}';
+
+InterfaceMemberDeclarations: InterfaceMemberDeclaration | InterfaceMemberDeclarations InterfaceMemberDeclaration;
+
+InterfaceMemberDeclaration: ConstantDeclaration | AbstractMethodDeclaration;
+
+ConstantDeclaration: ConstantModifiers Type VariableDeclarator;
+
+ConstantModifiers: 'public' | 'static' | 'final';
+
+AbstractMethodDeclaration: AbstractMethodModifiers? ResultType MethodDeclarator Throws? ';';
+
+AbstractMethodModifiers: AbstractMethodModifier | AbstractMethodModifiers AbstractMethodModifier;
+
+AbstractMethodModifier: 'public' | 'abstract';
+
+ArrayInitializer: '{' VariableInitializers? ',' ? '}';
+
+VariableInitializers: VariableInitializer | VariableInitializers ',' VariableInitializer;
+
+// Types;
+Type: PrimitiveType | ReferenceType;
+PrimitiveType: NumericType | 'boolean';
+
+NumericType: IntegralType | '<floating-point' 'type>';
+
+IntegralType: 'byte' | 'short' | 'int' | 'long' | 'char';
+
+FloatingPointType: 'float' | 'double';
+
+ReferenceType: ClassOrInterfaceType | ArrayType;
+
+ClassOrInterfaceType: ClassType | InterfaceType;
+
+ClassType: TypeName;
+
+InterfaceType: TypeName;
+
+ArrayType: Type '[' ']';
+
+// Blocks 'and' Commands;
+Block: '{' BlockStatements? '}';
+BlockStatements: BlockStatement | BlockStatements BlockStatement;
+
+BlockStatement: LocalVariableDeclarationStatement | Statement;
+
+LocalVariableDeclarationStatement: LocalVariableDeclaration ';';
+
+LocalVariableDeclaration: Type VariableDeclarators;
+
+Statement: StatementWithoutTrailingSubstatement | LabeledStatement | IfThenStatement | IfThenElseStatement | WhileStatement | ForStatement;
+
+StatementNoShortIf: StatementWithoutTrailingSubstatement | LabeledStatementNoShortIf | IfThenElseStatementNoShortIf | WhileStatementNoShortIf | ForStatementNoShortIf;
+
+StatementWithoutTrailingSubstatement: Block | EmptyStatement | ExpressionStatement | SwitchStatement | DoStatement | BreakStatement | ContinueStatement | ReturnStatement | SynchronizedStatement | ThrowsStatement | TryStatement;
+
+EmptyStatement: ';';
+
+LabeledStatement: Identifier ':' Statement;
+
+LabeledStatementNoShortIf: Identifier ':' StatementNoShortIf;
+
+ExpressionStatement: StatementExpression ';';
+
+StatementExpression: Assignment | PreincrementExpression | PostincrementExpression | PredecrementExpression | PostdecrementExpression | MethodInvocation | ClassInstanceCreationExpression;
+
+IfThenStatement: 'if' '(' Expression ')' Statement;
+
+IfThenElseStatement: 'if' '(' Expression ')' StatementNoShortIf 'else' Statement;
+
+IfThenElseStatementNoShortIf: 'if' '(' Expression ')' StatementNoShortIf 'else' StatementNoShortIf;
+
+SwitchStatement: 'switch' '(' Expression ')' SwitchBlock;
+
+SwitchBlock: '{' SwitchBlockStatementGroups? SwitchLabels? '}';
+
+SwitchBlockStatementGroups: SwitchBlockStatementGroup | SwitchBlockStatementGroups SwitchBlockStatementGroup;
+
+SwitchBlockStatementGroup: SwitchLabels BlockStatements;
+
+SwitchLabels: SwitchLabel | SwitchLabels SwitchLabel;
+
+SwitchLabel: 'case' ConstantExpression ':' | 'default' ':';
+
+WhileStatement: 'while' '(' Expression ')' Statement;
+
+WhileStatementNoShortIf: 'while' '(' Expression ')' StatementNoShortIf;
+
+DoStatement: 'do' Statement 'while' '(' Expression ')' ';';
+
+ForStatement: 'for' '(' ForInit? ';' Expression? ';' ForUpdate? ')' Statement;
+
+ForStatementNoShortIf: 'for' '(' ForInit? ';' Expression? ';' ForUpdate? ')' StatementNoShortIf;
+
+ForInit: StatementExpressionList | LocalVariableDeclaration;
+
+ForUpdate: StatementExpressionList;
+
+StatementExpressionList: StatementExpression | StatementExpressionList ',' StatementExpression;
+
+BreakStatement: 'break' Identifier? ';';
+
+ContinueStatement: 'continue' Identifier? ';';
+
+ReturnStatement: 'return' Expression? ';';
+
+ThrowsStatement: 'throw' Expression ';';
+
+SynchronizedStatement: 'synchronized' '(' Expression ')' Block;
+
+TryStatement: 'try' Block Catches | 'try' Block Catches? Finally;
+
+Catches: CatchClause | Catches CatchClause;
+
+CatchClause: 'catch' '(' FormalParameter ')' Block;
+
+Finally: 'finally' Block;
+
+// Expressions;
+ConstantExpression: Expression;
+Expression: AssignmentExpression;
+
+AssignmentExpression: ConditionalExpression | Assignment;
+
+Assignment: LeftHandSide AssignmentOperator AssignmentExpression;
+
+LeftHandSide: ExpressionName | FieldAccess | ArrayAccess;
+
+AssignmentOperator: '=' | '*=' | '/=' | '%=' | '+=' | '-=' | '<<=' | '>>=' | '>>>=' | '&=' | '^=' | '|=';
+
+ConditionalExpression: ConditionalOrExpression | ConditionalOrExpression ? Expression ':' ConditionalExpression;
+
+ConditionalOrExpression: ConditionalAndExpression | ConditionalOrExpression || ConditionalAndExpression;
+
+ConditionalAndExpression: InclusiveOrExpression | ConditionalAndExpression '&&' InclusiveOrExpression;
+
+InclusiveOrExpression: ExclusiveOrExpression | InclusiveOrExpression | ExclusiveOrExpression;
+
+ExclusiveOrExpression: AndExpression | ExclusiveOrExpression '^' AndExpression;
+
+AndExpression: EqualityExpression | AndExpression '&' EqualityExpression;
+
+EqualityExpression: RelationalExpression | EqualityExpression '==' RelationalExpression | EqualityExpression '!=' RelationalExpression;
+
+RelationalExpression: ShiftExpression | RelationalExpression '<' ShiftExpression | RelationalExpression '>' ShiftExpression | RelationalExpression '<=' ShiftExpression | RelationalExpression '>=' ShiftExpression | RelationalExpression 'instanceof' ReferenceType;
+
+ShiftExpression: AdditiveExpression | ShiftExpression '<<' AdditiveExpression | ShiftExpression '>>' AdditiveExpression | ShiftExpression '>>>' AdditiveExpression;
+
+AdditiveExpression: MultiplicativeExpression | AdditiveExpression '+' MultiplicativeExpression | AdditiveExpression '-' MultiplicativeExpression;
+
+MultiplicativeExpression: UnaryExpression | MultiplicativeExpression '*' UnaryExpression | MultiplicativeExpression '/' UnaryExpression | MultiplicativeExpression '%' UnaryExpression;
+
+CastExpression: '(' PrimitiveType ')' UnaryExpression | '(' ReferenceType ')' UnaryExpressionNotPlusMinus;
+
+UnaryExpression: PreincrementExpression | PredecrementExpression | '+' UnaryExpression | '-' UnaryExpression | UnaryExpressionNotPlusMinus;
+
+PredecrementExpression: '--' UnaryExpression;
+
+PreincrementExpression: '++' UnaryExpression;
+
+UnaryExpressionNotPlusMinus: PostfixExpression | '~' UnaryExpression | '!' UnaryExpression | CastExpression;
+
+PostdecrementExpression: PostfixExpression '--';
+
+PostincrementExpression: PostfixExpression '++';
+
+PostfixExpression: Primary | ExpressionName | PostincrementExpression | PostdecrementExpression;
+
+MethodInvocation: MethodName '(' ArgumentList? ')' | Primary . Identifier '(' ArgumentList? ')' | 'super' . Identifier '(' ArgumentList? ')';
+
+FieldAccess: Primary . Identifier | 'super' . Identifier;
+
+Primary: PrimaryNoNewArray | ArrayCreationExpression;
+
+PrimaryNoNewArray: Literal | 'this' | '(' Expression ')' | ClassInstanceCreationExpression | FieldAccess | MethodInvocation | ArrayAccess;
+
+ClassInstanceCreationExpression: 'new' ClassType '(' ArgumentList? ')';
+
+ArgumentList: Expression | ArgumentList ',' Expression;
+
+ArrayCreationExpression: 'new' PrimitiveType DimExprs Dims? | 'new' ClassOrInterfaceType DimExprs Dims?;
+
+DimExprs: DimExpr | DimExprs DimExpr;
+
+DimExpr: '[' Expression ']';
+
+Dims: '[' ']' | Dims '[' ']';
+
+ArrayAccess: ExpressionName '[' Expression ']' | PrimaryNoNewArray '[' Expression ']';
+
+// Tokens;
+PackageName: Identifier | PackageName . Identifier;
+TypeName: Identifier | PackageName . Identifier;
+
+SimpleTypeName: Identifier;
+
+ExpressionName: Identifier | AmbiguousName . Identifier;
+
+MethodName: Identifier | AmbiguousName. Identifier;
+
+AmbiguousName: Identifier | AmbiguousName. Identifier;
+
+Literal: IntegerLiteral | FloatingPointLiteral | BooleanLiteral | CharacterLiteral | StringLiteral | NullLiteral;
+
+IntegerLiteral: DecimalIntegerLiteral | HexIntegerLiteral | OctalIntegerLiteral;
+
+DecimalIntegerLiteral: DecimalNumeral IntegerTypeSuffix?;
+
+HexIntegerLiteral: HexNumeral IntegerTypeSuffix?;
+
+OctalIntegerLiteral: OctalNumeral IntegerTypeSuffix?;
+
+IntegerTypeSuffix: 'l' | 'L';
+
+DecimalNumeral: '0' | NonZeroDigit Digits?;
+
+Digits: Digit | Digits Digit;
+
+Digit: '0' | NonZeroDigit;
+
+NonZeroDigit: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9';
+
+HexNumeral: '0' 'x' HexDigit | '0' 'X' HexDigit | HexNumeral HexDigit;
+
+HexDigit: '=' '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F';
+
+OctalNumeral: '0' OctalDigit | OctalNumeral OctalDigit;
+
+OctalDigit: '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7';
+
+FloatingPointLiteral: Digits . Digits? ExponentPart? FloatTypeSuffix? Digits ExponentPart? FloatTypeSuffix?;
+
+ExponentPart: ExponentIndicator SignedInteger;
+
+ExponentIndicator: 'e' | 'E';
+
+SignedInteger: Sign? Digits;
+
+Sign: '+' | '-';
+
+FloatTypeSuffix: 'f' | 'F' | 'd' | 'D';
+
+BooleanLiteral: 'true' | 'false';
+
+CharacterLiteral: '\'' SingleCharacter '\'' ;//| '\'' EscapeSequence '\'';
+
+SingleCharacter: 'idk'; //InputCharacter 'except' ''' 'and' '\';
+
+StringLiteral: '"' StringCharacters? '"';
+
+StringCharacters: StringCharacter | StringCharacters StringCharacter;
+
+StringCharacter: 'idk'; //InputCharacter 'except' '"' 'and' '\' | EscapeCharacter;
+
+NullLiteral: 'null';
+
+Identifier: 'idk';
+
+Keyword: 'abstract' | 'boolean' | 'break' | 'byte' | 'case' | 'catch' | 'char' | 'class' | 'const' | 'continue' | 'default' | 'do' | 'double' | 'else' | 'extends' | 'final' | 'finally' | 'float' | 'for' | 'goto' | 'if' | 'implements' | 'import' | 'instanceof' | 'int' | 'interface' | 'long' | 'native' | 'new' | 'package' | 'private' | 'protected' | 'public' | 'return' | 'short' | 'static' | 'super' | 'switch' | 'synchronized' | 'this' | 'throw' | 'throws' | 'transient' | 'try' | 'void' | 'volatile' | 'while';

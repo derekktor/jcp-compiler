@@ -8,7 +8,7 @@ ImportDeclaration: SingleTypeImportDeclaration | TypeImportOnDemandDeclaration;
 
 SingleTypeImportDeclaration: 'import' TypeName ';';
 
-TypeImportOnDemandDeclaration: 'import' PackageName . * ';';
+TypeImportOnDemandDeclaration: 'import' PackageName .* ';';
 
 TypeDeclarations: TypeDeclaration | TypeDeclarations TypeDeclaration;
 
@@ -260,9 +260,9 @@ PostincrementExpression: PostfixExpression '++';
 
 PostfixExpression: Primary | ExpressionName | PostincrementExpression | PostdecrementExpression;
 
-MethodInvocation: MethodName '(' ArgumentList? ')' | Primary . Identifier '(' ArgumentList? ')' | 'super' . Identifier '(' ArgumentList? ')';
+MethodInvocation: MethodName '(' ArgumentList? ')' | Primary '.' Identifier '(' ArgumentList? ')' | 'super' '.' Identifier '(' ArgumentList? ')';
 
-FieldAccess: Primary . Identifier | 'super' . Identifier;
+FieldAccess: Primary '.' Identifier | 'super' '.' Identifier;
 
 Primary: PrimaryNoNewArray | ArrayCreationExpression;
 
@@ -283,16 +283,16 @@ Dims: '[' ']' | Dims '[' ']';
 ArrayAccess: ExpressionName '[' Expression ']' | PrimaryNoNewArray '[' Expression ']';
 
 // Tokens;
-PackageName: Identifier | PackageName . Identifier;
-TypeName: Identifier | PackageName . Identifier;
+PackageName: Identifier | PackageName '.' Identifier;
+TypeName: Identifier | PackageName '.' Identifier;
 
 SimpleTypeName: Identifier;
 
-ExpressionName: Identifier | AmbiguousName . Identifier;
+ExpressionName: Identifier | AmbiguousName '.' Identifier;
 
-MethodName: Identifier | AmbiguousName. Identifier;
+MethodName: Identifier | AmbiguousName '.' Identifier;
 
-AmbiguousName: Identifier | AmbiguousName. Identifier;
+AmbiguousName: Identifier | AmbiguousName '.' Identifier;
 
 Literal: IntegerLiteral | FloatingPointLiteral | BooleanLiteral | CharacterLiteral | StringLiteral | NullLiteral;
 
@@ -336,18 +336,12 @@ FloatTypeSuffix: 'f' | 'F' | 'd' | 'D';
 
 BooleanLiteral: 'true' | 'false';
 
-CharacterLiteral: '\'' SingleCharacter '\'' ;//| '\'' EscapeSequence '\'';
+CharacterLiteral: '\'' ~('\'') '\'' ;
 
-SingleCharacter: 'idk'; //InputCharacter 'except' ''' 'and' '\';
-
-StringLiteral: '"' StringCharacters? '"';
-
-StringCharacters: StringCharacter | StringCharacters StringCharacter;
-
-StringCharacter: 'idk'; //InputCharacter 'except' '"' 'and' '\' | EscapeCharacter;
+StringLiteral: '"' ~('"')+ '"';
 
 NullLiteral: 'null';
 
-Identifier: 'idk';
+Identifier: [_a-zA-Z0-9]+;
 
 Keyword: 'abstract' | 'boolean' | 'break' | 'byte' | 'case' | 'catch' | 'char' | 'class' | 'const' | 'continue' | 'default' | 'do' | 'double' | 'else' | 'extends' | 'final' | 'finally' | 'float' | 'for' | 'goto' | 'if' | 'implements' | 'import' | 'instanceof' | 'int' | 'interface' | 'long' | 'native' | 'new' | 'package' | 'private' | 'protected' | 'public' | 'return' | 'short' | 'static' | 'super' | 'switch' | 'synchronized' | 'this' | 'throw' | 'throws' | 'transient' | 'try' | 'void' | 'volatile' | 'while';

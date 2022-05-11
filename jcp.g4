@@ -1,5 +1,6 @@
 lexer grammar jcp;
 
+// Starting symbol:
 CompilationUnit: PackageDeclaration? ImportDeclarations? TypeDeclarations?;
 
 // Declarations;

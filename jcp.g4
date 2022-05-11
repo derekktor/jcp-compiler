@@ -1,5 +1,7 @@
 lexer grammar jcp;
 
+CompilationUnit: PackageDeclaration? ImportDeclarations? TypeDeclarations?;
+
 // Declarations;
 PackageDeclaration: 'package' PackageName ';';
 

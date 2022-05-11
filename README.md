@@ -1,8 +1,21 @@
-Resources:
+<!-- ## Resources:
 
 -   [java lexer](https://github.com/antlr/grammars-v4/blob/master/java/java9/Java9Lexer.g4)
 -   [java parser](https://github.com/antlr/grammars-v4/blob/master/java/java9/Java9Parser.g4)
 -   [java tokens](https://www.javatpoint.com/java-tokens)
+
+## Tokens
+
+| token | code  |
+| ----- | ----- |
+| Identifier | [_a-zA-Z0-9]+ |
+| Literal |  -->
+
+## Grammar
+
+| grammar | rule |
+
+## Installation
 
 Create new conda env
 

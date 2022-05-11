@@ -347,7 +347,6 @@ ConditionalExpression:
 ConditionalOrExpression:
 	ConditionalAndExpression
 	| ConditionalOrExpression
-	|
 	| ConditionalAndExpression;
 
 ConditionalAndExpression:
@@ -504,49 +503,15 @@ Digits: Digit | Digits Digit;
 
 Digit: '0' | NonZeroDigit;
 
-NonZeroDigit:
-	'1'
-	| '2'
-	| '3'
-	| '4'
-	| '5'
-	| '6'
-	| '7'
-	| '8'
-	| '9';
+NonZeroDigit: [1-9];
 
-HexNumeral:
-	'0' 'x' HexDigit
-	| '0' 'X' HexDigit
-	| HexNumeral HexDigit;
+HexNumeral: '0' [xX] HexDigit;
 
-HexDigit:
-	'=' '0'
-	| '1'
-	| '2'
-	| '3'
-	| '4'
-	| '5'
-	| '6'
-	| '7'
-	| '8'
-	| '9'
-	| 'a'
-	| 'b'
-	| 'c'
-	| 'd'
-	| 'e'
-	| 'f'
-	| 'A'
-	| 'B'
-	| 'C'
-	| 'D'
-	| 'E'
-	| 'F';
+HexDigit: [0-9a-fA-F];
 
 OctalNumeral: '0' OctalDigit | OctalNumeral OctalDigit;
 
-OctalDigit: '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7';
+OctalDigit: [0-7];
 
 FloatingPointLiteral:
 	Digits '.' Digits? ExponentPart? FloatTypeSuffix?
@@ -554,13 +519,13 @@ FloatingPointLiteral:
 
 ExponentPart: ExponentIndicator SignedInteger;
 
-ExponentIndicator: 'e' | 'E';
+ExponentIndicator: [eE];
 
 SignedInteger: Sign? Digits;
 
-Sign: '+' | '-';
+Sign: [-+];
 
-FloatTypeSuffix: 'f' | 'F' | 'd' | 'D';
+FloatTypeSuffix: [fFdD];
 
 BooleanLiteral: 'true' | 'false';
 

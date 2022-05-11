@@ -322,7 +322,7 @@ OctalNumeral: '0' OctalDigit | OctalNumeral OctalDigit;
 
 OctalDigit: '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7';
 
-FloatingPointLiteral: Digits . Digits? ExponentPart? FloatTypeSuffix? Digits ExponentPart? FloatTypeSuffix?;
+FloatingPointLiteral: Digits '.' Digits? ExponentPart? FloatTypeSuffix? | Digits ExponentPart? FloatTypeSuffix?;
 
 ExponentPart: ExponentIndicator SignedInteger;
 

@@ -116,7 +116,7 @@ VariableInitializers: VariableInitializer | VariableInitializers ',' VariableIni
 Type: PrimitiveType | ReferenceType;
 PrimitiveType: NumericType | 'boolean';
 
-NumericType: IntegralType | '<floating-point' 'type>';
+NumericType: IntegralType | FloatingPointType;
 
 IntegralType: 'byte' | 'short' | 'int' | 'long' | 'char';
 

@@ -6,33 +6,32 @@ lexer grammar jcp;
 CompilationUnit:
 	PackageDeclaration? ImportDeclaration* TypeDeclaration*;
 
-// Declarations;
-PackageDeclaration: 'package' PackageName SEMI;
+// Declarations
+PackageDeclaration: PACKAGE PackageName SEMI;
 // package pl.agh.tkik.compiler;
 
 ImportDeclaration:
 	SingleTypeImportDeclaration
 	| TypeImportOnDemandDeclaration;
 
-SingleTypeImportDeclaration: 'import' TypeName SEMI;
+SingleTypeImportDeclaration: IMPORT TypeName SEMI;
 // import java.util.ArrayList
 
-TypeImportOnDemandDeclaration:
-	'import' PackageName '.' '*' SEMI;
+TypeImportOnDemandDeclaration: IMPORT PackageName DOT '*' SEMI;
 // import java.util.*
 
 TypeDeclaration: ClassDeclaration | InterfaceDeclaration | SEMI;
 
 ClassDeclaration:
-	ClassModifier* 'class' Identifier Super? Interfaces? ClassBody;
+	ClassModifier* CLASS Identifier Super? Interfaces? ClassBody;
 // public class ExampleClass extends Parent.OtherClass implements RunnableClass {}
 
 ClassModifier: 'public' | 'abstract' | 'final';
 
-Super: 'extends' ClassType;
+Super: EXTENDS ClassType;
 // extends Parent.OtherClass
 
-Interfaces: 'implements' InterfaceTypeList;
+Interfaces: IMPLEMENTS InterfaceTypeList;
 // implements RunnableClass
 
 InterfaceTypeList: InterfaceType (',' InterfaceType)*;
@@ -111,7 +110,7 @@ InterfaceDeclaration:
 InterfaceModifier: 'public' | 'abstract';
 
 ExtendsInterfaces:
-	'extends' InterfaceType
+	EXTENDS InterfaceType
 	| ExtendsInterfaces ',' InterfaceType;
 
 InterfaceBody: '{' InterfaceMemberDeclaration* '}';
@@ -157,7 +156,7 @@ Digit: '0' | NonZeroDigit;
 NonZeroDigit: [1-9];
 
 FloatingPointLiteral:
-	Digits '.' Digits? ExponentPart? FloatTypeSuffix?
+	Digits DOT Digits? ExponentPart? FloatTypeSuffix?
 	| Digits ExponentPart? FloatTypeSuffix?;
 
 ExponentPart: ExponentIndicator SignedInteger;
@@ -198,7 +197,7 @@ FloatingPointType: 'float' | 'double';
 ReferenceType: ClassOrInterfaceType | ArrayType;
 
 // ClassOrInterfaceType: ClassType | InterfaceType;
-ClassOrInterfaceType: ClassType ('.' ClassType)*;
+ClassOrInterfaceType: ClassType (DOT ClassType)*;
 
 ClassType: TypeName;
 
@@ -211,10 +210,10 @@ Dims: ('[' ']')+;
 // Method
 MethodInvocation:
 	MethodName '(' ArgumentList? ')'
-	| Primary '.' Identifier '(' ArgumentList? ')'
-	| 'super' '.' Identifier '(' ArgumentList? ')';
+	| Primary DOT Identifier '(' ArgumentList? ')'
+	| 'super' DOT Identifier '(' ArgumentList? ')';
 
-FieldAccess: (Primary | 'super') '.' Identifier;
+FieldAccess: (Primary | 'super') DOT Identifier;
 
 Primary: PrimaryNoNewArray | ArrayCreationExpression;
 
@@ -482,18 +481,18 @@ PostincrementExpression: PostfixExpression '++';
 
 PostfixExpression: (Primary | ExpressionName) ('++' | '--')*;
 
-// Names PackageName: Identifier | PackageName '.' Identifier;
-PackageName: Identifier ('.' Identifier)*;
+// Names PackageName: Identifier | PackageName DOT Identifier;
+PackageName: Identifier (DOT Identifier)*;
 
-TypeName: Identifier | PackageName '.' Identifier;
+TypeName: Identifier | PackageName DOT Identifier;
 
 SimpleTypeName: Identifier;
 
-ExpressionName: Identifier | AmbiguousName '.' Identifier;
+ExpressionName: Identifier | AmbiguousName DOT Identifier;
 
-MethodName: Identifier | AmbiguousName '.' Identifier;
+MethodName: Identifier | AmbiguousName DOT Identifier;
 
-AmbiguousName: Identifier ('.' Identifier)*;
+AmbiguousName: Identifier (DOT Identifier)*;
 
 //// Tokens
 

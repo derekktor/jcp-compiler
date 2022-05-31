@@ -36,6 +36,8 @@ public class Student extends Person {
         var or = false;
         boolean exp = (((((-10 * unary) + mult) > rel) == eq) || and) && or;
 
+        String name = new String();
+
         // - PreInc
         // UnaryCond * UnaryCond
         // MultCond + MultCond

@@ -1,6 +1,6 @@
-lexer grammar attempt2;
+grammar attempt2;
 
-Start: PackageDec* ImportDec* ClassDec* EOF;
+start: PackageDec* ImportDec* ClassDec* EOF;
 
 PackageDec: PACKAGE IDENTIFIER (DOT IDENTIFIER) SEMI;
 
@@ -20,7 +20,7 @@ MethodDec: Modifier? Type IDENTIFIER Parameters Block;
 
 Block: LCUR BlockDec* RCUR;
 
-fragment BlockDec: LocalDec | Statement;
+BlockDec: LocalDec | Statement;
 
 LocalDec: Type IDENTIFIER SEMI;
 

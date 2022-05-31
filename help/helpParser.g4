@@ -1,7 +1,7 @@
-parser grammar Java9Parser;
+parser grammar helpParser;
 
 options {
-	tokenVocab = Java9Lexer;
+	tokenVocab = helpLexer;
 }
 
 /*

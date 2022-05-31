@@ -1,4 +1,4 @@
-// Generated from /Users/konradb/Coding/tkik/jcp-compiler/attempt2.g4 by ANTLR 4.9.2
+// Generated from /Users/mac/Desktop/agh/4/tk/projects/jcp/jcp-compiler/attempt2.g4 by ANTLR 4.9.2
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;

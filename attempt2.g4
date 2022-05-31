@@ -16,7 +16,15 @@ Body: LCUR BodyDec* RCUR;
 
 BodyDec: MemberDec | ConstructorDec | MethodDec;
 
-MemberDec: Modifier Type IDENTIFIER SEMI;
+MethodDec: Modifier? Type IDENTIFIER Parameters Block;
+
+Block: LCUR BlockDec* RCUR;
+
+fragment BlockDec: LocalDec | Statement;
+
+LocalDec: Type IDENTIFIER SEMI;
+
+MemberDec: Modifier LocalDec;
 
 Type: PrimitiveType | ReferenceType;
 

@@ -68,41 +68,55 @@ VariableInitializer: Expression;
 
 Expression: ConditionalExpression | Assignment;
 
-ConditionalExpression: OrExpression;
+Assignment: LeftHandSide AssignmentOperator Expression;
 
-OrExpression: AndExpression | OrExpression '||' AndExpression;
+LeftHandSide: ExpressionName | FieldAccess | ArrayAccess;
 
-AndExpression:
-	EqualityExpression
-	| AndExpression '&&' EqualityExpression;
+ArrayAccess: (IDENTIFIER | PrimaryNoNewArray_lfno) (
+		'[' Expression ']'
+	)*;
 
-EqualityExpression:
-	RelationalExpression
-	| EqualityExpression '==' RelationalExpression
-	| EqualityExpression '!=' RelationalExpression;
+FieldAccess: (Primary | 'super') DOT IDENTIFIER;
 
-RelationalExpression:
-	ShiftExpression
-	| RelationalExpression '<' ShiftExpression
-	| RelationalExpression '>' ShiftExpression
-	| RelationalExpression '<=' ShiftExpression
-	| RelationalExpression '>=' ShiftExpression;
+ExpressionName: IDENTIFIER | AmbiguousName DOT IDENTIFIER;
 
-ShiftExpression:
-	AdditiveExpression
-	| ShiftExpression '<<' AdditiveExpression
-	| ShiftExpression '>>' AdditiveExpression;
+AmbiguousName: IDENTIFIER (DOT IDENTIFIER)*;
 
-AdditiveExpression:
-	MultiplicativeExpression
-	| AdditiveExpression '+' MultiplicativeExpression
-	| AdditiveExpression '-' MultiplicativeExpression;
+// Expressions
+ConditionalExpression: 'test';
+// 	ConditionalOrExpression ('?' Expression ':' ConditionalExpression)?;
+// ConditionalOrExpression:
+// 	ConditionalAndExpression (OR ConditionalOrExpression)?;
+// ConditionalAndExpression:
+// 	InclusiveOrExpression (AND ConditionalAndExpression)?;
 
-MultiplicativeExpression:
-	UnaryExpression
-	| MultiplicativeExpression '*' UnaryExpression
-	| MultiplicativeExpression '/' UnaryExpression
-	| MultiplicativeExpression '%' UnaryExpression;
+
+// AndExpression:
+// 	EqualityExpression
+// 	| AndExpression '&' EqualityExpression;
+// EqualityExpression:
+// 	RelationalExpression
+// 	| EqualityExpression '==' RelationalExpression
+// 	| EqualityExpression '!=' RelationalExpression;
+// RelationalExpression:
+// 	RelationalExpression '<' AdditiveExpression
+// 	| RelationalExpression '>' AdditiveExpression
+// 	| RelationalExpression '<=' AdditiveExpression
+// 	| RelationalExpression '>=' AdditiveExpression
+// 	| RelationalExpression 'instanceof' ReferenceType;
+// AdditiveExpression:
+// 	MultiplicativeExpression
+// 	| AdditiveExpression '+' MultiplicativeExpression
+// 	| AdditiveExpression '-' MultiplicativeExpression;
+
+// MultiplicativeExpression:
+// 	UnaryExpression
+// 	| MultiplicativeExpression '*' UnaryExpression
+// 	| MultiplicativeExpression '/' UnaryExpression
+// 	| MultiplicativeExpression '%' UnaryExpression;
+
+
+
 
 UnaryExpression:
 	PreincrementExpression
@@ -121,22 +135,79 @@ UnaryExpressionNotPlusMinus:
 	| '!' UnaryExpression
 	| CastExpression;
 
+CastExpression:
+	'(' PrimitiveType ')' UnaryExpression
+	| '(' ReferenceType ')' UnaryExpressionNotPlusMinus;
+
 PostfixExpression: (Primary | ExpressionName) ('++' | '--')*;
 
 Primary: (PrimaryNoNewArray_lfno | ArrayCreationExpression) (
-		PrimaryNoNewArray_lf
+		PrimaryNoNewArray_lfno
 	)*;
+
+ArrayCreationExpression:
+	'new' PrimitiveType DimExprs Dims?
+	| 'new' ClassOrInterfaceType DimExprs Dims?;
+
+DimExprs: DimExpr (COMMA DimExpr)*;
+DimExpr: '[' Expression ']';
+
+ClassOrInterfaceType: ClassType (DOT ClassType)*;
+
 
 PrimaryNoNewArray_lfno: Literal | THIS;
 
 MethodDeclaration: Modifier MethodHeader Block;
 // public void getStatus(String studentID) {...}
 
+Block: '{' BlockStatements '}';
+BlockStatements: BlockStatement*;
+BlockStatement: LocalVariableDeclarationStatement | Statement;
+LocalVariableDeclarationStatement: LocalVariableDeclaration ';';
+LocalVariableDeclaration: Type VariableDeclarators;
+Statement: Block | EmptyStatement | ExpressionStatement | IfStatement |
+		WhileStatement | ForStatement | ForEachStatement |
+		DoStatement | SwitchStatement | BreakStatement |
+		ContinueStatement | ReturnStatement | SynchronizedStatement |
+		ThrowStatement | TryStatement | AssertStatement;
+EmptyStatement: SEMI;
+ExpressionStatement: Expression? SEMI;
+IfStatement: 'if' '(' Expression ')' Statement ('else' Statement)?;
+WhileStatement: 'while' '(' Expression ')' Statement;
+ForStatement: 'for' '(' ForInit? ';' Expression? ';' ForUpdate? ')' Statement;
+ForInit: LocalVariableDeclaration | ExpressionStatement;
+ForUpdate: ExpressionStatement;
+ForEachStatement: 'for' '(' ForInit? ';' Expression ')' Statement;
+DoStatement: 'do' Statement 'while' '(' Expression ')' SEMI;
+SwitchStatement: 'switch' '(' Expression ')' SwitchBlock;
+SwitchBlock: '{' SwitchBlockStatementGroup* '}';
+SwitchBlockStatementGroup: SwitchLabel BlockStatements;
+SwitchLabel: 'case' Expression ':' | 'default' ':';
+BreakStatement: 'break' IDENTIFIER? SEMI;
+ContinueStatement: 'continue' IDENTIFIER? SEMI;
+ReturnStatement: 'return' Expression? SEMI;
+SynchronizedStatement: 'synchronized' '(' Expression ')' Block;
+ThrowStatement: 'throw' Expression SEMI;
+TryStatement: 'try' Block Catches? Finally?;
+Catches: CatchClause (CatchClause)*;
+CatchClause: 'catch' '(' FormalParameter ')' Block;
+Finally: 'finally' Block;
+AssertStatement: 'assert' Expression (':' Expression)? SEMI;
+FormalParameter: Modifier? Type IDENTIFIER;
+
 MethodHeader: (VOID | Type) MethodDeclarator;
 // void getStatus(String studentID)
 
 MethodDeclarator: IDENTIFIER Parameters;
 // getStatus (String studentID)
+
+Literal:
+	IntegerLiteral
+	| FloatingPointLiteral
+	| BooleanLiteral
+	| CharacterLiteral
+	| StringLiteral
+	| NullLiteral;
 
 //// Tokens
 
@@ -218,3 +289,26 @@ IDENTIFIER: '_'* [a-zA-Z]+ [a-zA-Z0-9]*;
 
 // Whitespace
 WS: [ \t\n\r]+ -> skip;
+
+AssignmentOperator:
+	'='
+	| '*='
+	| '/='
+	| '%='
+	| '+='
+	| '-=';
+
+// Literals
+IntegerLiteral: [0-9]+;
+FloatingPointLiteral: [0-9]+ '.' [0-9]+;
+BooleanLiteral: TRUE | FALSE;
+CharacterLiteral: '\\'' [^\n\r\'] ''\\';
+StringLiteral: '"' [^\n\r"]* '"';
+NullLiteral: NULL;
+
+TRUE: 'true';
+FALSE: 'false';
+NULL: 'null';
+
+OR: '||';
+AND: '&&';

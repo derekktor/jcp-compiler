@@ -4,13 +4,13 @@ CompilationUnit:
 	PackageDeclaration? ImportDeclaration* ClassDeclaration* EOF;
 
 PackageDeclaration: 'package' IDENTIFIER (DOT IDENTIFIER)* SEMI;
-// package pl.edu.(identifier)*.game;
+// package utils;
 
-ImportDeclaration: 'import' IDENTIFIER (DOT IDENTIFIER)* SEMI;
-// import java.utils.(identifier)*; 
+ImportDeclaration: IMPORT IDENTIFIER (DOT IDENTIFIER)* SEMI;
+// import java.utils.ArrayList;
 
 ClassDeclaration: Modifier? CLASS IDENTIFIER Body;
-// public class ApplicationName {...}
+// public class Student extends Person {...}
 
 Modifier: PUBLIC | PRIVATE | PROTECTED;
 
@@ -168,6 +168,7 @@ IMPLEMENTS: 'implements';
 INSTANCEOF: 'instanceof';
 INT: 'int';
 INTERFACE: 'interface';
+IMPORT: 'import';
 LONG: 'long';
 MODULE: 'module';
 NATIVE: 'native';

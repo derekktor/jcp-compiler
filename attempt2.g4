@@ -1,138 +1,141 @@
-grammar attempt2;
+parser grammar attempt2;
 
-start: PackageDec* ImportDec* ClassDec* EOF;
+options {   tokenVocab = attempt2Lexer; }
 
-PackageDec: PACKAGE IDENTIFIER (DOT IDENTIFIER) SEMI;
+start: packageDec* importDec* classDec* EOF;
 
-ImportDec: IMPORT IDENTIFIER (DOT IDENTIFIER) SEMI;
+packageDec: PACKAGE IDENTIFIER (DOT IDENTIFIER) SEMI;
 
-ClassDec: Modifier CLASS IDENTIFIER Extends? Body;
+importDec: IMPORT IDENTIFIER (DOT IDENTIFIER) SEMI;
 
-Modifier: PUBLIC | PRIVATE | PROTECTED;
+classDec: modifier CLASS IDENTIFIER extends? Body;
 
-Extends: EXTENDS IDENTIFIER (DOT IDENTIFIER);
+modifier: PUBLIC | PRIVATE | PROTECTED;
 
-Body: LCUR BodyDec* RCUR;
+extends: EXTENDS IDENTIFIER (DOT IDENTIFIER)*;
 
-BodyDec: MemberDec | ConstructorDec | MethodDec;
+Body: LCUR bodyDec* RCUR;
 
-MethodDec: Modifier? Type IDENTIFIER Parameters Block;
+bodyDec: memberDec | constructorDec | methodDec;
 
-Block: LCUR BlockDec* RCUR;
+methodDec: modifier? type IDENTIFIER parameters block;
 
-BlockDec: LocalDec | Statement;
+block: LCUR blockDec* RCUR;
 
-LocalDec: Type IDENTIFIER SEMI;
+blockDec: localDec | statement;
 
-MemberDec: Modifier LocalDec;
+localDec: type IDENTIFIER SEMI;
 
-Type: PrimitiveType | ReferenceType;
+memberDec: modifier localDec;
 
-PrimitiveType: NumericType | BOOL;
+type: primitiveType | feferenceType;
 
-NumericType: IntegralType | FloatingPointType;
+primitiveType: numericType | BOOL;
 
-IntegralType: BYTE | SHORT | INT | LONG | CHAR;
+numericType: integralType | floatingPointType;
 
-FloatingPointType: FLOAT | DOUBLE;
+integralType: BYTE | SHORT | INT | LONG | CHAR;
 
-ReferenceType: ClassType;
+floatingPointType: FLOAT | DOUBLE;
 
-ClassType: IDENTIFIER;
+feferenceType: classType;
 
-ConstructorDec: Modifier IDENTIFIER Parameters ConstructorBody;
+classType: IDENTIFIER;
 
-Parameters: LPAR Parameter? (COMMA Parameter) RPAR;
+constructorDec: modifier IDENTIFIER parameters constructorBody;
 
-Parameter: Type IDENTIFIER;
+parameters: LPAR parameter? (COMMA parameter) RPAR;
 
-ConstructorBody: LCUR ConstructorInvocation? Statement* RCUR;
+parameter: type IDENTIFIER;
 
-ConstructorInvocation:
-	SUPER LPAR Argument? (COMMA Argument)* RPAR;
+constructorBody: LCUR constructorInvocation? statement* RCUR;
 
-Argument: IDENTIFIER;
+constructorInvocation:
+	SUPER LPAR argument? (COMMA argument)* RPAR;
 
-Statement:
-	Expression SEMI |
-	IF LPAR Expression RPAR Statement (ELSE Statement)? |
-	FOR LPAR ForInit? SEMI ForUpdate? RPAR Statement |
-	WHILE LPAR Expression RPAR Statement |
-	DO Statement WHILE LPAR Expression RPAR SEMI |
+argument: IDENTIFIER;
+
+statement:
+	expression SEMI |
+	IF LPAR expression RPAR statement (ELSE statement)? |
+	FOR LPAR forInit? SEMI forUpdate? RPAR statement |
+	WHILE LPAR expression RPAR statement |
+	DO statement WHILE LPAR expression RPAR SEMI |
 	BREAK SEMI |
 	CONTINUE SEMI |
-	RETURN Expression? SEMI |
-	LCUR BlockDec* RCUR;
+	RETURN expression? SEMI |
+	LCUR blockDec* RCUR;
 
-ForInit: LocalDec | Expression;
-ForUpdate: Expression;
+forInit: localDec | expression;
+forUpdate: expression;
 
-Expression:
-	Assignment |
-	ConditionalExpression;
+expression:
+	assignment |
+	conditionalExpression;
 
-Assignment:
-	LeftHandSide ASSIGN Expression;
+assignment:
+	leftHandSide ASSIGN expression;
 
-LeftHandSide:
-	FieldAccess |
-	ArrayAccess;
+leftHandSide:
+	fieldAccess |
+	arrayAccess;
 
-FieldAccess:
+fieldAccess:
 	IDENTIFIER (DOT IDENTIFIER)*;
 
-ArrayAccess:
+arrayAccess:
 	IDENTIFIER LBRACK LITERAL RBRACK;
 
-ConditionalExpression:
-	OrExpression
-	(QUESTION Expression COLON Expression)?;
+conditionalExpression:
+	orExpression
+	(QUESTION expression COLON expression)?;
 
-OrExpression:
-	AndExpression
-	(OR AndExpression)*;
+orExpression:
+	andExpression
+	(OR andExpression)*;
 
-AndExpression:
-	EqualityExpression
-	(AND EqualityExpression)*;
+andExpression:
+	equalityExpression
+	(AND equalityExpression)*;
 
-EqualityExpression:
-	RelationalExpression
-	(EQUAL RelationalExpression | NOTEQUAL RelationalExpression)*;
+equalityExpression:
+	relationalExpression
+	(EQUAL relationalExpression | NOTEQUAL relationalExpression)*;
 
-RelationalExpression:
-	AdditiveExpression
-	(LESS AdditiveExpression | LESSEQUAL AdditiveExpression | GREATER AdditiveExpression | GREATEREQUAL AdditiveExpression)*;
+relationalExpression:
+	additiveExpression
+	(LESS additiveExpression | LESSEQUAL additiveExpression | GREATER additiveExpression | GREATEREQUAL additiveExpression)*;
 
-AdditiveExpression:
-	MultiplicativeExpression
-	(PLUS MultiplicativeExpression | MINUS MultiplicativeExpression)*;
+additiveExpression:
+	multiplicativeExpression
+	(PLUS multiplicativeExpression | MINUS multiplicativeExpression)*;
 
-MultiplicativeExpression:
-	UnaryExpression
-	(MULTIPLY UnaryExpression | DIVIDE UnaryExpression | MOD UnaryExpression)*;
+multiplicativeExpression:
+	unaryExpression
+	(MULTIPLY unaryExpression | DIVIDE unaryExpression | MOD unaryExpression)*;
 
-UnaireExpression:
-	PrimaryExpression
-	(PLUS UnaryExpression | MINUS UnaryExpression)*;
+unaireExpression:
+	primaryExpression
+	(PLUS unaryExpression | MINUS unaryExpression)*;
 
-UnaryExpression:
-	(PLUS UnaryExpression | MINUS UnaryExpression) UnaryExpression |
-	(NOT UnaryExpression );
+unaryExpression:
+	(PLUS unaryExpression | MINUS unaryExpression) unaryExpression |
+	(NOT unaryExpression );
 
-PrimaryExpression:
+primaryExpression:
 	LITERAL |
 	IDENTIFIER |
 	THIS |
 	SUPER |
-	LPAR Expression RPAR |
-	NEW ClassType LPAR Argument? (COMMA Argument)* RPAR |
-	NOT UnaryExpression |
-	INCREMENT UnaryExpression |
-	DECREMENT UnaryExpression |
-	Type LPAR Expression RPAR;
+	LPAR expression RPAR |
+	NEW classType LPAR argument? (COMMA argument)* RPAR |
+	NOT unaryExpression |
+	INCREMENT unaryExpression |
+	DECREMENT unaryExpression |
+	type LPAR expression RPAR;
 
 
+lexer grammar attempt2Lexer;
 // Tokens
 PACKAGE: 'package';
 IMPORT: 'import';
@@ -195,5 +198,6 @@ CHAR: 'char';
 FLOAT: 'float';
 DOUBLE: 'double';
 
+WS : [ \t\r\n]+ -> skip;
 LITERAL: [0-9]+;
 IDENTIFIER: [_a-zA-Z]+ [_a-zA-Z0-9]*;

@@ -53,32 +53,23 @@
 
 #### Separators
 
-| Token    | Description |
-| -------- | ----------- |
-| DOT      | .           |
-| COMMA    | ,           |
-| SEMI     | ;           |
-| COLON    | :           |
-| QUESTION | ?           |
+| Token    | Description | Token  | Description |
+| -------- | ----------- | ------ | ----------- |
+| DOT      | .           | RCUR   | }           |
+| COMMA    | ,           | LPAR   | (           |
+| SEMI     | ;           | RPAR   | )           |
+| COLON    | :           | LBRACK | [           |
+| QUESTION | ?           | RBRACK | ]           |
 | LCUR     | {           |
-| RCUR     | }           |
-| LPAR     | (           |
-| RPAR     | )           |
-| LBRACK   | [           |
-| RBRACK   | ]           |
 
 #### Data Types
 
-| Token  | Description |
-| ------ | ----------- |
-| BOOL   | boolean     |
-| BYTE   | byte        |
-| SHORT  | short       |
-| LONG   | long        |
-| INT    | int         |
-| CHAR   | char        |
-| FLOAT  | float       |
-| DOUBLE | double      |
+| Token | Description | Token  | Description |
+| ----- | ----------- | ------ | ----------- |
+| BOOL  | boolean     | INT    | int         |
+| BYTE  | byte        | CHAR   | char        |
+| SHORT | short       | FLOAT  | float       |
+| LONG  | long        | DOUBLE | double      |
 
 #### Identifiers
 

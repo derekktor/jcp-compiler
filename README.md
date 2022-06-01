@@ -135,7 +135,6 @@
 | relationalExpression     | additiveExpression (LESS additiveExpression \| LESSEQUAL additiveExpression \| GREATER additiveExpression \| GREATEREQUAL additiveExpression)\*                                                                                |
 | additiveExpression       | multiplicativeExpression (PLUS multiplicativeExpression \| MINUS multiplicativeExpression)\*                                                                                                                                   |
 | multiplicativeExpression | unaryExpression (MULTIPLY unaryExpression \| DIVIDE unaryExpression \| MOD unaryExpression)\*                                                                                                                                  |
-| unaireExpression         | primaryExpression (PLUS unaryExpression \| MINUS unaryExpression)\*                                                                                                                                                            |
 | unaryExpression          | (PLUS unaryExpression \| MINUS unaryExpression) unaryExpression \| (NOT unaryExpression )                                                                                                                                      |
 | primaryExpression        | LITERAL \| IDENTIFIER \|THIS \|SUPER \|LPAR expression RPAR \|NEW classType LPAR argument? (COMMA argument)\* RPAR \|NOT unaryExpression \|INCREMENT unaryExpression \| DECREMENT unaryExpression \| type LPAR expression RPAR |
 

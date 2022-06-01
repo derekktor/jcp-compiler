@@ -1,577 +1,200 @@
-lexer grammar jcp;
+grammar JCP;
 
-// Breadth-First unfolding
+start: PackageDec* ImportDec* ClassDec* EOF;
 
-// Starting symbol:
-CompilationUnit:
-	PackageDeclaration? ImportDeclaration* TypeDeclaration*;
+PackageDec: PACKAGE IDENTIFIER (DOT IDENTIFIER) SEMI;
 
-// Declarations
-PackageDeclaration: PACKAGE PackageName SEMI;
-// package pl.agh.tkik.compiler;
+ImportDec: IMPORT IDENTIFIER (DOT IDENTIFIER) SEMI;
 
-ImportDeclaration:
-	SingleTypeImportDeclaration
-	| TypeImportOnDemandDeclaration;
+ClassDec: Modifier CLASS IDENTIFIER Extends? Body;
 
-SingleTypeImportDeclaration: IMPORT TypeName SEMI;
-// import java.util.ArrayList
+Modifier: PUBLIC | PRIVATE | PROTECTED;
 
-TypeImportOnDemandDeclaration: IMPORT PackageName DOT '*' SEMI;
-// import java.util.*
+Extends: EXTENDS IDENTIFIER (DOT IDENTIFIER);
 
-TypeDeclaration: ClassDeclaration | InterfaceDeclaration | SEMI;
+Body: LCUR BodyDec* RCUR;
 
-ClassDeclaration:
-	ClassModifier* CLASS Identifier Super? Interfaces? ClassBody;
-// public class ExampleClass extends Parent.OtherClass implements RunnableClass {}
+BodyDec: MemberDec | ConstructorDec | MethodDec;
 
-ClassModifier: 'public' | 'abstract' | 'final';
+MethodDec: Modifier? Type IDENTIFIER Parameters Block;
 
-Super: EXTENDS ClassType;
-// extends Parent.OtherClass
+Block: LCUR BlockDec* RCUR;
 
-Interfaces: IMPLEMENTS InterfaceTypeList;
-// implements RunnableClass
+BlockDec: LocalDec | Statement;
 
-InterfaceTypeList: InterfaceType (',' InterfaceType)*;
-// implements RunnableClass
+LocalDec: Type IDENTIFIER SEMI;
 
-ClassBody: '{' ClassBodyDeclaration* '}';
+MemberDec: Modifier LocalDec;
 
-ClassBodyDeclaration:
-	ClassMemberDeclaration
-	| StaticInitializer
-	| ConstructorDeclaration;
-
-ClassMemberDeclaration: FieldDeclaration | MethodDeclaration;
-
-StaticInitializer: 'static' Block;
-
-ConstructorDeclaration:
-	ConstructorModifier? ConstructorDeclarator Throws? ConstructorBody;
-
-ConstructorModifier: 'public' | 'protected' | 'private';
-
-ConstructorDeclarator:
-	SimpleTypeName '(' FormalParameterList? ')';
-
-FormalParameterList:
-	FormalParameters ',' LastFormalParameter
-	| LastFormalParameter;
-
-FormalParameters: FormalParameter (',' FormalParameter)*;
-
-FormalParameter: Type VariableDeclaratorId;
-
-LastFormalParameter: Type '...' VariableDeclaratorId;
-
-Throws: 'throws' ClassTypeList;
-
-ClassTypeList: ClassType (',' ClassType)*;
-
-ConstructorBody:
-	'{' ExplicitConstructorInvocation? BlockStatement* '}';
-
-ExplicitConstructorInvocation:
-	'this' '(' ArgumentList? ')'
-	| 'super' '(' ArgumentList? ')';
-
-FieldDeclaration: FieldModifier? Type VariableDeclarators SEMI;
-
-FieldModifier: 'public' | 'protected' | 'private';
-
-VariableDeclarators:
-	VariableDeclarator (',' VariableDeclarator)*;
-
-VariableDeclarator:
-	VariableDeclaratorId ('=' VariableInitializer)?;
-
-VariableDeclaratorId: Identifier Dims?;
-
-VariableInitializer: Expression | ArrayInitializer;
-
-MethodDeclaration: MethodHeader MethodBody;
-
-MethodHeader:
-	MethodModifier? ResultType MethodDeclarator Throws?;
-
-ResultType: Type | 'void';
-
-MethodModifier: 'public' | 'protected' | 'private';
-
-MethodDeclarator: Identifier '(' FormalParameterList? ')';
-
-MethodBody: Block | SEMI;
-
-InterfaceDeclaration:
-	InterfaceModifier* 'interface' Identifier ExtendsInterfaces? InterfaceBody;
-
-InterfaceModifier: 'public' | 'abstract';
-
-ExtendsInterfaces:
-	EXTENDS InterfaceType
-	| ExtendsInterfaces ',' InterfaceType;
-
-InterfaceBody: '{' InterfaceMemberDeclaration* '}';
-
-InterfaceMemberDeclaration:
-	ConstantDeclaration
-	| AbstractMethodDeclaration;
-
-ConstantDeclaration: ConstantModifiers Type VariableDeclarator;
-
-ConstantModifiers: 'public' | 'static' | 'final';
-
-AbstractMethodDeclaration:
-	AbstractMethodModifier* ResultType MethodDeclarator Throws? SEMI;
-
-AbstractMethodModifier: 'public' | 'abstract';
-
-ArrayInitializer: '{' VariableInitializers? ','? '}';
-
-VariableInitializers:
-	VariableInitializer
-	| VariableInitializers ',' VariableInitializer;
-
-//// Literals
-Literal:
-	IntegerLiteral
-	| FloatingPointLiteral
-	| BooleanLiteral
-	| CharacterLiteral
-	| StringLiteral
-	| NullLiteral;
-
-IntegerLiteral: DecimalNumeral IntegerTypeSuffix?;
-
-IntegerTypeSuffix: 'l' | 'L';
-
-DecimalNumeral: '0' | NonZeroDigit Digits?;
-
-Digits: Digit+;
-
-Digit: '0' | NonZeroDigit;
-
-NonZeroDigit: [1-9];
-
-FloatingPointLiteral:
-	Digits DOT Digits? ExponentPart? FloatTypeSuffix?
-	| Digits ExponentPart? FloatTypeSuffix?;
-
-ExponentPart: ExponentIndicator SignedInteger;
-
-ExponentIndicator: [eE];
-
-SignedInteger: Sign? Digits;
-
-Sign: [-+];
-
-FloatTypeSuffix: [fFdD];
-
-BooleanLiteral: 'true' | 'false';
-
-CharacterLiteral: '\'' SingleCharacter '\'';
-
-SingleCharacter: ~['\n\r\\];
-
-StringLiteral: '"' SingleCharacter+ '"';
-
-NullLiteral: 'null';
-
-Identifier: [_a-zA-Z0-9]+;
-
-//// Types
 Type: PrimitiveType | ReferenceType;
 
-// Primitive Types
-PrimitiveType: NumericType | 'boolean';
+PrimitiveType: NumericType | BOOL;
 
 NumericType: IntegralType | FloatingPointType;
 
-IntegralType: 'byte' | 'short' | 'int' | 'long' | 'char';
+IntegralType: BYTE | SHORT | INT | LONG | CHAR;
 
-FloatingPointType: 'float' | 'double';
+FloatingPointType: FLOAT | DOUBLE;
 
-// Reference Types
-ReferenceType: ClassOrInterfaceType | ArrayType;
+ReferenceType: ClassType;
 
-// ClassOrInterfaceType: ClassType | InterfaceType;
-ClassOrInterfaceType: ClassType (DOT ClassType)*;
+ClassType: IDENTIFIER;
 
-ClassType: TypeName;
+ConstructorDec: Modifier IDENTIFIER Parameters ConstructorBody;
 
-InterfaceType: TypeName;
+Parameters: LPAR Parameter? (COMMA Parameter) RPAR;
 
-ArrayType: (PrimitiveType | ClassOrInterfaceType) Dims;
+Parameter: Type IDENTIFIER;
 
-Dims: ('[' ']')+;
+ConstructorBody: LCUR ConstructorInvocation? Statement* RCUR;
 
-// Method
-MethodInvocation:
-	MethodName '(' ArgumentList? ')'
-	| Primary DOT Identifier '(' ArgumentList? ')'
-	| 'super' DOT Identifier '(' ArgumentList? ')';
+ConstructorInvocation:
+	SUPER LPAR Argument? (COMMA Argument)* RPAR;
 
-FieldAccess: (Primary | 'super') DOT Identifier;
+Argument: IDENTIFIER;
 
-Primary: PrimaryNoNewArray | ArrayCreationExpression;
-
-PrimaryNoNewArray:
-	Literal
-	| 'this'
-	| '(' Expression ')'
-	| ClassInstanceCreationExpression;
-// | FieldAccess | MethodInvocation | ArrayAccess
-
-ClassInstanceCreationExpression:
-	'new' ClassType '(' ArgumentList? ')';
-
-ArgumentList: Expression (',' Expression)*;
-
-ArrayCreationExpression:
-	'new' PrimitiveType DimExprs Dims?
-	| 'new' ClassOrInterfaceType DimExprs Dims?;
-
-DimExprs: DimExpr | DimExprs DimExpr;
-
-DimExpr: '[' Expression ']';
-
-// ArrayAccess: ExpressionName '[' Expression ']' | PrimaryNoNewArray '[' Expression ']';
-
-ArrayAccess: (ExpressionName | PrimaryNoNewArray) (
-		'[' Expression ']'
-	)*;
-
-// Blocks
-Block: '{' BlockStatements? '}';
-
-BlockStatements: BlockStatement+;
-
-BlockStatement: LocalVariableDeclarationStatement | Statement;
-
-LocalVariableDeclarationStatement:
-	LocalVariableDeclaration SEMI;
-
-LocalVariableDeclaration: Type VariableDeclarators;
-
-// Statements
 Statement:
-	StatementWithoutTrailingSubstatement
-	| LabeledStatement
-	| IfThenStatement
-	| IfThenElseStatement
-	| WhileStatement
-	| ForStatement;
+	Expression SEMI
+	| IF LPAR Expression RPAR Statement (ELSE Statement)?
+	| FOR LPAR ForInit? SEMI ForUpdate? RPAR Statement
+	| WHILE LPAR Expression RPAR Statement
+	| DO Statement WHILE LPAR Expression RPAR SEMI
+	| BREAK SEMI
+	| CONTINUE SEMI
+	| RETURN Expression? SEMI
+	| LCUR BlockDec* RCUR;
 
-StatementNoShortIf:
-	StatementWithoutTrailingSubstatement
-	| LabeledStatementNoShortIf
-	| IfThenElseStatementNoShortIf
-	| WhileStatementNoShortIf
-	| ForStatementNoShortIf;
+ForInit: LocalDec | Expression;
+ForUpdate: Expression;
 
-StatementWithoutTrailingSubstatement:
-	Block
-	| EmptyStatement
-	| ExpressionStatement
-	| SwitchStatement
-	| DoStatement
-	| BreakStatement
-	| ContinueStatement
-	| ReturnStatement
-	// | SynchronizedStatement
-	| ThrowsStatement
-	| TryStatement;
+Expression: Assignment | ConditionalExpression;
 
-EmptyStatement: SEMI;
+Assignment: LeftHandSide ASSIGN Expression;
 
-LabeledStatement: Identifier ':' Statement;
+LeftHandSide: FieldAccess | ArrayAccess;
 
-LabeledStatementNoShortIf: Identifier ':' StatementNoShortIf;
+FieldAccess: IDENTIFIER (DOT IDENTIFIER)*;
 
-ExpressionStatement: StatementExpression SEMI;
-
-StatementExpression:
-	Assignment
-	| PreincrementExpression
-	| PostincrementExpression
-	| PredecrementExpression
-	| PostdecrementExpression
-	| MethodInvocation
-	| ClassInstanceCreationExpression;
-
-// If-Else Statements
-IfThenStatement: 'if' '(' Expression ')' Statement;
-
-IfThenElseStatement:
-	'if' '(' Expression ')' StatementNoShortIf 'else' Statement;
-
-IfThenElseStatementNoShortIf:
-	'if' '(' Expression ')' StatementNoShortIf 'else' StatementNoShortIf;
-
-// Switch Statements
-SwitchStatement: 'switch' '(' Expression ')' SwitchBlock;
-
-SwitchBlock: '{' SwitchBlockStatementGroup* SwitchLabel* '}';
-
-SwitchBlockStatementGroup: SwitchLabels BlockStatements;
-
-SwitchLabels: SwitchLabel+;
-
-SwitchLabel: 'case' Expression ':' | 'default' ':';
-
-// While Statements
-WhileStatement: 'while' '(' Expression ')' Statement;
-
-WhileStatementNoShortIf:
-	'while' '(' Expression ')' StatementNoShortIf;
-
-DoStatement: 'do' Statement 'while' '(' Expression ')' SEMI;
-
-// For Statements
-ForStatement: BasicForStatement | ForEachStatement;
-
-ForStatementNoShortIf:
-	BasicForStatementNoShortIf
-	| ForEachStatementNoShortIf;
-
-BasicForStatement:
-	'for' '(' ForInit? SEMI Expression? SEMI ForUpdate? ')' Statement;
-
-BasicForStatementNoShortIf:
-	'for' '(' ForInit? SEMI Expression? SEMI ForUpdate? ')' StatementNoShortIf;
-
-ForInit: StatementExpressionList | LocalVariableDeclaration;
-
-ForUpdate: StatementExpressionList;
-
-StatementExpressionList:
-	StatementExpression (',' StatementExpression)*;
-
-ForEachStatement:
-	'for' '(' FieldModifier* Type VariableDeclaratorId ':' Expression ')' Statement;
-
-ForEachStatementNoShortIf:
-	'for' '(' FieldModifier* Type VariableDeclaratorId ':' Expression ')' StatementNoShortIf;
-
-BreakStatement: 'break' Identifier? SEMI;
-
-ContinueStatement: 'continue' Identifier? SEMI;
-
-ReturnStatement: 'return' Expression? SEMI;
-
-ThrowsStatement: 'throw' Expression SEMI;
-
-// SynchronizedStatement: 'synchronized' '(' Expression ')' Block;
-
-TryStatement:
-	'try' Block Catches
-	| 'try' Block Catches? Finally;
-
-Catches: CatchClause | Catches CatchClause;
-
-CatchClause: 'catch' '(' FormalParameter ')' Block;
-
-Finally: 'finally' Block;
-
-// Expressions
-Expression: AssignmentExpression;
-
-AssignmentExpression: ConditionalExpression | Assignment;
-
-Assignment: LeftHandSide AssignmentOperator Expression;
-
-LeftHandSide: ExpressionName | FieldAccess | ArrayAccess;
-
-AssignmentOperator:
-	'='
-	| '*='
-	| '/='
-	| '%='
-	| '+='
-	| '-='
-	| '<<='
-	| '>>='
-	| '>>>='
-	| '&='
-	| '^='
-	| '|=';
+ArrayAccess: IDENTIFIER LBRACK LITERAL RBRACK;
 
 ConditionalExpression:
-	ConditionalOrExpression
-	| ConditionalOrExpression? Expression ':' ConditionalExpression;
+	OrExpression (QUESTION Expression COLON Expression)?;
 
-ConditionalOrExpression:
-	ConditionalAndExpression
-	| ConditionalOrExpression '||' ConditionalAndExpression;
+OrExpression: AndExpression (OR AndExpression)*;
 
-ConditionalAndExpression:
-	InclusiveOrExpression
-	| ConditionalAndExpression '&&' InclusiveOrExpression;
-
-InclusiveOrExpression:
-	ExclusiveOrExpression
-	| InclusiveOrExpression '|' ExclusiveOrExpression;
-
-ExclusiveOrExpression:
-	AndExpression
-	| ExclusiveOrExpression '^' AndExpression;
-
-AndExpression:
-	EqualityExpression
-	| AndExpression '&' EqualityExpression;
+AndExpression: EqualityExpression (AND EqualityExpression)*;
 
 EqualityExpression:
-	RelationalExpression
-	| EqualityExpression '==' RelationalExpression
-	| EqualityExpression '!=' RelationalExpression;
+	RelationalExpression (
+		EQUAL RelationalExpression
+		| NOTEQUAL RelationalExpression
+	)*;
 
 RelationalExpression:
-	ShiftExpression
-	| RelationalExpression '<' ShiftExpression
-	| RelationalExpression '>' ShiftExpression
-	| RelationalExpression '<=' ShiftExpression
-	| RelationalExpression '>=' ShiftExpression
-	| RelationalExpression 'instanceof' ReferenceType;
-
-ShiftExpression:
-	AdditiveExpression
-	| ShiftExpression '<<' AdditiveExpression
-	| ShiftExpression '>>' AdditiveExpression
-	| ShiftExpression '>>>' AdditiveExpression;
+	AdditiveExpression (
+		LESS AdditiveExpression
+		| LESSEQUAL AdditiveExpression
+		| GREATER AdditiveExpression
+		| GREATEREQUAL AdditiveExpression
+	)*;
 
 AdditiveExpression:
-	MultiplicativeExpression
-	| AdditiveExpression '+' MultiplicativeExpression
-	| AdditiveExpression '-' MultiplicativeExpression;
+	MultiplicativeExpression (
+		PLUS MultiplicativeExpression
+		| MINUS MultiplicativeExpression
+	)*;
 
 MultiplicativeExpression:
-	UnaryExpression
-	| MultiplicativeExpression '*' UnaryExpression
-	| MultiplicativeExpression '/' UnaryExpression
-	| MultiplicativeExpression '%' UnaryExpression;
+	UnaryExpression (
+		MULTIPLY UnaryExpression
+		| DIVIDE UnaryExpression
+		| MOD UnaryExpression
+	)*;
+
+UnaireExpression:
+	PrimaryExpression (
+		PLUS UnaryExpression
+		| MINUS UnaryExpression
+	)*;
 
 UnaryExpression:
-	PreincrementExpression
-	| PredecrementExpression
-	| '+' UnaryExpression
-	| '-' UnaryExpression
-	| UnaryExpressionNotPlusMinus;
+	(PLUS UnaryExpression | MINUS UnaryExpression) UnaryExpression
+	| (NOT UnaryExpression);
 
-CastExpression:
-	'(' PrimitiveType ')' UnaryExpression
-	| '(' ReferenceType ')' UnaryExpressionNotPlusMinus;
+PrimaryExpression:
+	LITERAL
+	| IDENTIFIER
+	| THIS
+	| SUPER
+	| LPAR Expression RPAR
+	| NEW ClassType LPAR Argument? (COMMA Argument)* RPAR
+	| NOT UnaryExpression
+	| INCREMENT UnaryExpression
+	| DECREMENT UnaryExpression
+	| Type LPAR Expression RPAR;
 
-PredecrementExpression: '--' UnaryExpression;
-
-PreincrementExpression: '++' UnaryExpression;
-
-UnaryExpressionNotPlusMinus:
-	PostfixExpression
-	| '~' UnaryExpression
-	| '!' UnaryExpression
-	| CastExpression;
-
-PostdecrementExpression: PostfixExpression '--';
-
-PostincrementExpression: PostfixExpression '++';
-
-// PostfixExpression: Primary | ExpressionName | PostincrementExpression | PostdecrementExpression;
-
-PostfixExpression: (Primary | ExpressionName) ('++' | '--')*;
-
-// Names PackageName: Identifier | PackageName DOT Identifier;
-PackageName: Identifier (DOT Identifier)*;
-
-TypeName: Identifier | PackageName DOT Identifier;
-
-SimpleTypeName: Identifier;
-
-ExpressionName: Identifier | AmbiguousName DOT Identifier;
-
-MethodName: Identifier | AmbiguousName DOT Identifier;
-
-AmbiguousName: Identifier (DOT Identifier)*;
-
-//// Tokens
-
-// Keywords
-ABSTRACT: 'abstract';
-ASSERT: 'assert';
-BOOLEAN: 'boolean';
-BREAK: 'break';
-BYTE: 'byte';
-CASE: 'case';
-CATCH: 'catch';
-CHAR: 'char';
-CLASS: 'class';
-CONST: 'const';
-CONTINUE: 'continue';
-DEFAULT: 'default';
-DO: 'do';
-DOUBLE: 'double';
-ELSE: 'else';
-ENUM: 'enum';
-EXPORTS: 'exports';
-EXTENDS: 'extends';
-FINAL: 'final';
-FINALLY: 'finally';
-FLOAT: 'float';
-FOR: 'for';
-IF: 'if';
-GOTO: 'goto';
-IMPLEMENTS: 'implements';
-IMPORT: 'import';
-INSTANCEOF: 'instanceof';
-INT: 'int';
-INTERFACE: 'interface';
-LONG: 'long';
-MODULE: 'module';
-NATIVE: 'native';
-NEW: 'new';
-OPEN: 'open';
-OPERNS: 'opens';
+// Tokens
 PACKAGE: 'package';
+IMPORT: 'import';
+CLASS: 'class';
+PUBLIC: 'public';
 PRIVATE: 'private';
 PROTECTED: 'protected';
-PROVIDES: 'provides';
-PUBLIC: 'public';
-REQUIRES: 'requires';
-RETURN: 'return';
-SHORT: 'short';
-STATIC: 'static';
-STRICTFP: 'strictfp';
+EXTENDS: 'extends';
 SUPER: 'super';
-SWITCH: 'switch';
-SYNCHRONIZED: 'synchronized';
 THIS: 'this';
-THROW: 'throw';
-THROWS: 'throws';
-TO: 'to';
-TRANSIENT: 'transient';
-TRANSITIVE: 'transitive';
-TRY: 'try';
-USES: 'uses';
-VOID: 'void';
-VOLATILE: 'volatile';
+NEW: 'new';
+IF: 'if';
+ELSE: 'else';
+FOR: 'for';
 WHILE: 'while';
-WITH: 'with';
-UNDER_SCORE: '_';
+DO: 'do';
+BREAK: 'break';
+CONTINUE: 'continue';
+RETURN: 'return';
 
-// Separators
-LPAREN: '(';
-RPAREN: ')';
-LBRACE: '{';
-RBRACE: '}';
+ASSIGN: '=';
+PLUS: '+';
+MINUS: '-';
+MULTIPLY: '*';
+DIVIDE: '/';
+MOD: '%';
+INCREMENT: '++';
+DECREMENT: '--';
+
+OR: '||';
+AND: '&&';
+NOT: '!';
+
+EQUAL: '==';
+NOTEQUAL: '!=';
+LESS: '<';
+LESSEQUAL: '<=';
+GREATER: '>';
+GREATEREQUAL: '>=';
+
+DOT: '.';
+COMMA: ',';
+SEMI: ';';
+COLON: ':';
+QUESTION: '?';
+
+LCUR: '{';
+RCUR: '}';
+LPAR: '(';
+RPAR: ')';
 LBRACK: '[';
 RBRACK: ']';
-SEMI: ';';
-COMMA: ',';
-DOT: '.';
-ELLIPSIS: '...';
-AT: '@';
-COLONCOLON: '::';
 
-// Whitespace
-WS: [ \t\n\r]+ -> skip;
+BOOL: 'boolean';
+BYTE: 'byte';
+SHORT: 'short';
+LONG: 'long';
+INT: 'int';
+CHAR: 'char';
+FLOAT: 'float';
+DOUBLE: 'double';
+
+WS : [ \t\r\n]+ -> skip;
+LITERAL: [0-9]+;
+IDENTIFIER: [_a-zA-Z]+ [_a-zA-Z0-9]*;

@@ -1,6 +1,6 @@
-parser grammar attempt2;
+grammar JCP_lc;
 
-options {   tokenVocab = attempt2Lexer; }
+// options {   tokenVocab = jcpLexer; }
 
 start: packageDec* importDec* classDec* EOF;
 
@@ -135,7 +135,8 @@ primaryExpression:
 	type LPAR expression RPAR;
 
 
-lexer grammar attempt2Lexer;
+// lexer grammar jcpLexer;
+
 // Tokens
 PACKAGE: 'package';
 IMPORT: 'import';

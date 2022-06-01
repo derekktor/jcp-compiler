@@ -38,5 +38,5 @@ alias grun='java org.antlr.v4.gui.TestRig'
 Create antlr files in **grammar** directory
 
 ```
-antlr4py jcp.g4 -visitor -o grammar
+antlr4py JCP.g4 -visitor -o utils
 ```

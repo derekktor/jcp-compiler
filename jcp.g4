@@ -1,4 +1,4 @@
-grammar JCP;
+grammar jcp;
 
 start: packageDec* importDec* classDec* EOF;
 
@@ -54,83 +54,84 @@ constructorInvocation:
 argument: IDENTIFIER;
 
 statement:
-	expression SEMI |
-	IF LPAR expression RPAR statement (ELSE statement)? |
-	FOR LPAR forInit? SEMI forUpdate? RPAR statement |
-	WHILE LPAR expression RPAR statement |
-	DO statement WHILE LPAR expression RPAR SEMI |
-	BREAK SEMI |
-	CONTINUE SEMI |
-	RETURN expression? SEMI |
-	LCUR blockDec* RCUR;
+	expression SEMI
+	| IF LPAR expression RPAR statement (ELSE statement)?
+	| FOR LPAR forInit? SEMI forUpdate? RPAR statement
+	| WHILE LPAR expression RPAR statement
+	| DO statement WHILE LPAR expression RPAR SEMI
+	| BREAK SEMI
+	| CONTINUE SEMI
+	| RETURN expression? SEMI
+	| LCUR blockDec* RCUR;
 
 forInit: localDec | expression;
 forUpdate: expression;
 
-expression:
-	assignment |
-	conditionalExpression;
+expression: assignment | conditionalExpression;
 
-assignment:
-	leftHandSide ASSIGN expression;
+assignment: leftHandSide ASSIGN expression;
 
-leftHandSide:
-	fieldAccess |
-	arrayAccess;
+leftHandSide: fieldAccess | arrayAccess;
 
-fieldAccess:
-	IDENTIFIER (DOT IDENTIFIER)*;
+fieldAccess: IDENTIFIER (DOT IDENTIFIER)*;
 
-arrayAccess:
-	IDENTIFIER LBRACK LITERAL RBRACK;
+arrayAccess: IDENTIFIER LBRACK LITERAL RBRACK;
 
 conditionalExpression:
-	orExpression
-	(QUESTION expression COLON expression)?;
+	orExpression (QUESTION expression COLON expression)?;
 
-orExpression:
-	andExpression
-	(OR andExpression)*;
+orExpression: andExpression (OR andExpression)*;
 
-andExpression:
-	equalityExpression
-	(AND equalityExpression)*;
+andExpression: equalityExpression (AND equalityExpression)*;
 
 equalityExpression:
-	relationalExpression
-	(EQUAL relationalExpression | NOTEQUAL relationalExpression)*;
+	relationalExpression (
+		EQUAL relationalExpression
+		| NOTEQUAL relationalExpression
+	)*;
 
 relationalExpression:
-	additiveExpression
-	(LESS additiveExpression | LESSEQUAL additiveExpression | GREATER additiveExpression | GREATEREQUAL additiveExpression)*;
+	additiveExpression (
+		LESS additiveExpression
+		| LESSEQUAL additiveExpression
+		| GREATER additiveExpression
+		| GREATEREQUAL additiveExpression
+	)*;
 
 additiveExpression:
-	multiplicativeExpression
-	(PLUS multiplicativeExpression | MINUS multiplicativeExpression)*;
+	multiplicativeExpression (
+		PLUS multiplicativeExpression
+		| MINUS multiplicativeExpression
+	)*;
 
 multiplicativeExpression:
-	unaryExpression
-	(MULTIPLY unaryExpression | DIVIDE unaryExpression | MOD unaryExpression)*;
+	unaryExpression (
+		MULTIPLY unaryExpression
+		| DIVIDE unaryExpression
+		| MOD unaryExpression
+	)*;
 
 unaireExpression:
-	primaryExpression
-	(PLUS unaryExpression | MINUS unaryExpression)*;
+	primaryExpression (
+		PLUS unaryExpression
+		| MINUS unaryExpression
+	)*;
 
 unaryExpression:
-	(PLUS unaryExpression | MINUS unaryExpression) unaryExpression |
-	(NOT unaryExpression );
+	(PLUS unaryExpression | MINUS unaryExpression) unaryExpression
+	| (NOT unaryExpression);
 
 primaryExpression:
-	LITERAL |
-	IDENTIFIER |
-	THIS |
-	SUPER |
-	LPAR expression RPAR |
-	NEW classType LPAR argument? (COMMA argument)* RPAR |
-	NOT unaryExpression |
-	INCREMENT unaryExpression |
-	DECREMENT unaryExpression |
-	type LPAR expression RPAR;
+	LITERAL
+	| IDENTIFIER
+	| THIS
+	| SUPER
+	| LPAR expression RPAR
+	| NEW classType LPAR argument? (COMMA argument)* RPAR
+	| NOT unaryExpression
+	| INCREMENT unaryExpression
+	| DECREMENT unaryExpression
+	| type LPAR expression RPAR;
 
 // Tokens
 PACKAGE: 'package';
@@ -194,6 +195,6 @@ CHAR: 'char';
 FLOAT: 'float';
 DOUBLE: 'double';
 
-WS : [ \t\r\n]+ -> skip;
+WS: [ \t\r\n]+ -> skip;
 LITERAL: [0-9]+;
 IDENTIFIER: [_a-zA-Z]+ [_a-zA-Z0-9]*;

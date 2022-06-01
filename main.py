@@ -1,7 +1,7 @@
 from antlr4 import *
-from grammar.jcpLexer import JCPLexer
-from grammar.JCPListener import JCPListener
-from grammar.JCPParser import JCPParser
+from utils.jcpLexer import JCPLexer
+from utils.JCPListener import JCPListener
+from utils.JCPParser import JCPParser
 import sys
 
 class JCPListener(JCPListener):

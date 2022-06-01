@@ -25,48 +25,31 @@
 
 #### Operators
 
-| Token        | Description |
-| ------------ | ----------- |
-| ASSIGN       | =           |
-| PLUS         | +           |
-| MINUS        | -           |
-| MULTIPLY     | \*          |
-| DIVIDE       | /           |
-| MOD          | %           |
-| INCREMENT    | ++          |
-| DECREMENT    | --          |
-| OR           | \|\|        |
-| AND          | &&          |
-| NOT          | !           |
-| EQUAL        | ==          |
-| NOTEQUAL     | !=          |
-| LESS         | <           |
-| LESSEQUAL    | <=          |
-| GREATER      | >           |
-| GREATEREQUAL | >=          |
+| Token     | Description | Token        | Description |
+| --------- | ----------- | ------------ | ----------- |
+| ASSIGN    | =           | AND          | &&          |
+| PLUS      | +           | NOT          | !           |
+| MINUS     | -           | EQUAL        | ==          |
+| MULTIPLY  | \*          | NOTEQUAL     | !=          |
+| DIVIDE    | /           | LESS         | <           |
+| MOD       | %           | LESSEQUAL    | <=          |
+| INCREMENT | ++          | GREATER      | >           |
+| DECREMENT | --          | GREATEREQUAL | >=          |
+| OR        | \|\|        |
 
 #### Keywords
 
-| Token     | Description |
-| --------- | ----------- |
-| PACKAGE   | package     |
-| IMPORT    | import      |
-| CLASS     | class       |
-| PUBLIC    | public      |
-| PRIVATE   | private     |
-| PROTECTED | protected   |
-| EXTENDS   | extends     |
-| SUPER     | super       |
-| THIS      | this        |
-| NEW       | new         |
-| IF        | if          |
-| ELSE      | else        |
-| FOR       | for         |
-| WHILE     | while       |
-| DO        | do          |
-| BREAK     | break       |
-| CONTINUE  | continue    |
-| RETURN    | return      |
+| Token     | Description | Token    | Description |
+| --------- | ----------- | -------- | ----------- |
+| PACKAGE   | package     | NEW      | new         |
+| IMPORT    | import      | IF       | if          |
+| CLASS     | class       | ELSE     | else        |
+| PUBLIC    | public      | FOR      | for         |
+| PRIVATE   | private     | WHILE    | while       |
+| PROTECTED | protected   | DO       | do          |
+| EXTENDS   | extends     | BREAK    | break       |
+| SUPER     | super       | CONTINUE | continue    |
+| THIS      | this        | RETURN   | return      |
 
 #### Separators
 

@@ -1,4 +1,4 @@
-# Generated from JCP.g4 by ANTLR 4.10.1
+# Generated from jcp.g4 by ANTLR 4.10.1
 from antlr4 import *
 from io import StringIO
 import sys
@@ -136,7 +136,7 @@ def serializedATN():
         114,1,0,0,0,359,357,1,0,0,0,5,0,340,347,352,357,1,6,0,0
     ]
 
-class JCPLexer(Lexer):
+class jcpLexer(Lexer):
 
     atn = ATNDeserializer().deserialize(serializedATN())
 
@@ -236,7 +236,7 @@ class JCPLexer(Lexer):
                   "LONG", "INT", "CHAR", "FLOAT", "DOUBLE", "WS", "LITERAL", 
                   "IDENTIFIER" ]
 
-    grammarFileName = "JCP.g4"
+    grammarFileName = "jcp.g4"
 
     def __init__(self, input=None, output:TextIO = sys.stdout):
         super().__init__(input, output)

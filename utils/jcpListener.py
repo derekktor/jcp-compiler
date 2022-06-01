@@ -1,408 +1,408 @@
-# Generated from JCP.g4 by ANTLR 4.10.1
+# Generated from jcp.g4 by ANTLR 4.10.1
 from antlr4 import *
 if __name__ is not None and "." in __name__:
-    from .JCPParser import JCPParser
+    from .jcpParser import jcpParser
 else:
-    from JCPParser import JCPParser
+    from jcpParser import jcpParser
 
-# This class defines a complete listener for a parse tree produced by JCPParser.
-class JCPListener(ParseTreeListener):
+# This class defines a complete listener for a parse tree produced by jcpParser.
+class jcpListener(ParseTreeListener):
 
-    # Enter a parse tree produced by JCPParser#start.
-    def enterStart(self, ctx:JCPParser.StartContext):
+    # Enter a parse tree produced by jcpParser#start.
+    def enterStart(self, ctx:jcpParser.StartContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#start.
-    def exitStart(self, ctx:JCPParser.StartContext):
+    # Exit a parse tree produced by jcpParser#start.
+    def exitStart(self, ctx:jcpParser.StartContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#packageDec.
-    def enterPackageDec(self, ctx:JCPParser.PackageDecContext):
+    # Enter a parse tree produced by jcpParser#packageDec.
+    def enterPackageDec(self, ctx:jcpParser.PackageDecContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#packageDec.
-    def exitPackageDec(self, ctx:JCPParser.PackageDecContext):
+    # Exit a parse tree produced by jcpParser#packageDec.
+    def exitPackageDec(self, ctx:jcpParser.PackageDecContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#importDec.
-    def enterImportDec(self, ctx:JCPParser.ImportDecContext):
+    # Enter a parse tree produced by jcpParser#importDec.
+    def enterImportDec(self, ctx:jcpParser.ImportDecContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#importDec.
-    def exitImportDec(self, ctx:JCPParser.ImportDecContext):
+    # Exit a parse tree produced by jcpParser#importDec.
+    def exitImportDec(self, ctx:jcpParser.ImportDecContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#classDec.
-    def enterClassDec(self, ctx:JCPParser.ClassDecContext):
+    # Enter a parse tree produced by jcpParser#classDec.
+    def enterClassDec(self, ctx:jcpParser.ClassDecContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#classDec.
-    def exitClassDec(self, ctx:JCPParser.ClassDecContext):
+    # Exit a parse tree produced by jcpParser#classDec.
+    def exitClassDec(self, ctx:jcpParser.ClassDecContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#modifier.
-    def enterModifier(self, ctx:JCPParser.ModifierContext):
+    # Enter a parse tree produced by jcpParser#modifier.
+    def enterModifier(self, ctx:jcpParser.ModifierContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#modifier.
-    def exitModifier(self, ctx:JCPParser.ModifierContext):
+    # Exit a parse tree produced by jcpParser#modifier.
+    def exitModifier(self, ctx:jcpParser.ModifierContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#extendsDec.
-    def enterExtendsDec(self, ctx:JCPParser.ExtendsDecContext):
+    # Enter a parse tree produced by jcpParser#extendsDec.
+    def enterExtendsDec(self, ctx:jcpParser.ExtendsDecContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#extendsDec.
-    def exitExtendsDec(self, ctx:JCPParser.ExtendsDecContext):
+    # Exit a parse tree produced by jcpParser#extendsDec.
+    def exitExtendsDec(self, ctx:jcpParser.ExtendsDecContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#body.
-    def enterBody(self, ctx:JCPParser.BodyContext):
+    # Enter a parse tree produced by jcpParser#body.
+    def enterBody(self, ctx:jcpParser.BodyContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#body.
-    def exitBody(self, ctx:JCPParser.BodyContext):
+    # Exit a parse tree produced by jcpParser#body.
+    def exitBody(self, ctx:jcpParser.BodyContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#bodyDec.
-    def enterBodyDec(self, ctx:JCPParser.BodyDecContext):
+    # Enter a parse tree produced by jcpParser#bodyDec.
+    def enterBodyDec(self, ctx:jcpParser.BodyDecContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#bodyDec.
-    def exitBodyDec(self, ctx:JCPParser.BodyDecContext):
+    # Exit a parse tree produced by jcpParser#bodyDec.
+    def exitBodyDec(self, ctx:jcpParser.BodyDecContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#methodDec.
-    def enterMethodDec(self, ctx:JCPParser.MethodDecContext):
+    # Enter a parse tree produced by jcpParser#methodDec.
+    def enterMethodDec(self, ctx:jcpParser.MethodDecContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#methodDec.
-    def exitMethodDec(self, ctx:JCPParser.MethodDecContext):
+    # Exit a parse tree produced by jcpParser#methodDec.
+    def exitMethodDec(self, ctx:jcpParser.MethodDecContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#block.
-    def enterBlock(self, ctx:JCPParser.BlockContext):
+    # Enter a parse tree produced by jcpParser#block.
+    def enterBlock(self, ctx:jcpParser.BlockContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#block.
-    def exitBlock(self, ctx:JCPParser.BlockContext):
+    # Exit a parse tree produced by jcpParser#block.
+    def exitBlock(self, ctx:jcpParser.BlockContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#blockDec.
-    def enterBlockDec(self, ctx:JCPParser.BlockDecContext):
+    # Enter a parse tree produced by jcpParser#blockDec.
+    def enterBlockDec(self, ctx:jcpParser.BlockDecContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#blockDec.
-    def exitBlockDec(self, ctx:JCPParser.BlockDecContext):
+    # Exit a parse tree produced by jcpParser#blockDec.
+    def exitBlockDec(self, ctx:jcpParser.BlockDecContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#localDec.
-    def enterLocalDec(self, ctx:JCPParser.LocalDecContext):
+    # Enter a parse tree produced by jcpParser#localDec.
+    def enterLocalDec(self, ctx:jcpParser.LocalDecContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#localDec.
-    def exitLocalDec(self, ctx:JCPParser.LocalDecContext):
+    # Exit a parse tree produced by jcpParser#localDec.
+    def exitLocalDec(self, ctx:jcpParser.LocalDecContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#memberDec.
-    def enterMemberDec(self, ctx:JCPParser.MemberDecContext):
+    # Enter a parse tree produced by jcpParser#memberDec.
+    def enterMemberDec(self, ctx:jcpParser.MemberDecContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#memberDec.
-    def exitMemberDec(self, ctx:JCPParser.MemberDecContext):
+    # Exit a parse tree produced by jcpParser#memberDec.
+    def exitMemberDec(self, ctx:jcpParser.MemberDecContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#type.
-    def enterType(self, ctx:JCPParser.TypeContext):
+    # Enter a parse tree produced by jcpParser#type.
+    def enterType(self, ctx:jcpParser.TypeContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#type.
-    def exitType(self, ctx:JCPParser.TypeContext):
+    # Exit a parse tree produced by jcpParser#type.
+    def exitType(self, ctx:jcpParser.TypeContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#primitiveType.
-    def enterPrimitiveType(self, ctx:JCPParser.PrimitiveTypeContext):
+    # Enter a parse tree produced by jcpParser#primitiveType.
+    def enterPrimitiveType(self, ctx:jcpParser.PrimitiveTypeContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#primitiveType.
-    def exitPrimitiveType(self, ctx:JCPParser.PrimitiveTypeContext):
+    # Exit a parse tree produced by jcpParser#primitiveType.
+    def exitPrimitiveType(self, ctx:jcpParser.PrimitiveTypeContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#numericType.
-    def enterNumericType(self, ctx:JCPParser.NumericTypeContext):
+    # Enter a parse tree produced by jcpParser#numericType.
+    def enterNumericType(self, ctx:jcpParser.NumericTypeContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#numericType.
-    def exitNumericType(self, ctx:JCPParser.NumericTypeContext):
+    # Exit a parse tree produced by jcpParser#numericType.
+    def exitNumericType(self, ctx:jcpParser.NumericTypeContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#integralType.
-    def enterIntegralType(self, ctx:JCPParser.IntegralTypeContext):
+    # Enter a parse tree produced by jcpParser#integralType.
+    def enterIntegralType(self, ctx:jcpParser.IntegralTypeContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#integralType.
-    def exitIntegralType(self, ctx:JCPParser.IntegralTypeContext):
+    # Exit a parse tree produced by jcpParser#integralType.
+    def exitIntegralType(self, ctx:jcpParser.IntegralTypeContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#floatingPointType.
-    def enterFloatingPointType(self, ctx:JCPParser.FloatingPointTypeContext):
+    # Enter a parse tree produced by jcpParser#floatingPointType.
+    def enterFloatingPointType(self, ctx:jcpParser.FloatingPointTypeContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#floatingPointType.
-    def exitFloatingPointType(self, ctx:JCPParser.FloatingPointTypeContext):
+    # Exit a parse tree produced by jcpParser#floatingPointType.
+    def exitFloatingPointType(self, ctx:jcpParser.FloatingPointTypeContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#feferenceType.
-    def enterFeferenceType(self, ctx:JCPParser.FeferenceTypeContext):
+    # Enter a parse tree produced by jcpParser#feferenceType.
+    def enterFeferenceType(self, ctx:jcpParser.FeferenceTypeContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#feferenceType.
-    def exitFeferenceType(self, ctx:JCPParser.FeferenceTypeContext):
+    # Exit a parse tree produced by jcpParser#feferenceType.
+    def exitFeferenceType(self, ctx:jcpParser.FeferenceTypeContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#classType.
-    def enterClassType(self, ctx:JCPParser.ClassTypeContext):
+    # Enter a parse tree produced by jcpParser#classType.
+    def enterClassType(self, ctx:jcpParser.ClassTypeContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#classType.
-    def exitClassType(self, ctx:JCPParser.ClassTypeContext):
+    # Exit a parse tree produced by jcpParser#classType.
+    def exitClassType(self, ctx:jcpParser.ClassTypeContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#constructorDec.
-    def enterConstructorDec(self, ctx:JCPParser.ConstructorDecContext):
+    # Enter a parse tree produced by jcpParser#constructorDec.
+    def enterConstructorDec(self, ctx:jcpParser.ConstructorDecContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#constructorDec.
-    def exitConstructorDec(self, ctx:JCPParser.ConstructorDecContext):
+    # Exit a parse tree produced by jcpParser#constructorDec.
+    def exitConstructorDec(self, ctx:jcpParser.ConstructorDecContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#parameters.
-    def enterParameters(self, ctx:JCPParser.ParametersContext):
+    # Enter a parse tree produced by jcpParser#parameters.
+    def enterParameters(self, ctx:jcpParser.ParametersContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#parameters.
-    def exitParameters(self, ctx:JCPParser.ParametersContext):
+    # Exit a parse tree produced by jcpParser#parameters.
+    def exitParameters(self, ctx:jcpParser.ParametersContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#parameter.
-    def enterParameter(self, ctx:JCPParser.ParameterContext):
+    # Enter a parse tree produced by jcpParser#parameter.
+    def enterParameter(self, ctx:jcpParser.ParameterContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#parameter.
-    def exitParameter(self, ctx:JCPParser.ParameterContext):
+    # Exit a parse tree produced by jcpParser#parameter.
+    def exitParameter(self, ctx:jcpParser.ParameterContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#constructorBody.
-    def enterConstructorBody(self, ctx:JCPParser.ConstructorBodyContext):
+    # Enter a parse tree produced by jcpParser#constructorBody.
+    def enterConstructorBody(self, ctx:jcpParser.ConstructorBodyContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#constructorBody.
-    def exitConstructorBody(self, ctx:JCPParser.ConstructorBodyContext):
+    # Exit a parse tree produced by jcpParser#constructorBody.
+    def exitConstructorBody(self, ctx:jcpParser.ConstructorBodyContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#constructorInvocation.
-    def enterConstructorInvocation(self, ctx:JCPParser.ConstructorInvocationContext):
+    # Enter a parse tree produced by jcpParser#constructorInvocation.
+    def enterConstructorInvocation(self, ctx:jcpParser.ConstructorInvocationContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#constructorInvocation.
-    def exitConstructorInvocation(self, ctx:JCPParser.ConstructorInvocationContext):
+    # Exit a parse tree produced by jcpParser#constructorInvocation.
+    def exitConstructorInvocation(self, ctx:jcpParser.ConstructorInvocationContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#argument.
-    def enterArgument(self, ctx:JCPParser.ArgumentContext):
+    # Enter a parse tree produced by jcpParser#argument.
+    def enterArgument(self, ctx:jcpParser.ArgumentContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#argument.
-    def exitArgument(self, ctx:JCPParser.ArgumentContext):
+    # Exit a parse tree produced by jcpParser#argument.
+    def exitArgument(self, ctx:jcpParser.ArgumentContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#statement.
-    def enterStatement(self, ctx:JCPParser.StatementContext):
+    # Enter a parse tree produced by jcpParser#statement.
+    def enterStatement(self, ctx:jcpParser.StatementContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#statement.
-    def exitStatement(self, ctx:JCPParser.StatementContext):
+    # Exit a parse tree produced by jcpParser#statement.
+    def exitStatement(self, ctx:jcpParser.StatementContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#forInit.
-    def enterForInit(self, ctx:JCPParser.ForInitContext):
+    # Enter a parse tree produced by jcpParser#forInit.
+    def enterForInit(self, ctx:jcpParser.ForInitContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#forInit.
-    def exitForInit(self, ctx:JCPParser.ForInitContext):
+    # Exit a parse tree produced by jcpParser#forInit.
+    def exitForInit(self, ctx:jcpParser.ForInitContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#forUpdate.
-    def enterForUpdate(self, ctx:JCPParser.ForUpdateContext):
+    # Enter a parse tree produced by jcpParser#forUpdate.
+    def enterForUpdate(self, ctx:jcpParser.ForUpdateContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#forUpdate.
-    def exitForUpdate(self, ctx:JCPParser.ForUpdateContext):
+    # Exit a parse tree produced by jcpParser#forUpdate.
+    def exitForUpdate(self, ctx:jcpParser.ForUpdateContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#expression.
-    def enterExpression(self, ctx:JCPParser.ExpressionContext):
+    # Enter a parse tree produced by jcpParser#expression.
+    def enterExpression(self, ctx:jcpParser.ExpressionContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#expression.
-    def exitExpression(self, ctx:JCPParser.ExpressionContext):
+    # Exit a parse tree produced by jcpParser#expression.
+    def exitExpression(self, ctx:jcpParser.ExpressionContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#assignment.
-    def enterAssignment(self, ctx:JCPParser.AssignmentContext):
+    # Enter a parse tree produced by jcpParser#assignment.
+    def enterAssignment(self, ctx:jcpParser.AssignmentContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#assignment.
-    def exitAssignment(self, ctx:JCPParser.AssignmentContext):
+    # Exit a parse tree produced by jcpParser#assignment.
+    def exitAssignment(self, ctx:jcpParser.AssignmentContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#leftHandSide.
-    def enterLeftHandSide(self, ctx:JCPParser.LeftHandSideContext):
+    # Enter a parse tree produced by jcpParser#leftHandSide.
+    def enterLeftHandSide(self, ctx:jcpParser.LeftHandSideContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#leftHandSide.
-    def exitLeftHandSide(self, ctx:JCPParser.LeftHandSideContext):
+    # Exit a parse tree produced by jcpParser#leftHandSide.
+    def exitLeftHandSide(self, ctx:jcpParser.LeftHandSideContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#fieldAccess.
-    def enterFieldAccess(self, ctx:JCPParser.FieldAccessContext):
+    # Enter a parse tree produced by jcpParser#fieldAccess.
+    def enterFieldAccess(self, ctx:jcpParser.FieldAccessContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#fieldAccess.
-    def exitFieldAccess(self, ctx:JCPParser.FieldAccessContext):
+    # Exit a parse tree produced by jcpParser#fieldAccess.
+    def exitFieldAccess(self, ctx:jcpParser.FieldAccessContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#arrayAccess.
-    def enterArrayAccess(self, ctx:JCPParser.ArrayAccessContext):
+    # Enter a parse tree produced by jcpParser#arrayAccess.
+    def enterArrayAccess(self, ctx:jcpParser.ArrayAccessContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#arrayAccess.
-    def exitArrayAccess(self, ctx:JCPParser.ArrayAccessContext):
+    # Exit a parse tree produced by jcpParser#arrayAccess.
+    def exitArrayAccess(self, ctx:jcpParser.ArrayAccessContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#conditionalExpression.
-    def enterConditionalExpression(self, ctx:JCPParser.ConditionalExpressionContext):
+    # Enter a parse tree produced by jcpParser#conditionalExpression.
+    def enterConditionalExpression(self, ctx:jcpParser.ConditionalExpressionContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#conditionalExpression.
-    def exitConditionalExpression(self, ctx:JCPParser.ConditionalExpressionContext):
+    # Exit a parse tree produced by jcpParser#conditionalExpression.
+    def exitConditionalExpression(self, ctx:jcpParser.ConditionalExpressionContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#orExpression.
-    def enterOrExpression(self, ctx:JCPParser.OrExpressionContext):
+    # Enter a parse tree produced by jcpParser#orExpression.
+    def enterOrExpression(self, ctx:jcpParser.OrExpressionContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#orExpression.
-    def exitOrExpression(self, ctx:JCPParser.OrExpressionContext):
+    # Exit a parse tree produced by jcpParser#orExpression.
+    def exitOrExpression(self, ctx:jcpParser.OrExpressionContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#andExpression.
-    def enterAndExpression(self, ctx:JCPParser.AndExpressionContext):
+    # Enter a parse tree produced by jcpParser#andExpression.
+    def enterAndExpression(self, ctx:jcpParser.AndExpressionContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#andExpression.
-    def exitAndExpression(self, ctx:JCPParser.AndExpressionContext):
+    # Exit a parse tree produced by jcpParser#andExpression.
+    def exitAndExpression(self, ctx:jcpParser.AndExpressionContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#equalityExpression.
-    def enterEqualityExpression(self, ctx:JCPParser.EqualityExpressionContext):
+    # Enter a parse tree produced by jcpParser#equalityExpression.
+    def enterEqualityExpression(self, ctx:jcpParser.EqualityExpressionContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#equalityExpression.
-    def exitEqualityExpression(self, ctx:JCPParser.EqualityExpressionContext):
+    # Exit a parse tree produced by jcpParser#equalityExpression.
+    def exitEqualityExpression(self, ctx:jcpParser.EqualityExpressionContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#relationalExpression.
-    def enterRelationalExpression(self, ctx:JCPParser.RelationalExpressionContext):
+    # Enter a parse tree produced by jcpParser#relationalExpression.
+    def enterRelationalExpression(self, ctx:jcpParser.RelationalExpressionContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#relationalExpression.
-    def exitRelationalExpression(self, ctx:JCPParser.RelationalExpressionContext):
+    # Exit a parse tree produced by jcpParser#relationalExpression.
+    def exitRelationalExpression(self, ctx:jcpParser.RelationalExpressionContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#additiveExpression.
-    def enterAdditiveExpression(self, ctx:JCPParser.AdditiveExpressionContext):
+    # Enter a parse tree produced by jcpParser#additiveExpression.
+    def enterAdditiveExpression(self, ctx:jcpParser.AdditiveExpressionContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#additiveExpression.
-    def exitAdditiveExpression(self, ctx:JCPParser.AdditiveExpressionContext):
+    # Exit a parse tree produced by jcpParser#additiveExpression.
+    def exitAdditiveExpression(self, ctx:jcpParser.AdditiveExpressionContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#multiplicativeExpression.
-    def enterMultiplicativeExpression(self, ctx:JCPParser.MultiplicativeExpressionContext):
+    # Enter a parse tree produced by jcpParser#multiplicativeExpression.
+    def enterMultiplicativeExpression(self, ctx:jcpParser.MultiplicativeExpressionContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#multiplicativeExpression.
-    def exitMultiplicativeExpression(self, ctx:JCPParser.MultiplicativeExpressionContext):
+    # Exit a parse tree produced by jcpParser#multiplicativeExpression.
+    def exitMultiplicativeExpression(self, ctx:jcpParser.MultiplicativeExpressionContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#unaireExpression.
-    def enterUnaireExpression(self, ctx:JCPParser.UnaireExpressionContext):
+    # Enter a parse tree produced by jcpParser#unaireExpression.
+    def enterUnaireExpression(self, ctx:jcpParser.UnaireExpressionContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#unaireExpression.
-    def exitUnaireExpression(self, ctx:JCPParser.UnaireExpressionContext):
+    # Exit a parse tree produced by jcpParser#unaireExpression.
+    def exitUnaireExpression(self, ctx:jcpParser.UnaireExpressionContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#unaryExpression.
-    def enterUnaryExpression(self, ctx:JCPParser.UnaryExpressionContext):
+    # Enter a parse tree produced by jcpParser#unaryExpression.
+    def enterUnaryExpression(self, ctx:jcpParser.UnaryExpressionContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#unaryExpression.
-    def exitUnaryExpression(self, ctx:JCPParser.UnaryExpressionContext):
+    # Exit a parse tree produced by jcpParser#unaryExpression.
+    def exitUnaryExpression(self, ctx:jcpParser.UnaryExpressionContext):
         pass
 
 
-    # Enter a parse tree produced by JCPParser#primaryExpression.
-    def enterPrimaryExpression(self, ctx:JCPParser.PrimaryExpressionContext):
+    # Enter a parse tree produced by jcpParser#primaryExpression.
+    def enterPrimaryExpression(self, ctx:jcpParser.PrimaryExpressionContext):
         pass
 
-    # Exit a parse tree produced by JCPParser#primaryExpression.
-    def exitPrimaryExpression(self, ctx:JCPParser.PrimaryExpressionContext):
+    # Exit a parse tree produced by jcpParser#primaryExpression.
+    def exitPrimaryExpression(self, ctx:jcpParser.PrimaryExpressionContext):
         pass
 
 
 
-del JCPParser
+del jcpParser

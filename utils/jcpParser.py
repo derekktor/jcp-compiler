@@ -1,4 +1,4 @@
-# Generated from JCP.g4 by ANTLR 4.10.1
+# Generated from jcp.g4 by ANTLR 4.10.1
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO
@@ -178,9 +178,9 @@ def serializedATN():
         390,400,402,410,412,419,425,439,445,461
     ]
 
-class JCPParser ( Parser ):
+class jcpParser ( Parser ):
 
-    grammarFileName = "JCP.g4"
+    grammarFileName = "jcp.g4"
 
     atn = ATNDeserializer().deserialize(serializedATN())
 
@@ -343,31 +343,31 @@ class JCPParser ( Parser ):
             self.parser = parser
 
         def EOF(self):
-            return self.getToken(JCPParser.EOF, 0)
+            return self.getToken(jcpParser.EOF, 0)
 
         def packageDec(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(JCPParser.PackageDecContext)
+                return self.getTypedRuleContexts(jcpParser.PackageDecContext)
             else:
-                return self.getTypedRuleContext(JCPParser.PackageDecContext,i)
+                return self.getTypedRuleContext(jcpParser.PackageDecContext,i)
 
 
         def importDec(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(JCPParser.ImportDecContext)
+                return self.getTypedRuleContexts(jcpParser.ImportDecContext)
             else:
-                return self.getTypedRuleContext(JCPParser.ImportDecContext,i)
+                return self.getTypedRuleContext(jcpParser.ImportDecContext,i)
 
 
         def classDec(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(JCPParser.ClassDecContext)
+                return self.getTypedRuleContexts(jcpParser.ClassDecContext)
             else:
-                return self.getTypedRuleContext(JCPParser.ClassDecContext,i)
+                return self.getTypedRuleContext(jcpParser.ClassDecContext,i)
 
 
         def getRuleIndex(self):
-            return JCPParser.RULE_start
+            return jcpParser.RULE_start
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterStart" ):
@@ -377,18 +377,12 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitStart" ):
                 listener.exitStart(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitStart" ):
-                return visitor.visitStart(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def start(self):
 
-        localctx = JCPParser.StartContext(self, self._ctx, self.state)
+        localctx = jcpParser.StartContext(self, self._ctx, self.state)
         self.enterRule(localctx, 0, self.RULE_start)
         self._la = 0 # Token type
         try:
@@ -396,7 +390,7 @@ class JCPParser ( Parser ):
             self.state = 91
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==JCPParser.PACKAGE:
+            while _la==jcpParser.PACKAGE:
                 self.state = 88
                 self.packageDec()
                 self.state = 93
@@ -406,7 +400,7 @@ class JCPParser ( Parser ):
             self.state = 97
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==JCPParser.IMPORT:
+            while _la==jcpParser.IMPORT:
                 self.state = 94
                 self.importDec()
                 self.state = 99
@@ -416,7 +410,7 @@ class JCPParser ( Parser ):
             self.state = 103
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << JCPParser.PUBLIC) | (1 << JCPParser.PRIVATE) | (1 << JCPParser.PROTECTED))) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << jcpParser.PUBLIC) | (1 << jcpParser.PRIVATE) | (1 << jcpParser.PROTECTED))) != 0):
                 self.state = 100
                 self.classDec()
                 self.state = 105
@@ -424,7 +418,7 @@ class JCPParser ( Parser ):
                 _la = self._input.LA(1)
 
             self.state = 106
-            self.match(JCPParser.EOF)
+            self.match(jcpParser.EOF)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -442,22 +436,22 @@ class JCPParser ( Parser ):
             self.parser = parser
 
         def PACKAGE(self):
-            return self.getToken(JCPParser.PACKAGE, 0)
+            return self.getToken(jcpParser.PACKAGE, 0)
 
         def IDENTIFIER(self, i:int=None):
             if i is None:
-                return self.getTokens(JCPParser.IDENTIFIER)
+                return self.getTokens(jcpParser.IDENTIFIER)
             else:
-                return self.getToken(JCPParser.IDENTIFIER, i)
+                return self.getToken(jcpParser.IDENTIFIER, i)
 
         def SEMI(self):
-            return self.getToken(JCPParser.SEMI, 0)
+            return self.getToken(jcpParser.SEMI, 0)
 
         def DOT(self):
-            return self.getToken(JCPParser.DOT, 0)
+            return self.getToken(jcpParser.DOT, 0)
 
         def getRuleIndex(self):
-            return JCPParser.RULE_packageDec
+            return jcpParser.RULE_packageDec
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterPackageDec" ):
@@ -467,32 +461,26 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitPackageDec" ):
                 listener.exitPackageDec(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitPackageDec" ):
-                return visitor.visitPackageDec(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def packageDec(self):
 
-        localctx = JCPParser.PackageDecContext(self, self._ctx, self.state)
+        localctx = jcpParser.PackageDecContext(self, self._ctx, self.state)
         self.enterRule(localctx, 2, self.RULE_packageDec)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 108
-            self.match(JCPParser.PACKAGE)
+            self.match(jcpParser.PACKAGE)
             self.state = 109
-            self.match(JCPParser.IDENTIFIER)
+            self.match(jcpParser.IDENTIFIER)
 
             self.state = 110
-            self.match(JCPParser.DOT)
+            self.match(jcpParser.DOT)
             self.state = 111
-            self.match(JCPParser.IDENTIFIER)
+            self.match(jcpParser.IDENTIFIER)
             self.state = 113
-            self.match(JCPParser.SEMI)
+            self.match(jcpParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -510,22 +498,22 @@ class JCPParser ( Parser ):
             self.parser = parser
 
         def IMPORT(self):
-            return self.getToken(JCPParser.IMPORT, 0)
+            return self.getToken(jcpParser.IMPORT, 0)
 
         def IDENTIFIER(self, i:int=None):
             if i is None:
-                return self.getTokens(JCPParser.IDENTIFIER)
+                return self.getTokens(jcpParser.IDENTIFIER)
             else:
-                return self.getToken(JCPParser.IDENTIFIER, i)
+                return self.getToken(jcpParser.IDENTIFIER, i)
 
         def SEMI(self):
-            return self.getToken(JCPParser.SEMI, 0)
+            return self.getToken(jcpParser.SEMI, 0)
 
         def DOT(self):
-            return self.getToken(JCPParser.DOT, 0)
+            return self.getToken(jcpParser.DOT, 0)
 
         def getRuleIndex(self):
-            return JCPParser.RULE_importDec
+            return jcpParser.RULE_importDec
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterImportDec" ):
@@ -535,32 +523,26 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitImportDec" ):
                 listener.exitImportDec(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitImportDec" ):
-                return visitor.visitImportDec(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def importDec(self):
 
-        localctx = JCPParser.ImportDecContext(self, self._ctx, self.state)
+        localctx = jcpParser.ImportDecContext(self, self._ctx, self.state)
         self.enterRule(localctx, 4, self.RULE_importDec)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 115
-            self.match(JCPParser.IMPORT)
+            self.match(jcpParser.IMPORT)
             self.state = 116
-            self.match(JCPParser.IDENTIFIER)
+            self.match(jcpParser.IDENTIFIER)
 
             self.state = 117
-            self.match(JCPParser.DOT)
+            self.match(jcpParser.DOT)
             self.state = 118
-            self.match(JCPParser.IDENTIFIER)
+            self.match(jcpParser.IDENTIFIER)
             self.state = 120
-            self.match(JCPParser.SEMI)
+            self.match(jcpParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -578,25 +560,25 @@ class JCPParser ( Parser ):
             self.parser = parser
 
         def modifier(self):
-            return self.getTypedRuleContext(JCPParser.ModifierContext,0)
+            return self.getTypedRuleContext(jcpParser.ModifierContext,0)
 
 
         def CLASS(self):
-            return self.getToken(JCPParser.CLASS, 0)
+            return self.getToken(jcpParser.CLASS, 0)
 
         def IDENTIFIER(self):
-            return self.getToken(JCPParser.IDENTIFIER, 0)
+            return self.getToken(jcpParser.IDENTIFIER, 0)
 
         def body(self):
-            return self.getTypedRuleContext(JCPParser.BodyContext,0)
+            return self.getTypedRuleContext(jcpParser.BodyContext,0)
 
 
         def extendsDec(self):
-            return self.getTypedRuleContext(JCPParser.ExtendsDecContext,0)
+            return self.getTypedRuleContext(jcpParser.ExtendsDecContext,0)
 
 
         def getRuleIndex(self):
-            return JCPParser.RULE_classDec
+            return jcpParser.RULE_classDec
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterClassDec" ):
@@ -606,18 +588,12 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitClassDec" ):
                 listener.exitClassDec(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitClassDec" ):
-                return visitor.visitClassDec(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def classDec(self):
 
-        localctx = JCPParser.ClassDecContext(self, self._ctx, self.state)
+        localctx = jcpParser.ClassDecContext(self, self._ctx, self.state)
         self.enterRule(localctx, 6, self.RULE_classDec)
         self._la = 0 # Token type
         try:
@@ -625,13 +601,13 @@ class JCPParser ( Parser ):
             self.state = 122
             self.modifier()
             self.state = 123
-            self.match(JCPParser.CLASS)
+            self.match(jcpParser.CLASS)
             self.state = 124
-            self.match(JCPParser.IDENTIFIER)
+            self.match(jcpParser.IDENTIFIER)
             self.state = 126
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==JCPParser.EXTENDS:
+            if _la==jcpParser.EXTENDS:
                 self.state = 125
                 self.extendsDec()
 
@@ -655,16 +631,16 @@ class JCPParser ( Parser ):
             self.parser = parser
 
         def PUBLIC(self):
-            return self.getToken(JCPParser.PUBLIC, 0)
+            return self.getToken(jcpParser.PUBLIC, 0)
 
         def PRIVATE(self):
-            return self.getToken(JCPParser.PRIVATE, 0)
+            return self.getToken(jcpParser.PRIVATE, 0)
 
         def PROTECTED(self):
-            return self.getToken(JCPParser.PROTECTED, 0)
+            return self.getToken(jcpParser.PROTECTED, 0)
 
         def getRuleIndex(self):
-            return JCPParser.RULE_modifier
+            return jcpParser.RULE_modifier
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterModifier" ):
@@ -674,25 +650,19 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitModifier" ):
                 listener.exitModifier(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitModifier" ):
-                return visitor.visitModifier(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def modifier(self):
 
-        localctx = JCPParser.ModifierContext(self, self._ctx, self.state)
+        localctx = jcpParser.ModifierContext(self, self._ctx, self.state)
         self.enterRule(localctx, 8, self.RULE_modifier)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 130
             _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << JCPParser.PUBLIC) | (1 << JCPParser.PRIVATE) | (1 << JCPParser.PROTECTED))) != 0)):
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << jcpParser.PUBLIC) | (1 << jcpParser.PRIVATE) | (1 << jcpParser.PROTECTED))) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -714,22 +684,22 @@ class JCPParser ( Parser ):
             self.parser = parser
 
         def EXTENDS(self):
-            return self.getToken(JCPParser.EXTENDS, 0)
+            return self.getToken(jcpParser.EXTENDS, 0)
 
         def IDENTIFIER(self, i:int=None):
             if i is None:
-                return self.getTokens(JCPParser.IDENTIFIER)
+                return self.getTokens(jcpParser.IDENTIFIER)
             else:
-                return self.getToken(JCPParser.IDENTIFIER, i)
+                return self.getToken(jcpParser.IDENTIFIER, i)
 
         def DOT(self, i:int=None):
             if i is None:
-                return self.getTokens(JCPParser.DOT)
+                return self.getTokens(jcpParser.DOT)
             else:
-                return self.getToken(JCPParser.DOT, i)
+                return self.getToken(jcpParser.DOT, i)
 
         def getRuleIndex(self):
-            return JCPParser.RULE_extendsDec
+            return jcpParser.RULE_extendsDec
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterExtendsDec" ):
@@ -739,34 +709,28 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitExtendsDec" ):
                 listener.exitExtendsDec(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitExtendsDec" ):
-                return visitor.visitExtendsDec(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def extendsDec(self):
 
-        localctx = JCPParser.ExtendsDecContext(self, self._ctx, self.state)
+        localctx = jcpParser.ExtendsDecContext(self, self._ctx, self.state)
         self.enterRule(localctx, 10, self.RULE_extendsDec)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 132
-            self.match(JCPParser.EXTENDS)
+            self.match(jcpParser.EXTENDS)
             self.state = 133
-            self.match(JCPParser.IDENTIFIER)
+            self.match(jcpParser.IDENTIFIER)
             self.state = 138
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==JCPParser.DOT:
+            while _la==jcpParser.DOT:
                 self.state = 134
-                self.match(JCPParser.DOT)
+                self.match(jcpParser.DOT)
                 self.state = 135
-                self.match(JCPParser.IDENTIFIER)
+                self.match(jcpParser.IDENTIFIER)
                 self.state = 140
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
@@ -788,20 +752,20 @@ class JCPParser ( Parser ):
             self.parser = parser
 
         def LCUR(self):
-            return self.getToken(JCPParser.LCUR, 0)
+            return self.getToken(jcpParser.LCUR, 0)
 
         def RCUR(self):
-            return self.getToken(JCPParser.RCUR, 0)
+            return self.getToken(jcpParser.RCUR, 0)
 
         def bodyDec(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(JCPParser.BodyDecContext)
+                return self.getTypedRuleContexts(jcpParser.BodyDecContext)
             else:
-                return self.getTypedRuleContext(JCPParser.BodyDecContext,i)
+                return self.getTypedRuleContext(jcpParser.BodyDecContext,i)
 
 
         def getRuleIndex(self):
-            return JCPParser.RULE_body
+            return jcpParser.RULE_body
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterBody" ):
@@ -811,28 +775,22 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitBody" ):
                 listener.exitBody(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitBody" ):
-                return visitor.visitBody(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def body(self):
 
-        localctx = JCPParser.BodyContext(self, self._ctx, self.state)
+        localctx = jcpParser.BodyContext(self, self._ctx, self.state)
         self.enterRule(localctx, 12, self.RULE_body)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 141
-            self.match(JCPParser.LCUR)
+            self.match(jcpParser.LCUR)
             self.state = 145
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << JCPParser.PUBLIC) | (1 << JCPParser.PRIVATE) | (1 << JCPParser.PROTECTED) | (1 << JCPParser.BOOL) | (1 << JCPParser.BYTE) | (1 << JCPParser.SHORT) | (1 << JCPParser.LONG) | (1 << JCPParser.INT) | (1 << JCPParser.CHAR) | (1 << JCPParser.FLOAT) | (1 << JCPParser.DOUBLE) | (1 << JCPParser.IDENTIFIER))) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << jcpParser.PUBLIC) | (1 << jcpParser.PRIVATE) | (1 << jcpParser.PROTECTED) | (1 << jcpParser.BOOL) | (1 << jcpParser.BYTE) | (1 << jcpParser.SHORT) | (1 << jcpParser.LONG) | (1 << jcpParser.INT) | (1 << jcpParser.CHAR) | (1 << jcpParser.FLOAT) | (1 << jcpParser.DOUBLE) | (1 << jcpParser.IDENTIFIER))) != 0):
                 self.state = 142
                 self.bodyDec()
                 self.state = 147
@@ -840,7 +798,7 @@ class JCPParser ( Parser ):
                 _la = self._input.LA(1)
 
             self.state = 148
-            self.match(JCPParser.RCUR)
+            self.match(jcpParser.RCUR)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -858,19 +816,19 @@ class JCPParser ( Parser ):
             self.parser = parser
 
         def memberDec(self):
-            return self.getTypedRuleContext(JCPParser.MemberDecContext,0)
+            return self.getTypedRuleContext(jcpParser.MemberDecContext,0)
 
 
         def constructorDec(self):
-            return self.getTypedRuleContext(JCPParser.ConstructorDecContext,0)
+            return self.getTypedRuleContext(jcpParser.ConstructorDecContext,0)
 
 
         def methodDec(self):
-            return self.getTypedRuleContext(JCPParser.MethodDecContext,0)
+            return self.getTypedRuleContext(jcpParser.MethodDecContext,0)
 
 
         def getRuleIndex(self):
-            return JCPParser.RULE_bodyDec
+            return jcpParser.RULE_bodyDec
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterBodyDec" ):
@@ -880,18 +838,12 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitBodyDec" ):
                 listener.exitBodyDec(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitBodyDec" ):
-                return visitor.visitBodyDec(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def bodyDec(self):
 
-        localctx = JCPParser.BodyDecContext(self, self._ctx, self.state)
+        localctx = jcpParser.BodyDecContext(self, self._ctx, self.state)
         self.enterRule(localctx, 14, self.RULE_bodyDec)
         try:
             self.state = 153
@@ -933,26 +885,26 @@ class JCPParser ( Parser ):
             self.parser = parser
 
         def type_(self):
-            return self.getTypedRuleContext(JCPParser.TypeContext,0)
+            return self.getTypedRuleContext(jcpParser.TypeContext,0)
 
 
         def IDENTIFIER(self):
-            return self.getToken(JCPParser.IDENTIFIER, 0)
+            return self.getToken(jcpParser.IDENTIFIER, 0)
 
         def parameters(self):
-            return self.getTypedRuleContext(JCPParser.ParametersContext,0)
+            return self.getTypedRuleContext(jcpParser.ParametersContext,0)
 
 
         def block(self):
-            return self.getTypedRuleContext(JCPParser.BlockContext,0)
+            return self.getTypedRuleContext(jcpParser.BlockContext,0)
 
 
         def modifier(self):
-            return self.getTypedRuleContext(JCPParser.ModifierContext,0)
+            return self.getTypedRuleContext(jcpParser.ModifierContext,0)
 
 
         def getRuleIndex(self):
-            return JCPParser.RULE_methodDec
+            return jcpParser.RULE_methodDec
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterMethodDec" ):
@@ -962,18 +914,12 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitMethodDec" ):
                 listener.exitMethodDec(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitMethodDec" ):
-                return visitor.visitMethodDec(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def methodDec(self):
 
-        localctx = JCPParser.MethodDecContext(self, self._ctx, self.state)
+        localctx = jcpParser.MethodDecContext(self, self._ctx, self.state)
         self.enterRule(localctx, 16, self.RULE_methodDec)
         self._la = 0 # Token type
         try:
@@ -981,7 +927,7 @@ class JCPParser ( Parser ):
             self.state = 156
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << JCPParser.PUBLIC) | (1 << JCPParser.PRIVATE) | (1 << JCPParser.PROTECTED))) != 0):
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << jcpParser.PUBLIC) | (1 << jcpParser.PRIVATE) | (1 << jcpParser.PROTECTED))) != 0):
                 self.state = 155
                 self.modifier()
 
@@ -989,7 +935,7 @@ class JCPParser ( Parser ):
             self.state = 158
             self.type_()
             self.state = 159
-            self.match(JCPParser.IDENTIFIER)
+            self.match(jcpParser.IDENTIFIER)
             self.state = 160
             self.parameters()
             self.state = 161
@@ -1011,20 +957,20 @@ class JCPParser ( Parser ):
             self.parser = parser
 
         def LCUR(self):
-            return self.getToken(JCPParser.LCUR, 0)
+            return self.getToken(jcpParser.LCUR, 0)
 
         def RCUR(self):
-            return self.getToken(JCPParser.RCUR, 0)
+            return self.getToken(jcpParser.RCUR, 0)
 
         def blockDec(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(JCPParser.BlockDecContext)
+                return self.getTypedRuleContexts(jcpParser.BlockDecContext)
             else:
-                return self.getTypedRuleContext(JCPParser.BlockDecContext,i)
+                return self.getTypedRuleContext(jcpParser.BlockDecContext,i)
 
 
         def getRuleIndex(self):
-            return JCPParser.RULE_block
+            return jcpParser.RULE_block
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterBlock" ):
@@ -1034,28 +980,22 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitBlock" ):
                 listener.exitBlock(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitBlock" ):
-                return visitor.visitBlock(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def block(self):
 
-        localctx = JCPParser.BlockContext(self, self._ctx, self.state)
+        localctx = jcpParser.BlockContext(self, self._ctx, self.state)
         self.enterRule(localctx, 18, self.RULE_block)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 163
-            self.match(JCPParser.LCUR)
+            self.match(jcpParser.LCUR)
             self.state = 167
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << JCPParser.IF) | (1 << JCPParser.FOR) | (1 << JCPParser.WHILE) | (1 << JCPParser.DO) | (1 << JCPParser.BREAK) | (1 << JCPParser.CONTINUE) | (1 << JCPParser.RETURN) | (1 << JCPParser.PLUS) | (1 << JCPParser.MINUS) | (1 << JCPParser.NOT) | (1 << JCPParser.LCUR) | (1 << JCPParser.BOOL) | (1 << JCPParser.BYTE) | (1 << JCPParser.SHORT) | (1 << JCPParser.LONG) | (1 << JCPParser.INT) | (1 << JCPParser.CHAR) | (1 << JCPParser.FLOAT) | (1 << JCPParser.DOUBLE) | (1 << JCPParser.IDENTIFIER))) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << jcpParser.IF) | (1 << jcpParser.FOR) | (1 << jcpParser.WHILE) | (1 << jcpParser.DO) | (1 << jcpParser.BREAK) | (1 << jcpParser.CONTINUE) | (1 << jcpParser.RETURN) | (1 << jcpParser.PLUS) | (1 << jcpParser.MINUS) | (1 << jcpParser.NOT) | (1 << jcpParser.LCUR) | (1 << jcpParser.BOOL) | (1 << jcpParser.BYTE) | (1 << jcpParser.SHORT) | (1 << jcpParser.LONG) | (1 << jcpParser.INT) | (1 << jcpParser.CHAR) | (1 << jcpParser.FLOAT) | (1 << jcpParser.DOUBLE) | (1 << jcpParser.IDENTIFIER))) != 0):
                 self.state = 164
                 self.blockDec()
                 self.state = 169
@@ -1063,7 +1003,7 @@ class JCPParser ( Parser ):
                 _la = self._input.LA(1)
 
             self.state = 170
-            self.match(JCPParser.RCUR)
+            self.match(jcpParser.RCUR)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1081,15 +1021,15 @@ class JCPParser ( Parser ):
             self.parser = parser
 
         def localDec(self):
-            return self.getTypedRuleContext(JCPParser.LocalDecContext,0)
+            return self.getTypedRuleContext(jcpParser.LocalDecContext,0)
 
 
         def statement(self):
-            return self.getTypedRuleContext(JCPParser.StatementContext,0)
+            return self.getTypedRuleContext(jcpParser.StatementContext,0)
 
 
         def getRuleIndex(self):
-            return JCPParser.RULE_blockDec
+            return jcpParser.RULE_blockDec
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterBlockDec" ):
@@ -1099,18 +1039,12 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitBlockDec" ):
                 listener.exitBlockDec(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitBlockDec" ):
-                return visitor.visitBlockDec(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def blockDec(self):
 
-        localctx = JCPParser.BlockDecContext(self, self._ctx, self.state)
+        localctx = jcpParser.BlockDecContext(self, self._ctx, self.state)
         self.enterRule(localctx, 20, self.RULE_blockDec)
         try:
             self.state = 174
@@ -1146,17 +1080,17 @@ class JCPParser ( Parser ):
             self.parser = parser
 
         def type_(self):
-            return self.getTypedRuleContext(JCPParser.TypeContext,0)
+            return self.getTypedRuleContext(jcpParser.TypeContext,0)
 
 
         def IDENTIFIER(self):
-            return self.getToken(JCPParser.IDENTIFIER, 0)
+            return self.getToken(jcpParser.IDENTIFIER, 0)
 
         def SEMI(self):
-            return self.getToken(JCPParser.SEMI, 0)
+            return self.getToken(jcpParser.SEMI, 0)
 
         def getRuleIndex(self):
-            return JCPParser.RULE_localDec
+            return jcpParser.RULE_localDec
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterLocalDec" ):
@@ -1166,27 +1100,21 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitLocalDec" ):
                 listener.exitLocalDec(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitLocalDec" ):
-                return visitor.visitLocalDec(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def localDec(self):
 
-        localctx = JCPParser.LocalDecContext(self, self._ctx, self.state)
+        localctx = jcpParser.LocalDecContext(self, self._ctx, self.state)
         self.enterRule(localctx, 22, self.RULE_localDec)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 176
             self.type_()
             self.state = 177
-            self.match(JCPParser.IDENTIFIER)
+            self.match(jcpParser.IDENTIFIER)
             self.state = 178
-            self.match(JCPParser.SEMI)
+            self.match(jcpParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1204,15 +1132,15 @@ class JCPParser ( Parser ):
             self.parser = parser
 
         def modifier(self):
-            return self.getTypedRuleContext(JCPParser.ModifierContext,0)
+            return self.getTypedRuleContext(jcpParser.ModifierContext,0)
 
 
         def localDec(self):
-            return self.getTypedRuleContext(JCPParser.LocalDecContext,0)
+            return self.getTypedRuleContext(jcpParser.LocalDecContext,0)
 
 
         def getRuleIndex(self):
-            return JCPParser.RULE_memberDec
+            return jcpParser.RULE_memberDec
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterMemberDec" ):
@@ -1222,18 +1150,12 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitMemberDec" ):
                 listener.exitMemberDec(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitMemberDec" ):
-                return visitor.visitMemberDec(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def memberDec(self):
 
-        localctx = JCPParser.MemberDecContext(self, self._ctx, self.state)
+        localctx = jcpParser.MemberDecContext(self, self._ctx, self.state)
         self.enterRule(localctx, 24, self.RULE_memberDec)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -1258,15 +1180,15 @@ class JCPParser ( Parser ):
             self.parser = parser
 
         def primitiveType(self):
-            return self.getTypedRuleContext(JCPParser.PrimitiveTypeContext,0)
+            return self.getTypedRuleContext(jcpParser.PrimitiveTypeContext,0)
 
 
         def feferenceType(self):
-            return self.getTypedRuleContext(JCPParser.FeferenceTypeContext,0)
+            return self.getTypedRuleContext(jcpParser.FeferenceTypeContext,0)
 
 
         def getRuleIndex(self):
-            return JCPParser.RULE_type
+            return jcpParser.RULE_type
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterType" ):
@@ -1276,29 +1198,23 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitType" ):
                 listener.exitType(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitType" ):
-                return visitor.visitType(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def type_(self):
 
-        localctx = JCPParser.TypeContext(self, self._ctx, self.state)
+        localctx = jcpParser.TypeContext(self, self._ctx, self.state)
         self.enterRule(localctx, 26, self.RULE_type)
         try:
             self.state = 185
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [JCPParser.BOOL, JCPParser.BYTE, JCPParser.SHORT, JCPParser.LONG, JCPParser.INT, JCPParser.CHAR, JCPParser.FLOAT, JCPParser.DOUBLE]:
+            if token in [jcpParser.BOOL, jcpParser.BYTE, jcpParser.SHORT, jcpParser.LONG, jcpParser.INT, jcpParser.CHAR, jcpParser.FLOAT, jcpParser.DOUBLE]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 183
                 self.primitiveType()
                 pass
-            elif token in [JCPParser.IDENTIFIER]:
+            elif token in [jcpParser.IDENTIFIER]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 184
                 self.feferenceType()
@@ -1323,14 +1239,14 @@ class JCPParser ( Parser ):
             self.parser = parser
 
         def numericType(self):
-            return self.getTypedRuleContext(JCPParser.NumericTypeContext,0)
+            return self.getTypedRuleContext(jcpParser.NumericTypeContext,0)
 
 
         def BOOL(self):
-            return self.getToken(JCPParser.BOOL, 0)
+            return self.getToken(jcpParser.BOOL, 0)
 
         def getRuleIndex(self):
-            return JCPParser.RULE_primitiveType
+            return jcpParser.RULE_primitiveType
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterPrimitiveType" ):
@@ -1340,32 +1256,26 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitPrimitiveType" ):
                 listener.exitPrimitiveType(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitPrimitiveType" ):
-                return visitor.visitPrimitiveType(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def primitiveType(self):
 
-        localctx = JCPParser.PrimitiveTypeContext(self, self._ctx, self.state)
+        localctx = jcpParser.PrimitiveTypeContext(self, self._ctx, self.state)
         self.enterRule(localctx, 28, self.RULE_primitiveType)
         try:
             self.state = 189
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [JCPParser.BYTE, JCPParser.SHORT, JCPParser.LONG, JCPParser.INT, JCPParser.CHAR, JCPParser.FLOAT, JCPParser.DOUBLE]:
+            if token in [jcpParser.BYTE, jcpParser.SHORT, jcpParser.LONG, jcpParser.INT, jcpParser.CHAR, jcpParser.FLOAT, jcpParser.DOUBLE]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 187
                 self.numericType()
                 pass
-            elif token in [JCPParser.BOOL]:
+            elif token in [jcpParser.BOOL]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 188
-                self.match(JCPParser.BOOL)
+                self.match(jcpParser.BOOL)
                 pass
             else:
                 raise NoViableAltException(self)
@@ -1387,15 +1297,15 @@ class JCPParser ( Parser ):
             self.parser = parser
 
         def integralType(self):
-            return self.getTypedRuleContext(JCPParser.IntegralTypeContext,0)
+            return self.getTypedRuleContext(jcpParser.IntegralTypeContext,0)
 
 
         def floatingPointType(self):
-            return self.getTypedRuleContext(JCPParser.FloatingPointTypeContext,0)
+            return self.getTypedRuleContext(jcpParser.FloatingPointTypeContext,0)
 
 
         def getRuleIndex(self):
-            return JCPParser.RULE_numericType
+            return jcpParser.RULE_numericType
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterNumericType" ):
@@ -1405,29 +1315,23 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitNumericType" ):
                 listener.exitNumericType(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitNumericType" ):
-                return visitor.visitNumericType(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def numericType(self):
 
-        localctx = JCPParser.NumericTypeContext(self, self._ctx, self.state)
+        localctx = jcpParser.NumericTypeContext(self, self._ctx, self.state)
         self.enterRule(localctx, 30, self.RULE_numericType)
         try:
             self.state = 193
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [JCPParser.BYTE, JCPParser.SHORT, JCPParser.LONG, JCPParser.INT, JCPParser.CHAR]:
+            if token in [jcpParser.BYTE, jcpParser.SHORT, jcpParser.LONG, jcpParser.INT, jcpParser.CHAR]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 191
                 self.integralType()
                 pass
-            elif token in [JCPParser.FLOAT, JCPParser.DOUBLE]:
+            elif token in [jcpParser.FLOAT, jcpParser.DOUBLE]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 192
                 self.floatingPointType()
@@ -1452,22 +1356,22 @@ class JCPParser ( Parser ):
             self.parser = parser
 
         def BYTE(self):
-            return self.getToken(JCPParser.BYTE, 0)
+            return self.getToken(jcpParser.BYTE, 0)
 
         def SHORT(self):
-            return self.getToken(JCPParser.SHORT, 0)
+            return self.getToken(jcpParser.SHORT, 0)
 
         def INT(self):
-            return self.getToken(JCPParser.INT, 0)
+            return self.getToken(jcpParser.INT, 0)
 
         def LONG(self):
-            return self.getToken(JCPParser.LONG, 0)
+            return self.getToken(jcpParser.LONG, 0)
 
         def CHAR(self):
-            return self.getToken(JCPParser.CHAR, 0)
+            return self.getToken(jcpParser.CHAR, 0)
 
         def getRuleIndex(self):
-            return JCPParser.RULE_integralType
+            return jcpParser.RULE_integralType
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterIntegralType" ):
@@ -1477,25 +1381,19 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitIntegralType" ):
                 listener.exitIntegralType(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitIntegralType" ):
-                return visitor.visitIntegralType(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def integralType(self):
 
-        localctx = JCPParser.IntegralTypeContext(self, self._ctx, self.state)
+        localctx = jcpParser.IntegralTypeContext(self, self._ctx, self.state)
         self.enterRule(localctx, 32, self.RULE_integralType)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 195
             _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << JCPParser.BYTE) | (1 << JCPParser.SHORT) | (1 << JCPParser.LONG) | (1 << JCPParser.INT) | (1 << JCPParser.CHAR))) != 0)):
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << jcpParser.BYTE) | (1 << jcpParser.SHORT) | (1 << jcpParser.LONG) | (1 << jcpParser.INT) | (1 << jcpParser.CHAR))) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -1517,13 +1415,13 @@ class JCPParser ( Parser ):
             self.parser = parser
 
         def FLOAT(self):
-            return self.getToken(JCPParser.FLOAT, 0)
+            return self.getToken(jcpParser.FLOAT, 0)
 
         def DOUBLE(self):
-            return self.getToken(JCPParser.DOUBLE, 0)
+            return self.getToken(jcpParser.DOUBLE, 0)
 
         def getRuleIndex(self):
-            return JCPParser.RULE_floatingPointType
+            return jcpParser.RULE_floatingPointType
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterFloatingPointType" ):
@@ -1533,25 +1431,19 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitFloatingPointType" ):
                 listener.exitFloatingPointType(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitFloatingPointType" ):
-                return visitor.visitFloatingPointType(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def floatingPointType(self):
 
-        localctx = JCPParser.FloatingPointTypeContext(self, self._ctx, self.state)
+        localctx = jcpParser.FloatingPointTypeContext(self, self._ctx, self.state)
         self.enterRule(localctx, 34, self.RULE_floatingPointType)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 197
             _la = self._input.LA(1)
-            if not(_la==JCPParser.FLOAT or _la==JCPParser.DOUBLE):
+            if not(_la==jcpParser.FLOAT or _la==jcpParser.DOUBLE):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -1573,11 +1465,11 @@ class JCPParser ( Parser ):
             self.parser = parser
 
         def classType(self):
-            return self.getTypedRuleContext(JCPParser.ClassTypeContext,0)
+            return self.getTypedRuleContext(jcpParser.ClassTypeContext,0)
 
 
         def getRuleIndex(self):
-            return JCPParser.RULE_feferenceType
+            return jcpParser.RULE_feferenceType
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterFeferenceType" ):
@@ -1587,18 +1479,12 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitFeferenceType" ):
                 listener.exitFeferenceType(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitFeferenceType" ):
-                return visitor.visitFeferenceType(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def feferenceType(self):
 
-        localctx = JCPParser.FeferenceTypeContext(self, self._ctx, self.state)
+        localctx = jcpParser.FeferenceTypeContext(self, self._ctx, self.state)
         self.enterRule(localctx, 36, self.RULE_feferenceType)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -1621,10 +1507,10 @@ class JCPParser ( Parser ):
             self.parser = parser
 
         def IDENTIFIER(self):
-            return self.getToken(JCPParser.IDENTIFIER, 0)
+            return self.getToken(jcpParser.IDENTIFIER, 0)
 
         def getRuleIndex(self):
-            return JCPParser.RULE_classType
+            return jcpParser.RULE_classType
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterClassType" ):
@@ -1634,23 +1520,17 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitClassType" ):
                 listener.exitClassType(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitClassType" ):
-                return visitor.visitClassType(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def classType(self):
 
-        localctx = JCPParser.ClassTypeContext(self, self._ctx, self.state)
+        localctx = jcpParser.ClassTypeContext(self, self._ctx, self.state)
         self.enterRule(localctx, 38, self.RULE_classType)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 201
-            self.match(JCPParser.IDENTIFIER)
+            self.match(jcpParser.IDENTIFIER)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1668,22 +1548,22 @@ class JCPParser ( Parser ):
             self.parser = parser
 
         def modifier(self):
-            return self.getTypedRuleContext(JCPParser.ModifierContext,0)
+            return self.getTypedRuleContext(jcpParser.ModifierContext,0)
 
 
         def IDENTIFIER(self):
-            return self.getToken(JCPParser.IDENTIFIER, 0)
+            return self.getToken(jcpParser.IDENTIFIER, 0)
 
         def parameters(self):
-            return self.getTypedRuleContext(JCPParser.ParametersContext,0)
+            return self.getTypedRuleContext(jcpParser.ParametersContext,0)
 
 
         def constructorBody(self):
-            return self.getTypedRuleContext(JCPParser.ConstructorBodyContext,0)
+            return self.getTypedRuleContext(jcpParser.ConstructorBodyContext,0)
 
 
         def getRuleIndex(self):
-            return JCPParser.RULE_constructorDec
+            return jcpParser.RULE_constructorDec
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterConstructorDec" ):
@@ -1693,25 +1573,19 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitConstructorDec" ):
                 listener.exitConstructorDec(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitConstructorDec" ):
-                return visitor.visitConstructorDec(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def constructorDec(self):
 
-        localctx = JCPParser.ConstructorDecContext(self, self._ctx, self.state)
+        localctx = jcpParser.ConstructorDecContext(self, self._ctx, self.state)
         self.enterRule(localctx, 40, self.RULE_constructorDec)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 203
             self.modifier()
             self.state = 204
-            self.match(JCPParser.IDENTIFIER)
+            self.match(jcpParser.IDENTIFIER)
             self.state = 205
             self.parameters()
             self.state = 206
@@ -1733,23 +1607,23 @@ class JCPParser ( Parser ):
             self.parser = parser
 
         def LPAR(self):
-            return self.getToken(JCPParser.LPAR, 0)
+            return self.getToken(jcpParser.LPAR, 0)
 
         def RPAR(self):
-            return self.getToken(JCPParser.RPAR, 0)
+            return self.getToken(jcpParser.RPAR, 0)
 
         def COMMA(self):
-            return self.getToken(JCPParser.COMMA, 0)
+            return self.getToken(jcpParser.COMMA, 0)
 
         def parameter(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(JCPParser.ParameterContext)
+                return self.getTypedRuleContexts(jcpParser.ParameterContext)
             else:
-                return self.getTypedRuleContext(JCPParser.ParameterContext,i)
+                return self.getTypedRuleContext(jcpParser.ParameterContext,i)
 
 
         def getRuleIndex(self):
-            return JCPParser.RULE_parameters
+            return jcpParser.RULE_parameters
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterParameters" ):
@@ -1759,38 +1633,32 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitParameters" ):
                 listener.exitParameters(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitParameters" ):
-                return visitor.visitParameters(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def parameters(self):
 
-        localctx = JCPParser.ParametersContext(self, self._ctx, self.state)
+        localctx = jcpParser.ParametersContext(self, self._ctx, self.state)
         self.enterRule(localctx, 42, self.RULE_parameters)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 208
-            self.match(JCPParser.LPAR)
+            self.match(jcpParser.LPAR)
             self.state = 210
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << JCPParser.BOOL) | (1 << JCPParser.BYTE) | (1 << JCPParser.SHORT) | (1 << JCPParser.LONG) | (1 << JCPParser.INT) | (1 << JCPParser.CHAR) | (1 << JCPParser.FLOAT) | (1 << JCPParser.DOUBLE) | (1 << JCPParser.IDENTIFIER))) != 0):
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << jcpParser.BOOL) | (1 << jcpParser.BYTE) | (1 << jcpParser.SHORT) | (1 << jcpParser.LONG) | (1 << jcpParser.INT) | (1 << jcpParser.CHAR) | (1 << jcpParser.FLOAT) | (1 << jcpParser.DOUBLE) | (1 << jcpParser.IDENTIFIER))) != 0):
                 self.state = 209
                 self.parameter()
 
 
             self.state = 212
-            self.match(JCPParser.COMMA)
+            self.match(jcpParser.COMMA)
             self.state = 213
             self.parameter()
             self.state = 215
-            self.match(JCPParser.RPAR)
+            self.match(jcpParser.RPAR)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1808,14 +1676,14 @@ class JCPParser ( Parser ):
             self.parser = parser
 
         def type_(self):
-            return self.getTypedRuleContext(JCPParser.TypeContext,0)
+            return self.getTypedRuleContext(jcpParser.TypeContext,0)
 
 
         def IDENTIFIER(self):
-            return self.getToken(JCPParser.IDENTIFIER, 0)
+            return self.getToken(jcpParser.IDENTIFIER, 0)
 
         def getRuleIndex(self):
-            return JCPParser.RULE_parameter
+            return jcpParser.RULE_parameter
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterParameter" ):
@@ -1825,25 +1693,19 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitParameter" ):
                 listener.exitParameter(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitParameter" ):
-                return visitor.visitParameter(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def parameter(self):
 
-        localctx = JCPParser.ParameterContext(self, self._ctx, self.state)
+        localctx = jcpParser.ParameterContext(self, self._ctx, self.state)
         self.enterRule(localctx, 44, self.RULE_parameter)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 217
             self.type_()
             self.state = 218
-            self.match(JCPParser.IDENTIFIER)
+            self.match(jcpParser.IDENTIFIER)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1861,24 +1723,24 @@ class JCPParser ( Parser ):
             self.parser = parser
 
         def LCUR(self):
-            return self.getToken(JCPParser.LCUR, 0)
+            return self.getToken(jcpParser.LCUR, 0)
 
         def RCUR(self):
-            return self.getToken(JCPParser.RCUR, 0)
+            return self.getToken(jcpParser.RCUR, 0)
 
         def constructorInvocation(self):
-            return self.getTypedRuleContext(JCPParser.ConstructorInvocationContext,0)
+            return self.getTypedRuleContext(jcpParser.ConstructorInvocationContext,0)
 
 
         def statement(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(JCPParser.StatementContext)
+                return self.getTypedRuleContexts(jcpParser.StatementContext)
             else:
-                return self.getTypedRuleContext(JCPParser.StatementContext,i)
+                return self.getTypedRuleContext(jcpParser.StatementContext,i)
 
 
         def getRuleIndex(self):
-            return JCPParser.RULE_constructorBody
+            return jcpParser.RULE_constructorBody
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterConstructorBody" ):
@@ -1888,28 +1750,22 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitConstructorBody" ):
                 listener.exitConstructorBody(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitConstructorBody" ):
-                return visitor.visitConstructorBody(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def constructorBody(self):
 
-        localctx = JCPParser.ConstructorBodyContext(self, self._ctx, self.state)
+        localctx = jcpParser.ConstructorBodyContext(self, self._ctx, self.state)
         self.enterRule(localctx, 46, self.RULE_constructorBody)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 220
-            self.match(JCPParser.LCUR)
+            self.match(jcpParser.LCUR)
             self.state = 222
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==JCPParser.SUPER:
+            if _la==jcpParser.SUPER:
                 self.state = 221
                 self.constructorInvocation()
 
@@ -1917,7 +1773,7 @@ class JCPParser ( Parser ):
             self.state = 227
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << JCPParser.IF) | (1 << JCPParser.FOR) | (1 << JCPParser.WHILE) | (1 << JCPParser.DO) | (1 << JCPParser.BREAK) | (1 << JCPParser.CONTINUE) | (1 << JCPParser.RETURN) | (1 << JCPParser.PLUS) | (1 << JCPParser.MINUS) | (1 << JCPParser.NOT) | (1 << JCPParser.LCUR) | (1 << JCPParser.IDENTIFIER))) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << jcpParser.IF) | (1 << jcpParser.FOR) | (1 << jcpParser.WHILE) | (1 << jcpParser.DO) | (1 << jcpParser.BREAK) | (1 << jcpParser.CONTINUE) | (1 << jcpParser.RETURN) | (1 << jcpParser.PLUS) | (1 << jcpParser.MINUS) | (1 << jcpParser.NOT) | (1 << jcpParser.LCUR) | (1 << jcpParser.IDENTIFIER))) != 0):
                 self.state = 224
                 self.statement()
                 self.state = 229
@@ -1925,7 +1781,7 @@ class JCPParser ( Parser ):
                 _la = self._input.LA(1)
 
             self.state = 230
-            self.match(JCPParser.RCUR)
+            self.match(jcpParser.RCUR)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1943,29 +1799,29 @@ class JCPParser ( Parser ):
             self.parser = parser
 
         def SUPER(self):
-            return self.getToken(JCPParser.SUPER, 0)
+            return self.getToken(jcpParser.SUPER, 0)
 
         def LPAR(self):
-            return self.getToken(JCPParser.LPAR, 0)
+            return self.getToken(jcpParser.LPAR, 0)
 
         def RPAR(self):
-            return self.getToken(JCPParser.RPAR, 0)
+            return self.getToken(jcpParser.RPAR, 0)
 
         def argument(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(JCPParser.ArgumentContext)
+                return self.getTypedRuleContexts(jcpParser.ArgumentContext)
             else:
-                return self.getTypedRuleContext(JCPParser.ArgumentContext,i)
+                return self.getTypedRuleContext(jcpParser.ArgumentContext,i)
 
 
         def COMMA(self, i:int=None):
             if i is None:
-                return self.getTokens(JCPParser.COMMA)
+                return self.getTokens(jcpParser.COMMA)
             else:
-                return self.getToken(JCPParser.COMMA, i)
+                return self.getToken(jcpParser.COMMA, i)
 
         def getRuleIndex(self):
-            return JCPParser.RULE_constructorInvocation
+            return jcpParser.RULE_constructorInvocation
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterConstructorInvocation" ):
@@ -1975,30 +1831,24 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitConstructorInvocation" ):
                 listener.exitConstructorInvocation(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitConstructorInvocation" ):
-                return visitor.visitConstructorInvocation(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def constructorInvocation(self):
 
-        localctx = JCPParser.ConstructorInvocationContext(self, self._ctx, self.state)
+        localctx = jcpParser.ConstructorInvocationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 48, self.RULE_constructorInvocation)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 232
-            self.match(JCPParser.SUPER)
+            self.match(jcpParser.SUPER)
             self.state = 233
-            self.match(JCPParser.LPAR)
+            self.match(jcpParser.LPAR)
             self.state = 235
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==JCPParser.IDENTIFIER:
+            if _la==jcpParser.IDENTIFIER:
                 self.state = 234
                 self.argument()
 
@@ -2006,9 +1856,9 @@ class JCPParser ( Parser ):
             self.state = 241
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==JCPParser.COMMA:
+            while _la==jcpParser.COMMA:
                 self.state = 237
-                self.match(JCPParser.COMMA)
+                self.match(jcpParser.COMMA)
                 self.state = 238
                 self.argument()
                 self.state = 243
@@ -2016,7 +1866,7 @@ class JCPParser ( Parser ):
                 _la = self._input.LA(1)
 
             self.state = 244
-            self.match(JCPParser.RPAR)
+            self.match(jcpParser.RPAR)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -2034,10 +1884,10 @@ class JCPParser ( Parser ):
             self.parser = parser
 
         def IDENTIFIER(self):
-            return self.getToken(JCPParser.IDENTIFIER, 0)
+            return self.getToken(jcpParser.IDENTIFIER, 0)
 
         def getRuleIndex(self):
-            return JCPParser.RULE_argument
+            return jcpParser.RULE_argument
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterArgument" ):
@@ -2047,23 +1897,17 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitArgument" ):
                 listener.exitArgument(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArgument" ):
-                return visitor.visitArgument(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def argument(self):
 
-        localctx = JCPParser.ArgumentContext(self, self._ctx, self.state)
+        localctx = jcpParser.ArgumentContext(self, self._ctx, self.state)
         self.enterRule(localctx, 50, self.RULE_argument)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 246
-            self.match(JCPParser.IDENTIFIER)
+            self.match(jcpParser.IDENTIFIER)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -2081,72 +1925,72 @@ class JCPParser ( Parser ):
             self.parser = parser
 
         def expression(self):
-            return self.getTypedRuleContext(JCPParser.ExpressionContext,0)
+            return self.getTypedRuleContext(jcpParser.ExpressionContext,0)
 
 
         def SEMI(self):
-            return self.getToken(JCPParser.SEMI, 0)
+            return self.getToken(jcpParser.SEMI, 0)
 
         def IF(self):
-            return self.getToken(JCPParser.IF, 0)
+            return self.getToken(jcpParser.IF, 0)
 
         def LPAR(self):
-            return self.getToken(JCPParser.LPAR, 0)
+            return self.getToken(jcpParser.LPAR, 0)
 
         def RPAR(self):
-            return self.getToken(JCPParser.RPAR, 0)
+            return self.getToken(jcpParser.RPAR, 0)
 
         def statement(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(JCPParser.StatementContext)
+                return self.getTypedRuleContexts(jcpParser.StatementContext)
             else:
-                return self.getTypedRuleContext(JCPParser.StatementContext,i)
+                return self.getTypedRuleContext(jcpParser.StatementContext,i)
 
 
         def ELSE(self):
-            return self.getToken(JCPParser.ELSE, 0)
+            return self.getToken(jcpParser.ELSE, 0)
 
         def FOR(self):
-            return self.getToken(JCPParser.FOR, 0)
+            return self.getToken(jcpParser.FOR, 0)
 
         def forInit(self):
-            return self.getTypedRuleContext(JCPParser.ForInitContext,0)
+            return self.getTypedRuleContext(jcpParser.ForInitContext,0)
 
 
         def forUpdate(self):
-            return self.getTypedRuleContext(JCPParser.ForUpdateContext,0)
+            return self.getTypedRuleContext(jcpParser.ForUpdateContext,0)
 
 
         def WHILE(self):
-            return self.getToken(JCPParser.WHILE, 0)
+            return self.getToken(jcpParser.WHILE, 0)
 
         def DO(self):
-            return self.getToken(JCPParser.DO, 0)
+            return self.getToken(jcpParser.DO, 0)
 
         def BREAK(self):
-            return self.getToken(JCPParser.BREAK, 0)
+            return self.getToken(jcpParser.BREAK, 0)
 
         def CONTINUE(self):
-            return self.getToken(JCPParser.CONTINUE, 0)
+            return self.getToken(jcpParser.CONTINUE, 0)
 
         def RETURN(self):
-            return self.getToken(JCPParser.RETURN, 0)
+            return self.getToken(jcpParser.RETURN, 0)
 
         def LCUR(self):
-            return self.getToken(JCPParser.LCUR, 0)
+            return self.getToken(jcpParser.LCUR, 0)
 
         def RCUR(self):
-            return self.getToken(JCPParser.RCUR, 0)
+            return self.getToken(jcpParser.RCUR, 0)
 
         def blockDec(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(JCPParser.BlockDecContext)
+                return self.getTypedRuleContexts(jcpParser.BlockDecContext)
             else:
-                return self.getTypedRuleContext(JCPParser.BlockDecContext,i)
+                return self.getTypedRuleContext(jcpParser.BlockDecContext,i)
 
 
         def getRuleIndex(self):
-            return JCPParser.RULE_statement
+            return jcpParser.RULE_statement
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterStatement" ):
@@ -2156,41 +2000,35 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitStatement" ):
                 listener.exitStatement(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitStatement" ):
-                return visitor.visitStatement(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def statement(self):
 
-        localctx = JCPParser.StatementContext(self, self._ctx, self.state)
+        localctx = jcpParser.StatementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 52, self.RULE_statement)
         self._la = 0 # Token type
         try:
             self.state = 302
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [JCPParser.PLUS, JCPParser.MINUS, JCPParser.NOT, JCPParser.IDENTIFIER]:
+            if token in [jcpParser.PLUS, jcpParser.MINUS, jcpParser.NOT, jcpParser.IDENTIFIER]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 248
                 self.expression()
                 self.state = 249
-                self.match(JCPParser.SEMI)
+                self.match(jcpParser.SEMI)
                 pass
-            elif token in [JCPParser.IF]:
+            elif token in [jcpParser.IF]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 251
-                self.match(JCPParser.IF)
+                self.match(jcpParser.IF)
                 self.state = 252
-                self.match(JCPParser.LPAR)
+                self.match(jcpParser.LPAR)
                 self.state = 253
                 self.expression()
                 self.state = 254
-                self.match(JCPParser.RPAR)
+                self.match(jcpParser.RPAR)
                 self.state = 255
                 self.statement()
                 self.state = 258
@@ -2198,108 +2036,108 @@ class JCPParser ( Parser ):
                 la_ = self._interp.adaptivePredict(self._input,18,self._ctx)
                 if la_ == 1:
                     self.state = 256
-                    self.match(JCPParser.ELSE)
+                    self.match(jcpParser.ELSE)
                     self.state = 257
                     self.statement()
 
 
                 pass
-            elif token in [JCPParser.FOR]:
+            elif token in [jcpParser.FOR]:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 260
-                self.match(JCPParser.FOR)
+                self.match(jcpParser.FOR)
                 self.state = 261
-                self.match(JCPParser.LPAR)
+                self.match(jcpParser.LPAR)
                 self.state = 263
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << JCPParser.PLUS) | (1 << JCPParser.MINUS) | (1 << JCPParser.NOT) | (1 << JCPParser.BOOL) | (1 << JCPParser.BYTE) | (1 << JCPParser.SHORT) | (1 << JCPParser.LONG) | (1 << JCPParser.INT) | (1 << JCPParser.CHAR) | (1 << JCPParser.FLOAT) | (1 << JCPParser.DOUBLE) | (1 << JCPParser.IDENTIFIER))) != 0):
+                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << jcpParser.PLUS) | (1 << jcpParser.MINUS) | (1 << jcpParser.NOT) | (1 << jcpParser.BOOL) | (1 << jcpParser.BYTE) | (1 << jcpParser.SHORT) | (1 << jcpParser.LONG) | (1 << jcpParser.INT) | (1 << jcpParser.CHAR) | (1 << jcpParser.FLOAT) | (1 << jcpParser.DOUBLE) | (1 << jcpParser.IDENTIFIER))) != 0):
                     self.state = 262
                     self.forInit()
 
 
                 self.state = 265
-                self.match(JCPParser.SEMI)
+                self.match(jcpParser.SEMI)
                 self.state = 267
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << JCPParser.PLUS) | (1 << JCPParser.MINUS) | (1 << JCPParser.NOT) | (1 << JCPParser.IDENTIFIER))) != 0):
+                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << jcpParser.PLUS) | (1 << jcpParser.MINUS) | (1 << jcpParser.NOT) | (1 << jcpParser.IDENTIFIER))) != 0):
                     self.state = 266
                     self.forUpdate()
 
 
                 self.state = 269
-                self.match(JCPParser.RPAR)
+                self.match(jcpParser.RPAR)
                 self.state = 270
                 self.statement()
                 pass
-            elif token in [JCPParser.WHILE]:
+            elif token in [jcpParser.WHILE]:
                 self.enterOuterAlt(localctx, 4)
                 self.state = 271
-                self.match(JCPParser.WHILE)
+                self.match(jcpParser.WHILE)
                 self.state = 272
-                self.match(JCPParser.LPAR)
+                self.match(jcpParser.LPAR)
                 self.state = 273
                 self.expression()
                 self.state = 274
-                self.match(JCPParser.RPAR)
+                self.match(jcpParser.RPAR)
                 self.state = 275
                 self.statement()
                 pass
-            elif token in [JCPParser.DO]:
+            elif token in [jcpParser.DO]:
                 self.enterOuterAlt(localctx, 5)
                 self.state = 277
-                self.match(JCPParser.DO)
+                self.match(jcpParser.DO)
                 self.state = 278
                 self.statement()
                 self.state = 279
-                self.match(JCPParser.WHILE)
+                self.match(jcpParser.WHILE)
                 self.state = 280
-                self.match(JCPParser.LPAR)
+                self.match(jcpParser.LPAR)
                 self.state = 281
                 self.expression()
                 self.state = 282
-                self.match(JCPParser.RPAR)
+                self.match(jcpParser.RPAR)
                 self.state = 283
-                self.match(JCPParser.SEMI)
+                self.match(jcpParser.SEMI)
                 pass
-            elif token in [JCPParser.BREAK]:
+            elif token in [jcpParser.BREAK]:
                 self.enterOuterAlt(localctx, 6)
                 self.state = 285
-                self.match(JCPParser.BREAK)
+                self.match(jcpParser.BREAK)
                 self.state = 286
-                self.match(JCPParser.SEMI)
+                self.match(jcpParser.SEMI)
                 pass
-            elif token in [JCPParser.CONTINUE]:
+            elif token in [jcpParser.CONTINUE]:
                 self.enterOuterAlt(localctx, 7)
                 self.state = 287
-                self.match(JCPParser.CONTINUE)
+                self.match(jcpParser.CONTINUE)
                 self.state = 288
-                self.match(JCPParser.SEMI)
+                self.match(jcpParser.SEMI)
                 pass
-            elif token in [JCPParser.RETURN]:
+            elif token in [jcpParser.RETURN]:
                 self.enterOuterAlt(localctx, 8)
                 self.state = 289
-                self.match(JCPParser.RETURN)
+                self.match(jcpParser.RETURN)
                 self.state = 291
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << JCPParser.PLUS) | (1 << JCPParser.MINUS) | (1 << JCPParser.NOT) | (1 << JCPParser.IDENTIFIER))) != 0):
+                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << jcpParser.PLUS) | (1 << jcpParser.MINUS) | (1 << jcpParser.NOT) | (1 << jcpParser.IDENTIFIER))) != 0):
                     self.state = 290
                     self.expression()
 
 
                 self.state = 293
-                self.match(JCPParser.SEMI)
+                self.match(jcpParser.SEMI)
                 pass
-            elif token in [JCPParser.LCUR]:
+            elif token in [jcpParser.LCUR]:
                 self.enterOuterAlt(localctx, 9)
                 self.state = 294
-                self.match(JCPParser.LCUR)
+                self.match(jcpParser.LCUR)
                 self.state = 298
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << JCPParser.IF) | (1 << JCPParser.FOR) | (1 << JCPParser.WHILE) | (1 << JCPParser.DO) | (1 << JCPParser.BREAK) | (1 << JCPParser.CONTINUE) | (1 << JCPParser.RETURN) | (1 << JCPParser.PLUS) | (1 << JCPParser.MINUS) | (1 << JCPParser.NOT) | (1 << JCPParser.LCUR) | (1 << JCPParser.BOOL) | (1 << JCPParser.BYTE) | (1 << JCPParser.SHORT) | (1 << JCPParser.LONG) | (1 << JCPParser.INT) | (1 << JCPParser.CHAR) | (1 << JCPParser.FLOAT) | (1 << JCPParser.DOUBLE) | (1 << JCPParser.IDENTIFIER))) != 0):
+                while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << jcpParser.IF) | (1 << jcpParser.FOR) | (1 << jcpParser.WHILE) | (1 << jcpParser.DO) | (1 << jcpParser.BREAK) | (1 << jcpParser.CONTINUE) | (1 << jcpParser.RETURN) | (1 << jcpParser.PLUS) | (1 << jcpParser.MINUS) | (1 << jcpParser.NOT) | (1 << jcpParser.LCUR) | (1 << jcpParser.BOOL) | (1 << jcpParser.BYTE) | (1 << jcpParser.SHORT) | (1 << jcpParser.LONG) | (1 << jcpParser.INT) | (1 << jcpParser.CHAR) | (1 << jcpParser.FLOAT) | (1 << jcpParser.DOUBLE) | (1 << jcpParser.IDENTIFIER))) != 0):
                     self.state = 295
                     self.blockDec()
                     self.state = 300
@@ -2307,7 +2145,7 @@ class JCPParser ( Parser ):
                     _la = self._input.LA(1)
 
                 self.state = 301
-                self.match(JCPParser.RCUR)
+                self.match(jcpParser.RCUR)
                 pass
             else:
                 raise NoViableAltException(self)
@@ -2329,15 +2167,15 @@ class JCPParser ( Parser ):
             self.parser = parser
 
         def localDec(self):
-            return self.getTypedRuleContext(JCPParser.LocalDecContext,0)
+            return self.getTypedRuleContext(jcpParser.LocalDecContext,0)
 
 
         def expression(self):
-            return self.getTypedRuleContext(JCPParser.ExpressionContext,0)
+            return self.getTypedRuleContext(jcpParser.ExpressionContext,0)
 
 
         def getRuleIndex(self):
-            return JCPParser.RULE_forInit
+            return jcpParser.RULE_forInit
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterForInit" ):
@@ -2347,18 +2185,12 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitForInit" ):
                 listener.exitForInit(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitForInit" ):
-                return visitor.visitForInit(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def forInit(self):
 
-        localctx = JCPParser.ForInitContext(self, self._ctx, self.state)
+        localctx = jcpParser.ForInitContext(self, self._ctx, self.state)
         self.enterRule(localctx, 54, self.RULE_forInit)
         try:
             self.state = 306
@@ -2394,11 +2226,11 @@ class JCPParser ( Parser ):
             self.parser = parser
 
         def expression(self):
-            return self.getTypedRuleContext(JCPParser.ExpressionContext,0)
+            return self.getTypedRuleContext(jcpParser.ExpressionContext,0)
 
 
         def getRuleIndex(self):
-            return JCPParser.RULE_forUpdate
+            return jcpParser.RULE_forUpdate
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterForUpdate" ):
@@ -2408,18 +2240,12 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitForUpdate" ):
                 listener.exitForUpdate(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitForUpdate" ):
-                return visitor.visitForUpdate(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def forUpdate(self):
 
-        localctx = JCPParser.ForUpdateContext(self, self._ctx, self.state)
+        localctx = jcpParser.ForUpdateContext(self, self._ctx, self.state)
         self.enterRule(localctx, 56, self.RULE_forUpdate)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -2442,15 +2268,15 @@ class JCPParser ( Parser ):
             self.parser = parser
 
         def assignment(self):
-            return self.getTypedRuleContext(JCPParser.AssignmentContext,0)
+            return self.getTypedRuleContext(jcpParser.AssignmentContext,0)
 
 
         def conditionalExpression(self):
-            return self.getTypedRuleContext(JCPParser.ConditionalExpressionContext,0)
+            return self.getTypedRuleContext(jcpParser.ConditionalExpressionContext,0)
 
 
         def getRuleIndex(self):
-            return JCPParser.RULE_expression
+            return jcpParser.RULE_expression
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterExpression" ):
@@ -2460,29 +2286,23 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitExpression" ):
                 listener.exitExpression(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitExpression" ):
-                return visitor.visitExpression(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def expression(self):
 
-        localctx = JCPParser.ExpressionContext(self, self._ctx, self.state)
+        localctx = jcpParser.ExpressionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 58, self.RULE_expression)
         try:
             self.state = 312
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [JCPParser.IDENTIFIER]:
+            if token in [jcpParser.IDENTIFIER]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 310
                 self.assignment()
                 pass
-            elif token in [JCPParser.PLUS, JCPParser.MINUS, JCPParser.NOT]:
+            elif token in [jcpParser.PLUS, jcpParser.MINUS, jcpParser.NOT]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 311
                 self.conditionalExpression()
@@ -2507,18 +2327,18 @@ class JCPParser ( Parser ):
             self.parser = parser
 
         def leftHandSide(self):
-            return self.getTypedRuleContext(JCPParser.LeftHandSideContext,0)
+            return self.getTypedRuleContext(jcpParser.LeftHandSideContext,0)
 
 
         def ASSIGN(self):
-            return self.getToken(JCPParser.ASSIGN, 0)
+            return self.getToken(jcpParser.ASSIGN, 0)
 
         def expression(self):
-            return self.getTypedRuleContext(JCPParser.ExpressionContext,0)
+            return self.getTypedRuleContext(jcpParser.ExpressionContext,0)
 
 
         def getRuleIndex(self):
-            return JCPParser.RULE_assignment
+            return jcpParser.RULE_assignment
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterAssignment" ):
@@ -2528,25 +2348,19 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitAssignment" ):
                 listener.exitAssignment(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitAssignment" ):
-                return visitor.visitAssignment(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def assignment(self):
 
-        localctx = JCPParser.AssignmentContext(self, self._ctx, self.state)
+        localctx = jcpParser.AssignmentContext(self, self._ctx, self.state)
         self.enterRule(localctx, 60, self.RULE_assignment)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 314
             self.leftHandSide()
             self.state = 315
-            self.match(JCPParser.ASSIGN)
+            self.match(jcpParser.ASSIGN)
             self.state = 316
             self.expression()
         except RecognitionException as re:
@@ -2566,15 +2380,15 @@ class JCPParser ( Parser ):
             self.parser = parser
 
         def fieldAccess(self):
-            return self.getTypedRuleContext(JCPParser.FieldAccessContext,0)
+            return self.getTypedRuleContext(jcpParser.FieldAccessContext,0)
 
 
         def arrayAccess(self):
-            return self.getTypedRuleContext(JCPParser.ArrayAccessContext,0)
+            return self.getTypedRuleContext(jcpParser.ArrayAccessContext,0)
 
 
         def getRuleIndex(self):
-            return JCPParser.RULE_leftHandSide
+            return jcpParser.RULE_leftHandSide
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterLeftHandSide" ):
@@ -2584,18 +2398,12 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitLeftHandSide" ):
                 listener.exitLeftHandSide(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitLeftHandSide" ):
-                return visitor.visitLeftHandSide(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def leftHandSide(self):
 
-        localctx = JCPParser.LeftHandSideContext(self, self._ctx, self.state)
+        localctx = jcpParser.LeftHandSideContext(self, self._ctx, self.state)
         self.enterRule(localctx, 62, self.RULE_leftHandSide)
         try:
             self.state = 320
@@ -2632,18 +2440,18 @@ class JCPParser ( Parser ):
 
         def IDENTIFIER(self, i:int=None):
             if i is None:
-                return self.getTokens(JCPParser.IDENTIFIER)
+                return self.getTokens(jcpParser.IDENTIFIER)
             else:
-                return self.getToken(JCPParser.IDENTIFIER, i)
+                return self.getToken(jcpParser.IDENTIFIER, i)
 
         def DOT(self, i:int=None):
             if i is None:
-                return self.getTokens(JCPParser.DOT)
+                return self.getTokens(jcpParser.DOT)
             else:
-                return self.getToken(JCPParser.DOT, i)
+                return self.getToken(jcpParser.DOT, i)
 
         def getRuleIndex(self):
-            return JCPParser.RULE_fieldAccess
+            return jcpParser.RULE_fieldAccess
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterFieldAccess" ):
@@ -2653,32 +2461,26 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitFieldAccess" ):
                 listener.exitFieldAccess(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitFieldAccess" ):
-                return visitor.visitFieldAccess(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def fieldAccess(self):
 
-        localctx = JCPParser.FieldAccessContext(self, self._ctx, self.state)
+        localctx = jcpParser.FieldAccessContext(self, self._ctx, self.state)
         self.enterRule(localctx, 64, self.RULE_fieldAccess)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 322
-            self.match(JCPParser.IDENTIFIER)
+            self.match(jcpParser.IDENTIFIER)
             self.state = 327
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==JCPParser.DOT:
+            while _la==jcpParser.DOT:
                 self.state = 323
-                self.match(JCPParser.DOT)
+                self.match(jcpParser.DOT)
                 self.state = 324
-                self.match(JCPParser.IDENTIFIER)
+                self.match(jcpParser.IDENTIFIER)
                 self.state = 329
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
@@ -2700,19 +2502,19 @@ class JCPParser ( Parser ):
             self.parser = parser
 
         def IDENTIFIER(self):
-            return self.getToken(JCPParser.IDENTIFIER, 0)
+            return self.getToken(jcpParser.IDENTIFIER, 0)
 
         def LBRACK(self):
-            return self.getToken(JCPParser.LBRACK, 0)
+            return self.getToken(jcpParser.LBRACK, 0)
 
         def LITERAL(self):
-            return self.getToken(JCPParser.LITERAL, 0)
+            return self.getToken(jcpParser.LITERAL, 0)
 
         def RBRACK(self):
-            return self.getToken(JCPParser.RBRACK, 0)
+            return self.getToken(jcpParser.RBRACK, 0)
 
         def getRuleIndex(self):
-            return JCPParser.RULE_arrayAccess
+            return jcpParser.RULE_arrayAccess
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterArrayAccess" ):
@@ -2722,29 +2524,23 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitArrayAccess" ):
                 listener.exitArrayAccess(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitArrayAccess" ):
-                return visitor.visitArrayAccess(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def arrayAccess(self):
 
-        localctx = JCPParser.ArrayAccessContext(self, self._ctx, self.state)
+        localctx = jcpParser.ArrayAccessContext(self, self._ctx, self.state)
         self.enterRule(localctx, 66, self.RULE_arrayAccess)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 330
-            self.match(JCPParser.IDENTIFIER)
+            self.match(jcpParser.IDENTIFIER)
             self.state = 331
-            self.match(JCPParser.LBRACK)
+            self.match(jcpParser.LBRACK)
             self.state = 332
-            self.match(JCPParser.LITERAL)
+            self.match(jcpParser.LITERAL)
             self.state = 333
-            self.match(JCPParser.RBRACK)
+            self.match(jcpParser.RBRACK)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -2762,24 +2558,24 @@ class JCPParser ( Parser ):
             self.parser = parser
 
         def orExpression(self):
-            return self.getTypedRuleContext(JCPParser.OrExpressionContext,0)
+            return self.getTypedRuleContext(jcpParser.OrExpressionContext,0)
 
 
         def QUESTION(self):
-            return self.getToken(JCPParser.QUESTION, 0)
+            return self.getToken(jcpParser.QUESTION, 0)
 
         def expression(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(JCPParser.ExpressionContext)
+                return self.getTypedRuleContexts(jcpParser.ExpressionContext)
             else:
-                return self.getTypedRuleContext(JCPParser.ExpressionContext,i)
+                return self.getTypedRuleContext(jcpParser.ExpressionContext,i)
 
 
         def COLON(self):
-            return self.getToken(JCPParser.COLON, 0)
+            return self.getToken(jcpParser.COLON, 0)
 
         def getRuleIndex(self):
-            return JCPParser.RULE_conditionalExpression
+            return jcpParser.RULE_conditionalExpression
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterConditionalExpression" ):
@@ -2789,18 +2585,12 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitConditionalExpression" ):
                 listener.exitConditionalExpression(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitConditionalExpression" ):
-                return visitor.visitConditionalExpression(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def conditionalExpression(self):
 
-        localctx = JCPParser.ConditionalExpressionContext(self, self._ctx, self.state)
+        localctx = jcpParser.ConditionalExpressionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 68, self.RULE_conditionalExpression)
         self._la = 0 # Token type
         try:
@@ -2810,13 +2600,13 @@ class JCPParser ( Parser ):
             self.state = 341
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==JCPParser.QUESTION:
+            if _la==jcpParser.QUESTION:
                 self.state = 336
-                self.match(JCPParser.QUESTION)
+                self.match(jcpParser.QUESTION)
                 self.state = 337
                 self.expression()
                 self.state = 338
-                self.match(JCPParser.COLON)
+                self.match(jcpParser.COLON)
                 self.state = 339
                 self.expression()
 
@@ -2839,19 +2629,19 @@ class JCPParser ( Parser ):
 
         def andExpression(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(JCPParser.AndExpressionContext)
+                return self.getTypedRuleContexts(jcpParser.AndExpressionContext)
             else:
-                return self.getTypedRuleContext(JCPParser.AndExpressionContext,i)
+                return self.getTypedRuleContext(jcpParser.AndExpressionContext,i)
 
 
         def OR(self, i:int=None):
             if i is None:
-                return self.getTokens(JCPParser.OR)
+                return self.getTokens(jcpParser.OR)
             else:
-                return self.getToken(JCPParser.OR, i)
+                return self.getToken(jcpParser.OR, i)
 
         def getRuleIndex(self):
-            return JCPParser.RULE_orExpression
+            return jcpParser.RULE_orExpression
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterOrExpression" ):
@@ -2861,18 +2651,12 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitOrExpression" ):
                 listener.exitOrExpression(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitOrExpression" ):
-                return visitor.visitOrExpression(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def orExpression(self):
 
-        localctx = JCPParser.OrExpressionContext(self, self._ctx, self.state)
+        localctx = jcpParser.OrExpressionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 70, self.RULE_orExpression)
         self._la = 0 # Token type
         try:
@@ -2882,9 +2666,9 @@ class JCPParser ( Parser ):
             self.state = 348
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==JCPParser.OR:
+            while _la==jcpParser.OR:
                 self.state = 344
-                self.match(JCPParser.OR)
+                self.match(jcpParser.OR)
                 self.state = 345
                 self.andExpression()
                 self.state = 350
@@ -2909,19 +2693,19 @@ class JCPParser ( Parser ):
 
         def equalityExpression(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(JCPParser.EqualityExpressionContext)
+                return self.getTypedRuleContexts(jcpParser.EqualityExpressionContext)
             else:
-                return self.getTypedRuleContext(JCPParser.EqualityExpressionContext,i)
+                return self.getTypedRuleContext(jcpParser.EqualityExpressionContext,i)
 
 
         def AND(self, i:int=None):
             if i is None:
-                return self.getTokens(JCPParser.AND)
+                return self.getTokens(jcpParser.AND)
             else:
-                return self.getToken(JCPParser.AND, i)
+                return self.getToken(jcpParser.AND, i)
 
         def getRuleIndex(self):
-            return JCPParser.RULE_andExpression
+            return jcpParser.RULE_andExpression
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterAndExpression" ):
@@ -2931,18 +2715,12 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitAndExpression" ):
                 listener.exitAndExpression(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitAndExpression" ):
-                return visitor.visitAndExpression(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def andExpression(self):
 
-        localctx = JCPParser.AndExpressionContext(self, self._ctx, self.state)
+        localctx = jcpParser.AndExpressionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 72, self.RULE_andExpression)
         self._la = 0 # Token type
         try:
@@ -2952,9 +2730,9 @@ class JCPParser ( Parser ):
             self.state = 356
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==JCPParser.AND:
+            while _la==jcpParser.AND:
                 self.state = 352
-                self.match(JCPParser.AND)
+                self.match(jcpParser.AND)
                 self.state = 353
                 self.equalityExpression()
                 self.state = 358
@@ -2979,25 +2757,25 @@ class JCPParser ( Parser ):
 
         def relationalExpression(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(JCPParser.RelationalExpressionContext)
+                return self.getTypedRuleContexts(jcpParser.RelationalExpressionContext)
             else:
-                return self.getTypedRuleContext(JCPParser.RelationalExpressionContext,i)
+                return self.getTypedRuleContext(jcpParser.RelationalExpressionContext,i)
 
 
         def EQUAL(self, i:int=None):
             if i is None:
-                return self.getTokens(JCPParser.EQUAL)
+                return self.getTokens(jcpParser.EQUAL)
             else:
-                return self.getToken(JCPParser.EQUAL, i)
+                return self.getToken(jcpParser.EQUAL, i)
 
         def NOTEQUAL(self, i:int=None):
             if i is None:
-                return self.getTokens(JCPParser.NOTEQUAL)
+                return self.getTokens(jcpParser.NOTEQUAL)
             else:
-                return self.getToken(JCPParser.NOTEQUAL, i)
+                return self.getToken(jcpParser.NOTEQUAL, i)
 
         def getRuleIndex(self):
-            return JCPParser.RULE_equalityExpression
+            return jcpParser.RULE_equalityExpression
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterEqualityExpression" ):
@@ -3007,18 +2785,12 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitEqualityExpression" ):
                 listener.exitEqualityExpression(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitEqualityExpression" ):
-                return visitor.visitEqualityExpression(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def equalityExpression(self):
 
-        localctx = JCPParser.EqualityExpressionContext(self, self._ctx, self.state)
+        localctx = jcpParser.EqualityExpressionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 74, self.RULE_equalityExpression)
         self._la = 0 # Token type
         try:
@@ -3028,19 +2800,19 @@ class JCPParser ( Parser ):
             self.state = 366
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==JCPParser.EQUAL or _la==JCPParser.NOTEQUAL:
+            while _la==jcpParser.EQUAL or _la==jcpParser.NOTEQUAL:
                 self.state = 364
                 self._errHandler.sync(self)
                 token = self._input.LA(1)
-                if token in [JCPParser.EQUAL]:
+                if token in [jcpParser.EQUAL]:
                     self.state = 360
-                    self.match(JCPParser.EQUAL)
+                    self.match(jcpParser.EQUAL)
                     self.state = 361
                     self.relationalExpression()
                     pass
-                elif token in [JCPParser.NOTEQUAL]:
+                elif token in [jcpParser.NOTEQUAL]:
                     self.state = 362
-                    self.match(JCPParser.NOTEQUAL)
+                    self.match(jcpParser.NOTEQUAL)
                     self.state = 363
                     self.relationalExpression()
                     pass
@@ -3069,37 +2841,37 @@ class JCPParser ( Parser ):
 
         def additiveExpression(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(JCPParser.AdditiveExpressionContext)
+                return self.getTypedRuleContexts(jcpParser.AdditiveExpressionContext)
             else:
-                return self.getTypedRuleContext(JCPParser.AdditiveExpressionContext,i)
+                return self.getTypedRuleContext(jcpParser.AdditiveExpressionContext,i)
 
 
         def LESS(self, i:int=None):
             if i is None:
-                return self.getTokens(JCPParser.LESS)
+                return self.getTokens(jcpParser.LESS)
             else:
-                return self.getToken(JCPParser.LESS, i)
+                return self.getToken(jcpParser.LESS, i)
 
         def LESSEQUAL(self, i:int=None):
             if i is None:
-                return self.getTokens(JCPParser.LESSEQUAL)
+                return self.getTokens(jcpParser.LESSEQUAL)
             else:
-                return self.getToken(JCPParser.LESSEQUAL, i)
+                return self.getToken(jcpParser.LESSEQUAL, i)
 
         def GREATER(self, i:int=None):
             if i is None:
-                return self.getTokens(JCPParser.GREATER)
+                return self.getTokens(jcpParser.GREATER)
             else:
-                return self.getToken(JCPParser.GREATER, i)
+                return self.getToken(jcpParser.GREATER, i)
 
         def GREATEREQUAL(self, i:int=None):
             if i is None:
-                return self.getTokens(JCPParser.GREATEREQUAL)
+                return self.getTokens(jcpParser.GREATEREQUAL)
             else:
-                return self.getToken(JCPParser.GREATEREQUAL, i)
+                return self.getToken(jcpParser.GREATEREQUAL, i)
 
         def getRuleIndex(self):
-            return JCPParser.RULE_relationalExpression
+            return jcpParser.RULE_relationalExpression
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterRelationalExpression" ):
@@ -3109,18 +2881,12 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitRelationalExpression" ):
                 listener.exitRelationalExpression(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitRelationalExpression" ):
-                return visitor.visitRelationalExpression(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def relationalExpression(self):
 
-        localctx = JCPParser.RelationalExpressionContext(self, self._ctx, self.state)
+        localctx = jcpParser.RelationalExpressionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 76, self.RULE_relationalExpression)
         self._la = 0 # Token type
         try:
@@ -3130,31 +2896,31 @@ class JCPParser ( Parser ):
             self.state = 380
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << JCPParser.LESS) | (1 << JCPParser.LESSEQUAL) | (1 << JCPParser.GREATER) | (1 << JCPParser.GREATEREQUAL))) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << jcpParser.LESS) | (1 << jcpParser.LESSEQUAL) | (1 << jcpParser.GREATER) | (1 << jcpParser.GREATEREQUAL))) != 0):
                 self.state = 378
                 self._errHandler.sync(self)
                 token = self._input.LA(1)
-                if token in [JCPParser.LESS]:
+                if token in [jcpParser.LESS]:
                     self.state = 370
-                    self.match(JCPParser.LESS)
+                    self.match(jcpParser.LESS)
                     self.state = 371
                     self.additiveExpression()
                     pass
-                elif token in [JCPParser.LESSEQUAL]:
+                elif token in [jcpParser.LESSEQUAL]:
                     self.state = 372
-                    self.match(JCPParser.LESSEQUAL)
+                    self.match(jcpParser.LESSEQUAL)
                     self.state = 373
                     self.additiveExpression()
                     pass
-                elif token in [JCPParser.GREATER]:
+                elif token in [jcpParser.GREATER]:
                     self.state = 374
-                    self.match(JCPParser.GREATER)
+                    self.match(jcpParser.GREATER)
                     self.state = 375
                     self.additiveExpression()
                     pass
-                elif token in [JCPParser.GREATEREQUAL]:
+                elif token in [jcpParser.GREATEREQUAL]:
                     self.state = 376
-                    self.match(JCPParser.GREATEREQUAL)
+                    self.match(jcpParser.GREATEREQUAL)
                     self.state = 377
                     self.additiveExpression()
                     pass
@@ -3183,25 +2949,25 @@ class JCPParser ( Parser ):
 
         def multiplicativeExpression(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(JCPParser.MultiplicativeExpressionContext)
+                return self.getTypedRuleContexts(jcpParser.MultiplicativeExpressionContext)
             else:
-                return self.getTypedRuleContext(JCPParser.MultiplicativeExpressionContext,i)
+                return self.getTypedRuleContext(jcpParser.MultiplicativeExpressionContext,i)
 
 
         def PLUS(self, i:int=None):
             if i is None:
-                return self.getTokens(JCPParser.PLUS)
+                return self.getTokens(jcpParser.PLUS)
             else:
-                return self.getToken(JCPParser.PLUS, i)
+                return self.getToken(jcpParser.PLUS, i)
 
         def MINUS(self, i:int=None):
             if i is None:
-                return self.getTokens(JCPParser.MINUS)
+                return self.getTokens(jcpParser.MINUS)
             else:
-                return self.getToken(JCPParser.MINUS, i)
+                return self.getToken(jcpParser.MINUS, i)
 
         def getRuleIndex(self):
-            return JCPParser.RULE_additiveExpression
+            return jcpParser.RULE_additiveExpression
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterAdditiveExpression" ):
@@ -3211,18 +2977,12 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitAdditiveExpression" ):
                 listener.exitAdditiveExpression(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitAdditiveExpression" ):
-                return visitor.visitAdditiveExpression(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def additiveExpression(self):
 
-        localctx = JCPParser.AdditiveExpressionContext(self, self._ctx, self.state)
+        localctx = jcpParser.AdditiveExpressionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 78, self.RULE_additiveExpression)
         self._la = 0 # Token type
         try:
@@ -3232,19 +2992,19 @@ class JCPParser ( Parser ):
             self.state = 390
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==JCPParser.PLUS or _la==JCPParser.MINUS:
+            while _la==jcpParser.PLUS or _la==jcpParser.MINUS:
                 self.state = 388
                 self._errHandler.sync(self)
                 token = self._input.LA(1)
-                if token in [JCPParser.PLUS]:
+                if token in [jcpParser.PLUS]:
                     self.state = 384
-                    self.match(JCPParser.PLUS)
+                    self.match(jcpParser.PLUS)
                     self.state = 385
                     self.multiplicativeExpression()
                     pass
-                elif token in [JCPParser.MINUS]:
+                elif token in [jcpParser.MINUS]:
                     self.state = 386
-                    self.match(JCPParser.MINUS)
+                    self.match(jcpParser.MINUS)
                     self.state = 387
                     self.multiplicativeExpression()
                     pass
@@ -3273,31 +3033,31 @@ class JCPParser ( Parser ):
 
         def unaryExpression(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(JCPParser.UnaryExpressionContext)
+                return self.getTypedRuleContexts(jcpParser.UnaryExpressionContext)
             else:
-                return self.getTypedRuleContext(JCPParser.UnaryExpressionContext,i)
+                return self.getTypedRuleContext(jcpParser.UnaryExpressionContext,i)
 
 
         def MULTIPLY(self, i:int=None):
             if i is None:
-                return self.getTokens(JCPParser.MULTIPLY)
+                return self.getTokens(jcpParser.MULTIPLY)
             else:
-                return self.getToken(JCPParser.MULTIPLY, i)
+                return self.getToken(jcpParser.MULTIPLY, i)
 
         def DIVIDE(self, i:int=None):
             if i is None:
-                return self.getTokens(JCPParser.DIVIDE)
+                return self.getTokens(jcpParser.DIVIDE)
             else:
-                return self.getToken(JCPParser.DIVIDE, i)
+                return self.getToken(jcpParser.DIVIDE, i)
 
         def MOD(self, i:int=None):
             if i is None:
-                return self.getTokens(JCPParser.MOD)
+                return self.getTokens(jcpParser.MOD)
             else:
-                return self.getToken(JCPParser.MOD, i)
+                return self.getToken(jcpParser.MOD, i)
 
         def getRuleIndex(self):
-            return JCPParser.RULE_multiplicativeExpression
+            return jcpParser.RULE_multiplicativeExpression
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterMultiplicativeExpression" ):
@@ -3307,18 +3067,12 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitMultiplicativeExpression" ):
                 listener.exitMultiplicativeExpression(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitMultiplicativeExpression" ):
-                return visitor.visitMultiplicativeExpression(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def multiplicativeExpression(self):
 
-        localctx = JCPParser.MultiplicativeExpressionContext(self, self._ctx, self.state)
+        localctx = jcpParser.MultiplicativeExpressionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 80, self.RULE_multiplicativeExpression)
         self._la = 0 # Token type
         try:
@@ -3328,25 +3082,25 @@ class JCPParser ( Parser ):
             self.state = 402
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << JCPParser.MULTIPLY) | (1 << JCPParser.DIVIDE) | (1 << JCPParser.MOD))) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << jcpParser.MULTIPLY) | (1 << jcpParser.DIVIDE) | (1 << jcpParser.MOD))) != 0):
                 self.state = 400
                 self._errHandler.sync(self)
                 token = self._input.LA(1)
-                if token in [JCPParser.MULTIPLY]:
+                if token in [jcpParser.MULTIPLY]:
                     self.state = 394
-                    self.match(JCPParser.MULTIPLY)
+                    self.match(jcpParser.MULTIPLY)
                     self.state = 395
                     self.unaryExpression()
                     pass
-                elif token in [JCPParser.DIVIDE]:
+                elif token in [jcpParser.DIVIDE]:
                     self.state = 396
-                    self.match(JCPParser.DIVIDE)
+                    self.match(jcpParser.DIVIDE)
                     self.state = 397
                     self.unaryExpression()
                     pass
-                elif token in [JCPParser.MOD]:
+                elif token in [jcpParser.MOD]:
                     self.state = 398
-                    self.match(JCPParser.MOD)
+                    self.match(jcpParser.MOD)
                     self.state = 399
                     self.unaryExpression()
                     pass
@@ -3374,30 +3128,30 @@ class JCPParser ( Parser ):
             self.parser = parser
 
         def primaryExpression(self):
-            return self.getTypedRuleContext(JCPParser.PrimaryExpressionContext,0)
+            return self.getTypedRuleContext(jcpParser.PrimaryExpressionContext,0)
 
 
         def PLUS(self, i:int=None):
             if i is None:
-                return self.getTokens(JCPParser.PLUS)
+                return self.getTokens(jcpParser.PLUS)
             else:
-                return self.getToken(JCPParser.PLUS, i)
+                return self.getToken(jcpParser.PLUS, i)
 
         def unaryExpression(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(JCPParser.UnaryExpressionContext)
+                return self.getTypedRuleContexts(jcpParser.UnaryExpressionContext)
             else:
-                return self.getTypedRuleContext(JCPParser.UnaryExpressionContext,i)
+                return self.getTypedRuleContext(jcpParser.UnaryExpressionContext,i)
 
 
         def MINUS(self, i:int=None):
             if i is None:
-                return self.getTokens(JCPParser.MINUS)
+                return self.getTokens(jcpParser.MINUS)
             else:
-                return self.getToken(JCPParser.MINUS, i)
+                return self.getToken(jcpParser.MINUS, i)
 
         def getRuleIndex(self):
-            return JCPParser.RULE_unaireExpression
+            return jcpParser.RULE_unaireExpression
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterUnaireExpression" ):
@@ -3407,18 +3161,12 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitUnaireExpression" ):
                 listener.exitUnaireExpression(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitUnaireExpression" ):
-                return visitor.visitUnaireExpression(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def unaireExpression(self):
 
-        localctx = JCPParser.UnaireExpressionContext(self, self._ctx, self.state)
+        localctx = jcpParser.UnaireExpressionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 82, self.RULE_unaireExpression)
         self._la = 0 # Token type
         try:
@@ -3428,19 +3176,19 @@ class JCPParser ( Parser ):
             self.state = 412
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==JCPParser.PLUS or _la==JCPParser.MINUS:
+            while _la==jcpParser.PLUS or _la==jcpParser.MINUS:
                 self.state = 410
                 self._errHandler.sync(self)
                 token = self._input.LA(1)
-                if token in [JCPParser.PLUS]:
+                if token in [jcpParser.PLUS]:
                     self.state = 406
-                    self.match(JCPParser.PLUS)
+                    self.match(jcpParser.PLUS)
                     self.state = 407
                     self.unaryExpression()
                     pass
-                elif token in [JCPParser.MINUS]:
+                elif token in [jcpParser.MINUS]:
                     self.state = 408
-                    self.match(JCPParser.MINUS)
+                    self.match(jcpParser.MINUS)
                     self.state = 409
                     self.unaryExpression()
                     pass
@@ -3469,22 +3217,22 @@ class JCPParser ( Parser ):
 
         def unaryExpression(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(JCPParser.UnaryExpressionContext)
+                return self.getTypedRuleContexts(jcpParser.UnaryExpressionContext)
             else:
-                return self.getTypedRuleContext(JCPParser.UnaryExpressionContext,i)
+                return self.getTypedRuleContext(jcpParser.UnaryExpressionContext,i)
 
 
         def PLUS(self):
-            return self.getToken(JCPParser.PLUS, 0)
+            return self.getToken(jcpParser.PLUS, 0)
 
         def MINUS(self):
-            return self.getToken(JCPParser.MINUS, 0)
+            return self.getToken(jcpParser.MINUS, 0)
 
         def NOT(self):
-            return self.getToken(JCPParser.NOT, 0)
+            return self.getToken(jcpParser.NOT, 0)
 
         def getRuleIndex(self):
-            return JCPParser.RULE_unaryExpression
+            return jcpParser.RULE_unaryExpression
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterUnaryExpression" ):
@@ -3494,37 +3242,31 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitUnaryExpression" ):
                 listener.exitUnaryExpression(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitUnaryExpression" ):
-                return visitor.visitUnaryExpression(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def unaryExpression(self):
 
-        localctx = JCPParser.UnaryExpressionContext(self, self._ctx, self.state)
+        localctx = jcpParser.UnaryExpressionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 84, self.RULE_unaryExpression)
         try:
             self.state = 425
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [JCPParser.PLUS, JCPParser.MINUS]:
+            if token in [jcpParser.PLUS, jcpParser.MINUS]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 419
                 self._errHandler.sync(self)
                 token = self._input.LA(1)
-                if token in [JCPParser.PLUS]:
+                if token in [jcpParser.PLUS]:
                     self.state = 415
-                    self.match(JCPParser.PLUS)
+                    self.match(jcpParser.PLUS)
                     self.state = 416
                     self.unaryExpression()
                     pass
-                elif token in [JCPParser.MINUS]:
+                elif token in [jcpParser.MINUS]:
                     self.state = 417
-                    self.match(JCPParser.MINUS)
+                    self.match(jcpParser.MINUS)
                     self.state = 418
                     self.unaryExpression()
                     pass
@@ -3534,10 +3276,10 @@ class JCPParser ( Parser ):
                 self.state = 421
                 self.unaryExpression()
                 pass
-            elif token in [JCPParser.NOT]:
+            elif token in [jcpParser.NOT]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 423
-                self.match(JCPParser.NOT)
+                self.match(jcpParser.NOT)
                 self.state = 424
                 self.unaryExpression()
                 pass
@@ -3561,66 +3303,66 @@ class JCPParser ( Parser ):
             self.parser = parser
 
         def LITERAL(self):
-            return self.getToken(JCPParser.LITERAL, 0)
+            return self.getToken(jcpParser.LITERAL, 0)
 
         def IDENTIFIER(self):
-            return self.getToken(JCPParser.IDENTIFIER, 0)
+            return self.getToken(jcpParser.IDENTIFIER, 0)
 
         def THIS(self):
-            return self.getToken(JCPParser.THIS, 0)
+            return self.getToken(jcpParser.THIS, 0)
 
         def SUPER(self):
-            return self.getToken(JCPParser.SUPER, 0)
+            return self.getToken(jcpParser.SUPER, 0)
 
         def LPAR(self):
-            return self.getToken(JCPParser.LPAR, 0)
+            return self.getToken(jcpParser.LPAR, 0)
 
         def expression(self):
-            return self.getTypedRuleContext(JCPParser.ExpressionContext,0)
+            return self.getTypedRuleContext(jcpParser.ExpressionContext,0)
 
 
         def RPAR(self):
-            return self.getToken(JCPParser.RPAR, 0)
+            return self.getToken(jcpParser.RPAR, 0)
 
         def NEW(self):
-            return self.getToken(JCPParser.NEW, 0)
+            return self.getToken(jcpParser.NEW, 0)
 
         def classType(self):
-            return self.getTypedRuleContext(JCPParser.ClassTypeContext,0)
+            return self.getTypedRuleContext(jcpParser.ClassTypeContext,0)
 
 
         def argument(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(JCPParser.ArgumentContext)
+                return self.getTypedRuleContexts(jcpParser.ArgumentContext)
             else:
-                return self.getTypedRuleContext(JCPParser.ArgumentContext,i)
+                return self.getTypedRuleContext(jcpParser.ArgumentContext,i)
 
 
         def COMMA(self, i:int=None):
             if i is None:
-                return self.getTokens(JCPParser.COMMA)
+                return self.getTokens(jcpParser.COMMA)
             else:
-                return self.getToken(JCPParser.COMMA, i)
+                return self.getToken(jcpParser.COMMA, i)
 
         def NOT(self):
-            return self.getToken(JCPParser.NOT, 0)
+            return self.getToken(jcpParser.NOT, 0)
 
         def unaryExpression(self):
-            return self.getTypedRuleContext(JCPParser.UnaryExpressionContext,0)
+            return self.getTypedRuleContext(jcpParser.UnaryExpressionContext,0)
 
 
         def INCREMENT(self):
-            return self.getToken(JCPParser.INCREMENT, 0)
+            return self.getToken(jcpParser.INCREMENT, 0)
 
         def DECREMENT(self):
-            return self.getToken(JCPParser.DECREMENT, 0)
+            return self.getToken(jcpParser.DECREMENT, 0)
 
         def type_(self):
-            return self.getTypedRuleContext(JCPParser.TypeContext,0)
+            return self.getTypedRuleContext(jcpParser.TypeContext,0)
 
 
         def getRuleIndex(self):
-            return JCPParser.RULE_primaryExpression
+            return jcpParser.RULE_primaryExpression
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterPrimaryExpression" ):
@@ -3630,18 +3372,12 @@ class JCPParser ( Parser ):
             if hasattr( listener, "exitPrimaryExpression" ):
                 listener.exitPrimaryExpression(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitPrimaryExpression" ):
-                return visitor.visitPrimaryExpression(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
     def primaryExpression(self):
 
-        localctx = JCPParser.PrimaryExpressionContext(self, self._ctx, self.state)
+        localctx = jcpParser.PrimaryExpressionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 86, self.RULE_primaryExpression)
         self._la = 0 # Token type
         try:
@@ -3651,49 +3387,49 @@ class JCPParser ( Parser ):
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 427
-                self.match(JCPParser.LITERAL)
+                self.match(jcpParser.LITERAL)
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 428
-                self.match(JCPParser.IDENTIFIER)
+                self.match(jcpParser.IDENTIFIER)
                 pass
 
             elif la_ == 3:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 429
-                self.match(JCPParser.THIS)
+                self.match(jcpParser.THIS)
                 pass
 
             elif la_ == 4:
                 self.enterOuterAlt(localctx, 4)
                 self.state = 430
-                self.match(JCPParser.SUPER)
+                self.match(jcpParser.SUPER)
                 pass
 
             elif la_ == 5:
                 self.enterOuterAlt(localctx, 5)
                 self.state = 431
-                self.match(JCPParser.LPAR)
+                self.match(jcpParser.LPAR)
                 self.state = 432
                 self.expression()
                 self.state = 433
-                self.match(JCPParser.RPAR)
+                self.match(jcpParser.RPAR)
                 pass
 
             elif la_ == 6:
                 self.enterOuterAlt(localctx, 6)
                 self.state = 435
-                self.match(JCPParser.NEW)
+                self.match(jcpParser.NEW)
                 self.state = 436
                 self.classType()
                 self.state = 437
-                self.match(JCPParser.LPAR)
+                self.match(jcpParser.LPAR)
                 self.state = 439
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==JCPParser.IDENTIFIER:
+                if _la==jcpParser.IDENTIFIER:
                     self.state = 438
                     self.argument()
 
@@ -3701,9 +3437,9 @@ class JCPParser ( Parser ):
                 self.state = 445
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while _la==JCPParser.COMMA:
+                while _la==jcpParser.COMMA:
                     self.state = 441
-                    self.match(JCPParser.COMMA)
+                    self.match(jcpParser.COMMA)
                     self.state = 442
                     self.argument()
                     self.state = 447
@@ -3711,13 +3447,13 @@ class JCPParser ( Parser ):
                     _la = self._input.LA(1)
 
                 self.state = 448
-                self.match(JCPParser.RPAR)
+                self.match(jcpParser.RPAR)
                 pass
 
             elif la_ == 7:
                 self.enterOuterAlt(localctx, 7)
                 self.state = 450
-                self.match(JCPParser.NOT)
+                self.match(jcpParser.NOT)
                 self.state = 451
                 self.unaryExpression()
                 pass
@@ -3725,7 +3461,7 @@ class JCPParser ( Parser ):
             elif la_ == 8:
                 self.enterOuterAlt(localctx, 8)
                 self.state = 452
-                self.match(JCPParser.INCREMENT)
+                self.match(jcpParser.INCREMENT)
                 self.state = 453
                 self.unaryExpression()
                 pass
@@ -3733,7 +3469,7 @@ class JCPParser ( Parser ):
             elif la_ == 9:
                 self.enterOuterAlt(localctx, 9)
                 self.state = 454
-                self.match(JCPParser.DECREMENT)
+                self.match(jcpParser.DECREMENT)
                 self.state = 455
                 self.unaryExpression()
                 pass
@@ -3743,11 +3479,11 @@ class JCPParser ( Parser ):
                 self.state = 456
                 self.type_()
                 self.state = 457
-                self.match(JCPParser.LPAR)
+                self.match(jcpParser.LPAR)
                 self.state = 458
                 self.expression()
                 self.state = 459
-                self.match(JCPParser.RPAR)
+                self.match(jcpParser.RPAR)
                 pass
 
 

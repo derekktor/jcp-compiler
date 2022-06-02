@@ -8,7 +8,7 @@ importDec: IMPORT IDENTIFIER (DOT IDENTIFIER) SEMI;
 
 classDec: modifier CLASS IDENTIFIER extendsDec? body;
 
-modifier: PUBLIC | PRIVATE | PROTECTED | STATIC;
+modifier: PUBLIC | PRIVATE | PROTECTED;
 
 extendsDec: EXTENDS IDENTIFIER (DOT IDENTIFIER)*;
 
@@ -16,13 +16,13 @@ body: LCUR bodyDec* RCUR;
 
 bodyDec: memberDec | constructorDec | methodDec;
 
-methodDec: modifier? type IDENTIFIER parameters block;
+methodDec: modifier? STATIC? type IDENTIFIER parameters block;
 
 block: LCUR blockDec* RCUR;
 
 blockDec: localDec | statement;
 
-localDec: type IDENTIFIER SEMI;
+localDec: type IDENTIFIER (ASSIGN expression)? SEMI;
 
 memberDec: modifier localDec;
 
@@ -40,11 +40,13 @@ referenceType: classType;
 
 classType: IDENTIFIER;
 
+classAccess: IDENTIFIER (DOT IDENTIFIER)*;
+
 constructorDec: modifier IDENTIFIER parameters constructorBody;
 
-parameters: LPAR parameter? (COMMA parameter) RPAR;
+parameters: LPAR parameter? (COMMA parameter)* RPAR;
 
-parameter: type IDENTIFIER;
+parameter: type LBRACK? RBRACK? IDENTIFIER;
 
 constructorBody: LCUR constructorInvocation? statement* RCUR;
 
@@ -68,7 +70,10 @@ forInit: localDec | expression;
 
 forUpdate: expression;
 
-expression: assignment | conditionalExpression;
+expression: 
+	assignment 
+	| conditionalExpression 
+	| primaryExpression;
 
 assignment: leftHandSide ASSIGN expression;
 
@@ -126,7 +131,7 @@ primaryExpression:
 	| NOT unaryExpression
 	| INCREMENT unaryExpression
 	| DECREMENT unaryExpression
-	| type LPAR expression RPAR;
+	| (type | classAccess) LPAR expression? RPAR;
 
 // Tokens
 PACKAGE: 'package';

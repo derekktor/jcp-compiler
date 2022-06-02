@@ -170,12 +170,12 @@ class jcpListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by jcpParser#feferenceType.
-    def enterFeferenceType(self, ctx:jcpParser.FeferenceTypeContext):
+    # Enter a parse tree produced by jcpParser#referenceType.
+    def enterReferenceType(self, ctx:jcpParser.ReferenceTypeContext):
         pass
 
-    # Exit a parse tree produced by jcpParser#feferenceType.
-    def exitFeferenceType(self, ctx:jcpParser.FeferenceTypeContext):
+    # Exit a parse tree produced by jcpParser#referenceType.
+    def exitReferenceType(self, ctx:jcpParser.ReferenceTypeContext):
         pass
 
 
@@ -185,6 +185,15 @@ class jcpListener(ParseTreeListener):
 
     # Exit a parse tree produced by jcpParser#classType.
     def exitClassType(self, ctx:jcpParser.ClassTypeContext):
+        pass
+
+
+    # Enter a parse tree produced by jcpParser#classAccess.
+    def enterClassAccess(self, ctx:jcpParser.ClassAccessContext):
+        pass
+
+    # Exit a parse tree produced by jcpParser#classAccess.
+    def exitClassAccess(self, ctx:jcpParser.ClassAccessContext):
         pass
 
 
@@ -374,15 +383,6 @@ class jcpListener(ParseTreeListener):
 
     # Exit a parse tree produced by jcpParser#multiplicativeExpression.
     def exitMultiplicativeExpression(self, ctx:jcpParser.MultiplicativeExpressionContext):
-        pass
-
-
-    # Enter a parse tree produced by jcpParser#unaireExpression.
-    def enterUnaireExpression(self, ctx:jcpParser.UnaireExpressionContext):
-        pass
-
-    # Exit a parse tree produced by jcpParser#unaireExpression.
-    def exitUnaireExpression(self, ctx:jcpParser.UnaireExpressionContext):
         pass
 
 

@@ -127,6 +127,12 @@
 
 ---
 
+## Visualization {#visualization}
+
+[Graph](/graph.md)
+
+---
+
 ## Installation {#installation}
 
 Create new conda env

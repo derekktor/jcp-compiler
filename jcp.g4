@@ -8,7 +8,7 @@ importDec: IMPORT IDENTIFIER (DOT IDENTIFIER) SEMI;
 
 classDec: modifier CLASS IDENTIFIER extendsDec? body;
 
-modifier: PUBLIC | PRIVATE | PROTECTED;
+modifier: PUBLIC | PRIVATE | PROTECTED | STATIC;
 
 extendsDec: EXTENDS IDENTIFIER (DOT IDENTIFIER)*;
 
@@ -26,7 +26,7 @@ localDec: type IDENTIFIER SEMI;
 
 memberDec: modifier localDec;
 
-type: primitiveType | feferenceType;
+type: primitiveType | referenceType;
 
 primitiveType: numericType | BOOL;
 
@@ -36,7 +36,7 @@ integralType: BYTE | SHORT | INT | LONG | CHAR;
 
 floatingPointType: FLOAT | DOUBLE;
 
-feferenceType: classType;
+referenceType: classType;
 
 classType: IDENTIFIER;
 
@@ -65,6 +65,7 @@ statement:
 	| LCUR blockDec* RCUR;
 
 forInit: localDec | expression;
+
 forUpdate: expression;
 
 expression: assignment | conditionalExpression;
@@ -111,12 +112,6 @@ multiplicativeExpression:
 		| MOD unaryExpression
 	)*;
 
-unaireExpression:
-	primaryExpression (
-		PLUS unaryExpression
-		| MINUS unaryExpression
-	)*;
-
 unaryExpression:
 	(PLUS unaryExpression | MINUS unaryExpression) unaryExpression
 	| (NOT unaryExpression);
@@ -152,6 +147,7 @@ DO: 'do';
 BREAK: 'break';
 CONTINUE: 'continue';
 RETURN: 'return';
+STATIC: 'static';
 
 ASSIGN: '=';
 PLUS: '+';

@@ -6,7 +6,7 @@
 
 ---
 
-## Resources {#resources}
+## Resources
 
 -   [Java Language Specification](https://docs.oracle.com/javase/specs/jls/se8/html/jls-19.html)
 -   [Java Tokens](https://www.javatpoint.com/java-tokens)
@@ -19,7 +19,7 @@
 
 ---
 
-## Rules {#rules}
+## Rules
 
 ### Lexer Rules
 
@@ -127,13 +127,13 @@
 
 ---
 
-## Visualization {#visualization}
+## Graph
 
 [Graph](/graph.md)
 
 ---
 
-## Installation {#installation}
+## Installation
 
 Create new conda env
 

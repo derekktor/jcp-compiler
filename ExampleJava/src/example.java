@@ -3,7 +3,7 @@ import utils.Student;
 public class Main {
     public static void main(String[] args) {
         Student student = new Student();
-        
+
         int a = student.getAge();
 
         System.out.println(student.get_name());

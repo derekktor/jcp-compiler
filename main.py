@@ -7,10 +7,14 @@ from utils.jcpVisitor import jcpVisitor
 import sys
 
 def main():
-    with open('example.java') as f:
+    dir = "ExampleJava/src/"
+    files = ["Main.java", "example.java", "utils/Person.java", "utils/Student.java", "utils/Subject.java"]
+
+    path = str(dir + files[0]);
+
+    with open(path) as f:
         lines = f.read()
     lexer = jcpLexer(InputStream(lines))
-    # lexer = attempt2Lexer(StdinStream())
     stream = CommonTokenStream(lexer)
     parser = jcpParser(stream)
     tree = parser.start()

@@ -10,7 +10,7 @@ def main():
     dir = "ExampleJava/src/"
     files = ["Main.java", "example.java", "utils/Person.java", "utils/Student.java", "utils/Subject.java"]
 
-    path = str(dir + files[0]);
+    path = str(dir + files[2]);
 
     with open(path) as f:
         lines = f.read()
@@ -22,9 +22,9 @@ def main():
     walker = ParseTreeWalker()
     walker.walk(printer, tree)
 
-    # visitor = Visitor()
-    # output = visitor.visit(tree)
-    # print(output)
+    visitor = Visitor()
+    output = visitor.visit(tree)
+    print(output)
 
 if __name__ == '__main__':
     main()

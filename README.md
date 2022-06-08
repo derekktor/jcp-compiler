@@ -1,7 +1,7 @@
 ## Table of Contents
 
 -   [Resources](#resources)
--   [Tokens](#tokens)
+-   [Rules](#rules)
 -   [Installation](#installation)
 
 ---
@@ -21,7 +21,7 @@
 
 ## Rules {#rules}
 
-### Lexer Rules {#tokens}
+### Lexer Rules
 
 #### Operators
 
@@ -156,8 +156,14 @@ alias antlr4py='java -jar /usr/local/lib/antlr-4.10.1-complete.jar -Dlanguage=Py
 alias grun='java org.antlr.v4.gui.TestRig'
 ```
 
-Create antlr files in **grammar** directory
+Create antlr files in **utils** directory
 
 ```
-antlr4py jcp.g4 -visitor -o grammar
+antlr4py jcp.g4 -o utils
+```
+
+Run `main.py`
+
+```
+python3 main.py
 ```

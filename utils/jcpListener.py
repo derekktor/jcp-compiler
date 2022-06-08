@@ -260,6 +260,24 @@ class jcpListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by jcpParser#returnStatement.
+    def enterReturnStatement(self, ctx:jcpParser.ReturnStatementContext):
+        pass
+
+    # Exit a parse tree produced by jcpParser#returnStatement.
+    def exitReturnStatement(self, ctx:jcpParser.ReturnStatementContext):
+        pass
+
+
+    # Enter a parse tree produced by jcpParser#sout.
+    def enterSout(self, ctx:jcpParser.SoutContext):
+        pass
+
+    # Exit a parse tree produced by jcpParser#sout.
+    def exitSout(self, ctx:jcpParser.SoutContext):
+        pass
+
+
     # Enter a parse tree produced by jcpParser#forInit.
     def enterForInit(self, ctx:jcpParser.ForInitContext):
         pass
@@ -293,6 +311,24 @@ class jcpListener(ParseTreeListener):
 
     # Exit a parse tree produced by jcpParser#assignment.
     def exitAssignment(self, ctx:jcpParser.AssignmentContext):
+        pass
+
+
+    # Enter a parse tree produced by jcpParser#assign.
+    def enterAssign(self, ctx:jcpParser.AssignContext):
+        pass
+
+    # Exit a parse tree produced by jcpParser#assign.
+    def exitAssign(self, ctx:jcpParser.AssignContext):
+        pass
+
+
+    # Enter a parse tree produced by jcpParser#rightHandSide.
+    def enterRightHandSide(self, ctx:jcpParser.RightHandSideContext):
+        pass
+
+    # Exit a parse tree produced by jcpParser#rightHandSide.
+    def exitRightHandSide(self, ctx:jcpParser.RightHandSideContext):
         pass
 
 

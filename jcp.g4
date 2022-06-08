@@ -2,9 +2,9 @@ grammar jcp;
 
 start: packageDec* importDec* classDec* EOF;
 
-packageDec: PACKAGE IDENTIFIER (DOT IDENTIFIER) SEMI;
+packageDec: PACKAGE IDENTIFIER (DOT IDENTIFIER)* SEMI;
 
-importDec: IMPORT IDENTIFIER (DOT IDENTIFIER) SEMI;
+importDec: IMPORT IDENTIFIER (DOT IDENTIFIER)* SEMI;
 
 classDec: modifier CLASS IDENTIFIER extendsDec? body;
 
@@ -22,7 +22,7 @@ block: LCUR blockDec* RCUR;
 
 blockDec: localDec | statement;
 
-localDec: type IDENTIFIER (ASSIGN expression)? SEMI;
+localDec: type IDENTIFIER assign SEMI;
 
 memberDec: modifier localDec;
 
@@ -56,15 +56,21 @@ constructorInvocation:
 argument: IDENTIFIER;
 
 statement:
-	expression SEMI
+	sout SEMI
+	| expression SEMI
 	| IF LPAR expression RPAR statement (ELSE statement)?
 	| FOR LPAR forInit? SEMI forUpdate? RPAR statement
 	| WHILE LPAR expression RPAR statement
 	| DO statement WHILE LPAR expression RPAR SEMI
 	| BREAK SEMI
 	| CONTINUE SEMI
-	| RETURN expression? SEMI
+	| returnStatement
 	| LCUR blockDec* RCUR;
+
+returnStatement:
+	RETURN expression? SEMI;
+
+sout: SOUT LPAR expression RPAR SEMI;
 
 forInit: localDec | expression;
 
@@ -75,7 +81,13 @@ expression:
 	| conditionalExpression 
 	| primaryExpression;
 
-assignment: leftHandSide ASSIGN expression;
+assignment: leftHandSide assign;
+
+assign: ASSIGN rightHandSide;
+
+rightHandSide:
+	conditionalExpression 
+	| primaryExpression;
 
 leftHandSide: fieldAccess | arrayAccess;
 
@@ -143,7 +155,7 @@ PROTECTED: 'protected';
 EXTENDS: 'extends';
 SUPER: 'super';
 THIS: 'this';
-NEW: 'new';
+NEW: 'new ';
 IF: 'if';
 ELSE: 'else';
 FOR: 'for';
@@ -153,6 +165,8 @@ BREAK: 'break';
 CONTINUE: 'continue';
 RETURN: 'return';
 STATIC: 'static';
+
+SOUT: 'System.out.println';
 
 ASSIGN: '=';
 PLUS: '+';

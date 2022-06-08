@@ -2,27 +2,37 @@ grammar jcp;
 
 start: packageDec* importDec* classDec* EOF;
 
-packageDec: PACKAGE IDENTIFIER (DOT IDENTIFIER)* SEMI;
+packageDec: PACKAGE packageName (DOT IDENTIFIER)* SEMI;
 
-importDec: IMPORT IDENTIFIER (DOT IDENTIFIER)* SEMI;
+packageName: IDENTIFIER;
 
-classDec: modifier CLASS IDENTIFIER extendsDec? body;
+importDec: IMPORT importName (DOT IDENTIFIER)* SEMI;
+
+importName: IDENTIFIER;
+
+classDec: modifier CLASS className extendsDec? body;
+
+className: IDENTIFIER;
 
 modifier: PUBLIC | PRIVATE | PROTECTED;
 
-extendsDec: EXTENDS IDENTIFIER (DOT IDENTIFIER)*;
+extendsDec: EXTENDS parentClassName (DOT IDENTIFIER)*;
+
+parentClassName: IDENTIFIER;
 
 body: LCUR bodyDec* RCUR;
 
 bodyDec: memberDec | constructorDec | methodDec;
 
-methodDec: modifier? STATIC? type IDENTIFIER parameters block;
+methodDec: modifier? STATIC? type methodName parameters block;
+
+methodName: IDENTIFIER;
 
 block: LCUR blockDec* RCUR;
 
 blockDec: localDec | statement;
 
-localDec: type IDENTIFIER assign SEMI;
+localDec: type IDENTIFIER assign? SEMI;
 
 memberDec: modifier localDec;
 
@@ -56,38 +66,56 @@ constructorInvocation:
 argument: IDENTIFIER;
 
 statement:
-	sout SEMI
-	| expression SEMI
-	| IF LPAR expression RPAR statement (ELSE statement)?
-	| FOR LPAR forInit? SEMI forUpdate? RPAR statement
-	| WHILE LPAR expression RPAR statement
-	| DO statement WHILE LPAR expression RPAR SEMI
-	| BREAK SEMI
-	| CONTINUE SEMI
-	| returnStatement
-	| LCUR blockDec* RCUR;
+	simpleStatement
+	| ifStatement
+	| forStatement
+	| whileStatement
+	| doStatement
+	| breakStatement
+	| continueStatement
+	| returnStatement;
 
-returnStatement:
-	RETURN expression? SEMI;
+simpleStatement: expression SEMI;
 
-sout: SOUT LPAR expression RPAR SEMI;
+ifStatement: IF condition statement elseStatement?;
+
+condition: LPAR expression RPAR;
+
+elseStatement: ELSE block;
+
+forStatement: FOR forControl statement;
+
+forControl:
+	LPAR forInit? SEMI forCondition? SEMI forUpdate? RPAR;
 
 forInit: localDec | expression;
 
+forCondition: expression;
+
 forUpdate: expression;
 
-expression: 
-	assignment 
-	| conditionalExpression 
+whileStatement: WHILE condition statement;
+
+doStatement: DO statement WHILE condition;
+
+breakStatement: BREAK SEMI;
+
+continueStatement: CONTINUE SEMI;
+
+returnStatement: RETURN expression? SEMI;
+
+sout: SOUT LPAR expression RPAR SEMI;
+
+expression:
+	assignment
+	| conditionalExpression
 	| primaryExpression;
 
 assignment: leftHandSide assign;
 
 assign: ASSIGN rightHandSide;
 
-rightHandSide:
-	conditionalExpression 
-	| primaryExpression;
+rightHandSide: conditionalExpression | primaryExpression;
 
 leftHandSide: fieldAccess | arrayAccess;
 

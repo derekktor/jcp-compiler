@@ -2,6 +2,7 @@
 
 -   [Resources](#resources)
 -   [Rules](#rules)
+-   [Graph](#graph)
 -   [Installation](#installation)
 
 ---

@@ -183,8 +183,10 @@ graph TD
 ```mermaid
 graph TD
     assignment --> leftHandSide
-    assignment --> ASSIGN
-    assignment --> expression
+    assignment --> assign
+
+    assign --> ASSIGN
+    assign --> rightHandSide
 
     leftHandSide -.-> fieldAccess
     leftHandSide -.-> arrayAccess
@@ -192,4 +194,12 @@ graph TD
     fieldAccess --> FA("IDENTIFIER (DOT IDENTIFIER)*")
 
     arrayAccess --> AA("IDENTIFIER LBRACK LITERAL RBRACK")
+```
+
+```mermaid
+graph TD
+    rightHandSide -.-> conditionalExpression
+    rightHandSide -.-> primaryExpression
+
+    conditionalExpression --> orExpression (QUESTION expression COLON expression)?;
 ```

@@ -7,10 +7,10 @@ from utils.jcpVisitor import jcpVisitor
 import sys
 
 def main():
-    dir = "ExampleJava/src/"
-    files = ["Main.java", "example.java", "utils/Person.java", "utils/Student.java", "utils/Subject.java"]
+    dir = "examples/"
+    files = ["comments", "constructors", "dataTypes", "helloWorld", "ifElse", "import", "loops", "operators", "stringVariables", "switch"]
 
-    path = str(dir + files[2]);
+    path = str(dir + files[4] + ".java");
 
     with open(path) as f:
         lines = f.read()

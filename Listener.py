@@ -35,16 +35,24 @@ class Listener(jcpListener):
     def exitLocalDec(self, ctx: jcpParser.LocalDecContext):
         self.output.write(';\n')
 
+    def getTypeText(self, ctx: jcpParser.TypeContext):
+        if(ctx.getText()=='String'):
+            return 'std::string'
+        else:
+            return ctx.getText()
+
     def enterMethodDec(self, ctx: jcpParser.MethodDecContext):
         if ctx.modifier() is not None:
             self.output.write(ctx.modifier().getText()+ ':\n')
-        self.output.write(ctx.type_().getText()+' '+ctx.IDENTIFIER().getText())
+        if ctx.STATIC() is not None:
+            self.output.write(ctx.STATIC().getText()+ ' ')
+        self.output.write(self.getTypeText(ctx.type_())+' '+ctx.IDENTIFIER().getText())
 
     def printParameter(self, parameter):
-        self.output.write(parameter.type_().getText())
+        self.output.write(self.getTypeText(parameter.type_()))
+        self.output.write(' '+parameter.IDENTIFIER().getText())
         if parameter.LBRACK() is not None: self.output.write('[')
         if parameter.RBRACK() is not None: self.output.write(']')
-        self.output.write(' '+parameter.IDENTIFIER().getText())
 
     def enterParameters(self, ctx: jcpParser.ParametersContext):
         self.output.write('(')
@@ -66,4 +74,9 @@ class Listener(jcpListener):
         self.output.write('return '+ctx.expression().getText()+';\n')  
 
     def enterSout(self, ctx: jcpParser.SoutContext):
-        self.output.write('std::cout << '+ctx.expression().getText()+';\n')
+        self.output.write('std::cout << '+ctx.expression().getText()+' << std::endl;\n')
+
+    def exitStart(self, ctx: jcpParser.StartContext):
+        self.output.write('\nint main() {\n')
+        self.output.write('\tMain::main({});\n')
+        self.output.write('\treturn 0;\n}\n')

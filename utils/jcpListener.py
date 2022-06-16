@@ -431,6 +431,15 @@ class jcpListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by jcpParser#literal.
+    def enterLiteral(self, ctx:jcpParser.LiteralContext):
+        pass
+
+    # Exit a parse tree produced by jcpParser#literal.
+    def exitLiteral(self, ctx:jcpParser.LiteralContext):
+        pass
+
+
     # Enter a parse tree produced by jcpParser#primaryExpression.
     def enterPrimaryExpression(self, ctx:jcpParser.PrimaryExpressionContext):
         pass

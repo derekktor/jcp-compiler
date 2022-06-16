@@ -26,7 +26,7 @@ localDec: type IDENTIFIER assign SEMI;
 
 memberDec: modifier localDec;
 
-type: primitiveType | referenceType;
+type: VOID | primitiveType | referenceType;
 
 primitiveType: numericType | BOOL;
 
@@ -70,7 +70,7 @@ statement:
 returnStatement:
 	RETURN expression? SEMI;
 
-sout: SOUT LPAR expression RPAR SEMI;
+sout: SOUT LPAR expression RPAR;
 
 forInit: localDec | expression;
 
@@ -93,7 +93,7 @@ leftHandSide: fieldAccess | arrayAccess;
 
 fieldAccess: IDENTIFIER (DOT IDENTIFIER)*;
 
-arrayAccess: IDENTIFIER LBRACK LITERAL RBRACK;
+arrayAccess: IDENTIFIER LBRACK INT_LITERAL RBRACK;
 
 conditionalExpression:
 	orExpression (QUESTION expression COLON expression)?;
@@ -133,8 +133,10 @@ unaryExpression:
 	(PLUS unaryExpression | MINUS unaryExpression) unaryExpression
 	| (NOT unaryExpression);
 
+literal: INT_LITERAL | FLOAT_LITERAL | STRING_LITERAL | BOOL_LITERAL | CHAR_LITERAL;
+
 primaryExpression:
-	LITERAL
+	literal
 	| IDENTIFIER
 	| THIS
 	| SUPER
@@ -165,6 +167,9 @@ BREAK: 'break';
 CONTINUE: 'continue';
 RETURN: 'return';
 STATIC: 'static';
+VOID: 'void';
+TRUE: 'true';
+FALSE: 'false';
 
 SOUT: 'System.out.println';
 
@@ -193,6 +198,8 @@ COMMA: ',';
 SEMI: ';';
 COLON: ':';
 QUESTION: '?';
+QUOTE: '"';
+SQUOTE: '\'';
 
 LCUR: '{';
 RCUR: '}';
@@ -210,6 +217,12 @@ CHAR: 'char';
 FLOAT: 'float';
 DOUBLE: 'double';
 
+fragment ESC : '\\"' | '\\\\' ;
+
 WS: [ \t\r\n]+ -> skip;
-LITERAL: [0-9]+;
+INT_LITERAL: [0-9]+;
+FLOAT_LITERAL: [0-9]+'.'[0-9]+;
+STRING_LITERAL: '"' ( ESC | ~[\\"\r\n] )* '"';
+CHAR_LITERAL: SQUOTE [^SQUOTE] SQUOTE;
+BOOL_LITERAL: TRUE | FALSE;
 IDENTIFIER: [_a-zA-Z]+ [_a-zA-Z0-9]*;

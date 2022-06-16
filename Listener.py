@@ -108,6 +108,22 @@ class Listener(jcpListener):
         self.tab-=1
         self.write('}\n')
 
+    def enterIfStatement(self, ctx: jcpParser.IfStatementContext):
+        self.write('if('+ctx.expression().getText()+') {\n')
+        self.tab+=1
+    
+    def exitIfStatement(self, ctx: jcpParser.IfStatementContext):
+        self.tab-=1
+        self.write('}\n')
+    
+    def enterElseStatement(self, ctx: jcpParser.ElseStatementContext):
+        self.write('else {\n')
+        self.tab+=1
+    
+    def exitElseStatement(self, ctx: jcpParser.ElseStatementContext):
+        self.tab-=1
+        self.write('}\n')
+
     def exitStart(self, ctx: jcpParser.StartContext):
         self.write('\nint main() {\n')
         self.write('\tMain::main({});\n')

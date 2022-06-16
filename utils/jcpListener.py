@@ -260,6 +260,33 @@ class jcpListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by jcpParser#ifStatement.
+    def enterIfStatement(self, ctx:jcpParser.IfStatementContext):
+        pass
+
+    # Exit a parse tree produced by jcpParser#ifStatement.
+    def exitIfStatement(self, ctx:jcpParser.IfStatementContext):
+        pass
+
+
+    # Enter a parse tree produced by jcpParser#elseStatement.
+    def enterElseStatement(self, ctx:jcpParser.ElseStatementContext):
+        pass
+
+    # Exit a parse tree produced by jcpParser#elseStatement.
+    def exitElseStatement(self, ctx:jcpParser.ElseStatementContext):
+        pass
+
+
+    # Enter a parse tree produced by jcpParser#ifElseStatement.
+    def enterIfElseStatement(self, ctx:jcpParser.IfElseStatementContext):
+        pass
+
+    # Exit a parse tree produced by jcpParser#ifElseStatement.
+    def exitIfElseStatement(self, ctx:jcpParser.IfElseStatementContext):
+        pass
+
+
     # Enter a parse tree produced by jcpParser#returnStatement.
     def enterReturnStatement(self, ctx:jcpParser.ReturnStatementContext):
         pass

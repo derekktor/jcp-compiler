@@ -58,7 +58,8 @@ argument: literal | IDENTIFIER;
 statement:
 	sout SEMI
 	| expression SEMI
-	| IF LPAR expression RPAR statement (ELSE statement)?
+	| ifStatement
+	| ifElseStatement
 	| FOR LPAR forInit? SEMI forUpdate? RPAR statement
 	| WHILE LPAR expression RPAR statement
 	| DO statement WHILE LPAR expression RPAR SEMI
@@ -66,6 +67,10 @@ statement:
 	| CONTINUE SEMI
 	| returnStatement
 	| LCUR blockDec* RCUR;
+
+ifStatement: IF LPAR expression RPAR statement;
+elseStatement: ELSE statement;
+ifElseStatement: ifStatement elseStatement;
 
 returnStatement:
 	RETURN expression? SEMI;

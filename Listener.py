@@ -56,6 +56,8 @@ class Listener(jcpListener):
     def getTypeText(self, ctx: jcpParser.TypeContext):
         if(ctx.getText()=='String'):
             return 'std::string'
+        elif(ctx.getText()=='boolean'):
+            return 'bool'
         else:
             return ctx.getText()
 

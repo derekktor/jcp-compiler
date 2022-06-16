@@ -77,17 +77,17 @@ forInit: localDec | expression;
 forUpdate: expression;
 
 expression: 
-	assignment 
-	| conditionalExpression 
-	| primaryExpression;
+	primaryExpression
+	| assignment 
+	| conditionalExpression;
 
 assignment: leftHandSide assign;
 
 assign: ASSIGN rightHandSide;
 
 rightHandSide:
-	conditionalExpression 
-	| primaryExpression;
+	primaryExpression
+	| conditionalExpression;
 
 leftHandSide: fieldAccess | arrayAccess;
 
@@ -168,8 +168,6 @@ CONTINUE: 'continue';
 RETURN: 'return';
 STATIC: 'static';
 VOID: 'void';
-TRUE: 'true';
-FALSE: 'false';
 
 SOUT: 'System.out.println';
 
@@ -198,8 +196,6 @@ COMMA: ',';
 SEMI: ';';
 COLON: ':';
 QUESTION: '?';
-QUOTE: '"';
-SQUOTE: '\'';
 
 LCUR: '{';
 RCUR: '}';
@@ -220,10 +216,10 @@ DOUBLE: 'double';
 fragment ESC : '\\"' | '\\\\' ;
 
 INT_LITERAL: [0-9]+;
-FLOAT_LITERAL: [0-9]+'.'[0-9]+;
+FLOAT_LITERAL: [0-9]+'.'[0-9]+('f'?);
 STRING_LITERAL: '"' ( ESC | ~[\\"\r\n] )* '"';
-CHAR_LITERAL: SQUOTE [^SQUOTE] SQUOTE;
-BOOL_LITERAL: TRUE | FALSE;
+CHAR_LITERAL: '\'' ~['] '\'';
+BOOL_LITERAL: 'true' | 'false';
 IDENTIFIER: [_a-zA-Z]+ [_a-zA-Z0-9]*;
 
 WS: [ \t\r\n]+ -> skip;

@@ -10,7 +10,7 @@ else:
 
 def serializedATN():
     return [
-        4,1,70,524,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
+        4,1,66,524,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
         6,2,7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,2,13,7,13,
         2,14,7,14,2,15,7,15,2,16,7,16,2,17,7,17,2,18,7,18,2,19,7,19,2,20,
         7,20,2,21,7,21,2,22,7,22,2,23,7,23,2,24,7,24,2,25,7,25,2,26,7,26,
@@ -56,8 +56,8 @@ def serializedATN():
         1,48,1,48,3,48,514,8,48,1,48,1,48,3,48,518,8,48,1,48,1,48,3,48,522,
         8,48,1,48,0,0,49,0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,
         36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70,72,74,76,78,
-        80,82,84,86,88,90,92,94,96,0,5,1,0,4,6,1,0,55,59,1,0,60,61,2,0,26,
-        26,34,34,1,0,62,66,553,0,101,1,0,0,0,2,118,1,0,0,0,4,129,1,0,0,0,
+        80,82,84,86,88,90,92,94,96,0,5,1,0,4,6,1,0,51,55,1,0,56,57,2,0,24,
+        24,32,32,1,0,58,62,553,0,101,1,0,0,0,2,118,1,0,0,0,4,129,1,0,0,0,
         6,140,1,0,0,0,8,148,1,0,0,0,10,150,1,0,0,0,12,159,1,0,0,0,14,171,
         1,0,0,0,16,174,1,0,0,0,18,184,1,0,0,0,20,195,1,0,0,0,22,197,1,0,
         0,0,24,205,1,0,0,0,26,212,1,0,0,0,28,216,1,0,0,0,30,220,1,0,0,0,
@@ -74,125 +74,125 @@ def serializedATN():
         107,105,1,0,0,0,107,108,1,0,0,0,108,113,1,0,0,0,109,107,1,0,0,0,
         110,112,3,6,3,0,111,110,1,0,0,0,112,115,1,0,0,0,113,111,1,0,0,0,
         113,114,1,0,0,0,114,116,1,0,0,0,115,113,1,0,0,0,116,117,5,0,0,1,
-        117,1,1,0,0,0,118,119,5,1,0,0,119,124,5,67,0,0,120,121,5,41,0,0,
-        121,123,5,67,0,0,122,120,1,0,0,0,123,126,1,0,0,0,124,122,1,0,0,0,
-        124,125,1,0,0,0,125,127,1,0,0,0,126,124,1,0,0,0,127,128,5,43,0,0,
-        128,3,1,0,0,0,129,130,5,2,0,0,130,135,5,67,0,0,131,132,5,41,0,0,
-        132,134,5,67,0,0,133,131,1,0,0,0,134,137,1,0,0,0,135,133,1,0,0,0,
-        135,136,1,0,0,0,136,138,1,0,0,0,137,135,1,0,0,0,138,139,5,43,0,0,
-        139,5,1,0,0,0,140,141,3,8,4,0,141,142,5,3,0,0,142,144,5,67,0,0,143,
+        117,1,1,0,0,0,118,119,5,1,0,0,119,124,5,63,0,0,120,121,5,39,0,0,
+        121,123,5,63,0,0,122,120,1,0,0,0,123,126,1,0,0,0,124,122,1,0,0,0,
+        124,125,1,0,0,0,125,127,1,0,0,0,126,124,1,0,0,0,127,128,5,41,0,0,
+        128,3,1,0,0,0,129,130,5,2,0,0,130,135,5,63,0,0,131,132,5,39,0,0,
+        132,134,5,63,0,0,133,131,1,0,0,0,134,137,1,0,0,0,135,133,1,0,0,0,
+        135,136,1,0,0,0,136,138,1,0,0,0,137,135,1,0,0,0,138,139,5,41,0,0,
+        139,5,1,0,0,0,140,141,3,8,4,0,141,142,5,3,0,0,142,144,5,63,0,0,143,
         145,3,10,5,0,144,143,1,0,0,0,144,145,1,0,0,0,145,146,1,0,0,0,146,
         147,3,12,6,0,147,7,1,0,0,0,148,149,7,0,0,0,149,9,1,0,0,0,150,151,
-        5,7,0,0,151,156,5,67,0,0,152,153,5,41,0,0,153,155,5,67,0,0,154,152,
+        5,7,0,0,151,156,5,63,0,0,152,153,5,39,0,0,153,155,5,63,0,0,154,152,
         1,0,0,0,155,158,1,0,0,0,156,154,1,0,0,0,156,157,1,0,0,0,157,11,1,
-        0,0,0,158,156,1,0,0,0,159,163,5,48,0,0,160,162,3,14,7,0,161,160,
+        0,0,0,158,156,1,0,0,0,159,163,5,44,0,0,160,162,3,14,7,0,161,160,
         1,0,0,0,162,165,1,0,0,0,163,161,1,0,0,0,163,164,1,0,0,0,164,166,
-        1,0,0,0,165,163,1,0,0,0,166,167,5,49,0,0,167,13,1,0,0,0,168,172,
+        1,0,0,0,165,163,1,0,0,0,166,167,5,45,0,0,167,13,1,0,0,0,168,172,
         3,24,12,0,169,172,3,42,21,0,170,172,3,16,8,0,171,168,1,0,0,0,171,
         169,1,0,0,0,171,170,1,0,0,0,172,15,1,0,0,0,173,175,3,8,4,0,174,173,
         1,0,0,0,174,175,1,0,0,0,175,177,1,0,0,0,176,178,5,19,0,0,177,176,
         1,0,0,0,177,178,1,0,0,0,178,179,1,0,0,0,179,180,3,26,13,0,180,181,
-        5,67,0,0,181,182,3,44,22,0,182,183,3,18,9,0,183,17,1,0,0,0,184,188,
-        5,48,0,0,185,187,3,20,10,0,186,185,1,0,0,0,187,190,1,0,0,0,188,186,
+        5,63,0,0,181,182,3,44,22,0,182,183,3,18,9,0,183,17,1,0,0,0,184,188,
+        5,44,0,0,185,187,3,20,10,0,186,185,1,0,0,0,187,190,1,0,0,0,188,186,
         1,0,0,0,188,189,1,0,0,0,189,191,1,0,0,0,190,188,1,0,0,0,191,192,
-        5,49,0,0,192,19,1,0,0,0,193,196,3,22,11,0,194,196,3,54,27,0,195,
+        5,45,0,0,192,19,1,0,0,0,193,196,3,22,11,0,194,196,3,54,27,0,195,
         193,1,0,0,0,195,194,1,0,0,0,196,21,1,0,0,0,197,198,3,26,13,0,198,
-        200,5,67,0,0,199,201,3,68,34,0,200,199,1,0,0,0,200,201,1,0,0,0,201,
-        202,1,0,0,0,202,203,5,43,0,0,203,23,1,0,0,0,204,206,3,8,4,0,205,
+        200,5,63,0,0,199,201,3,68,34,0,200,199,1,0,0,0,200,201,1,0,0,0,201,
+        202,1,0,0,0,202,203,5,41,0,0,203,23,1,0,0,0,204,206,3,8,4,0,205,
         204,1,0,0,0,205,206,1,0,0,0,206,207,1,0,0,0,207,208,3,22,11,0,208,
         25,1,0,0,0,209,213,5,20,0,0,210,213,3,28,14,0,211,213,3,36,18,0,
         212,209,1,0,0,0,212,210,1,0,0,0,212,211,1,0,0,0,213,27,1,0,0,0,214,
-        217,3,30,15,0,215,217,5,54,0,0,216,214,1,0,0,0,216,215,1,0,0,0,217,
+        217,3,30,15,0,215,217,5,50,0,0,216,214,1,0,0,0,216,215,1,0,0,0,217,
         29,1,0,0,0,218,221,3,32,16,0,219,221,3,34,17,0,220,218,1,0,0,0,220,
         219,1,0,0,0,221,31,1,0,0,0,222,223,7,1,0,0,223,33,1,0,0,0,224,225,
         7,2,0,0,225,35,1,0,0,0,226,227,3,38,19,0,227,37,1,0,0,0,228,229,
-        5,67,0,0,229,39,1,0,0,0,230,235,5,67,0,0,231,232,5,41,0,0,232,234,
-        5,67,0,0,233,231,1,0,0,0,234,237,1,0,0,0,235,233,1,0,0,0,235,236,
+        5,63,0,0,229,39,1,0,0,0,230,235,5,63,0,0,231,232,5,39,0,0,232,234,
+        5,63,0,0,233,231,1,0,0,0,234,237,1,0,0,0,235,233,1,0,0,0,235,236,
         1,0,0,0,236,41,1,0,0,0,237,235,1,0,0,0,238,239,3,8,4,0,239,240,5,
-        67,0,0,240,241,3,44,22,0,241,242,3,48,24,0,242,43,1,0,0,0,243,245,
-        5,50,0,0,244,246,3,46,23,0,245,244,1,0,0,0,245,246,1,0,0,0,246,251,
-        1,0,0,0,247,248,5,42,0,0,248,250,3,46,23,0,249,247,1,0,0,0,250,253,
+        63,0,0,240,241,3,44,22,0,241,242,3,48,24,0,242,43,1,0,0,0,243,245,
+        5,46,0,0,244,246,3,46,23,0,245,244,1,0,0,0,245,246,1,0,0,0,246,251,
+        1,0,0,0,247,248,5,40,0,0,248,250,3,46,23,0,249,247,1,0,0,0,250,253,
         1,0,0,0,251,249,1,0,0,0,251,252,1,0,0,0,252,254,1,0,0,0,253,251,
-        1,0,0,0,254,255,5,51,0,0,255,45,1,0,0,0,256,258,3,26,13,0,257,259,
-        5,52,0,0,258,257,1,0,0,0,258,259,1,0,0,0,259,261,1,0,0,0,260,262,
-        5,53,0,0,261,260,1,0,0,0,261,262,1,0,0,0,262,263,1,0,0,0,263,264,
-        5,67,0,0,264,47,1,0,0,0,265,267,5,48,0,0,266,268,3,50,25,0,267,266,
+        1,0,0,0,254,255,5,47,0,0,255,45,1,0,0,0,256,258,3,26,13,0,257,259,
+        5,48,0,0,258,257,1,0,0,0,258,259,1,0,0,0,259,261,1,0,0,0,260,262,
+        5,49,0,0,261,260,1,0,0,0,261,262,1,0,0,0,262,263,1,0,0,0,263,264,
+        5,63,0,0,264,47,1,0,0,0,265,267,5,44,0,0,266,268,3,50,25,0,267,266,
         1,0,0,0,267,268,1,0,0,0,268,272,1,0,0,0,269,271,3,20,10,0,270,269,
         1,0,0,0,271,274,1,0,0,0,272,270,1,0,0,0,272,273,1,0,0,0,273,275,
-        1,0,0,0,274,272,1,0,0,0,275,276,5,49,0,0,276,49,1,0,0,0,277,278,
-        5,8,0,0,278,280,5,50,0,0,279,281,3,52,26,0,280,279,1,0,0,0,280,281,
-        1,0,0,0,281,286,1,0,0,0,282,283,5,42,0,0,283,285,3,52,26,0,284,282,
+        1,0,0,0,274,272,1,0,0,0,275,276,5,45,0,0,276,49,1,0,0,0,277,278,
+        5,8,0,0,278,280,5,46,0,0,279,281,3,52,26,0,280,279,1,0,0,0,280,281,
+        1,0,0,0,281,286,1,0,0,0,282,283,5,40,0,0,283,285,3,52,26,0,284,282,
         1,0,0,0,285,288,1,0,0,0,286,284,1,0,0,0,286,287,1,0,0,0,287,289,
-        1,0,0,0,288,286,1,0,0,0,289,290,5,51,0,0,290,51,1,0,0,0,291,294,
-        3,94,47,0,292,294,5,67,0,0,293,291,1,0,0,0,293,292,1,0,0,0,294,53,
-        1,0,0,0,295,296,3,58,29,0,296,297,5,43,0,0,297,349,1,0,0,0,298,299,
-        3,64,32,0,299,300,5,43,0,0,300,349,1,0,0,0,301,302,5,11,0,0,302,
-        303,5,50,0,0,303,304,3,64,32,0,304,305,5,51,0,0,305,308,3,54,27,
+        1,0,0,0,288,286,1,0,0,0,289,290,5,47,0,0,290,51,1,0,0,0,291,294,
+        3,94,47,0,292,294,5,63,0,0,293,291,1,0,0,0,293,292,1,0,0,0,294,53,
+        1,0,0,0,295,296,3,58,29,0,296,297,5,41,0,0,297,349,1,0,0,0,298,299,
+        3,64,32,0,299,300,5,41,0,0,300,349,1,0,0,0,301,302,5,11,0,0,302,
+        303,5,46,0,0,303,304,3,64,32,0,304,305,5,47,0,0,305,308,3,54,27,
         0,306,307,5,12,0,0,307,309,3,54,27,0,308,306,1,0,0,0,308,309,1,0,
-        0,0,309,349,1,0,0,0,310,311,5,13,0,0,311,313,5,50,0,0,312,314,3,
+        0,0,309,349,1,0,0,0,310,311,5,13,0,0,311,313,5,46,0,0,312,314,3,
         60,30,0,313,312,1,0,0,0,313,314,1,0,0,0,314,315,1,0,0,0,315,317,
-        5,43,0,0,316,318,3,62,31,0,317,316,1,0,0,0,317,318,1,0,0,0,318,319,
-        1,0,0,0,319,320,5,51,0,0,320,349,3,54,27,0,321,322,5,14,0,0,322,
-        323,5,50,0,0,323,324,3,64,32,0,324,325,5,51,0,0,325,326,3,54,27,
+        5,41,0,0,316,318,3,62,31,0,317,316,1,0,0,0,317,318,1,0,0,0,318,319,
+        1,0,0,0,319,320,5,47,0,0,320,349,3,54,27,0,321,322,5,14,0,0,322,
+        323,5,46,0,0,323,324,3,64,32,0,324,325,5,47,0,0,325,326,3,54,27,
         0,326,349,1,0,0,0,327,328,5,15,0,0,328,329,3,54,27,0,329,330,5,14,
-        0,0,330,331,5,50,0,0,331,332,3,64,32,0,332,333,5,51,0,0,333,334,
-        5,43,0,0,334,349,1,0,0,0,335,336,5,16,0,0,336,349,5,43,0,0,337,338,
-        5,17,0,0,338,349,5,43,0,0,339,349,3,56,28,0,340,344,5,48,0,0,341,
+        0,0,330,331,5,46,0,0,331,332,3,64,32,0,332,333,5,47,0,0,333,334,
+        5,41,0,0,334,349,1,0,0,0,335,336,5,16,0,0,336,349,5,41,0,0,337,338,
+        5,17,0,0,338,349,5,41,0,0,339,349,3,56,28,0,340,344,5,44,0,0,341,
         343,3,20,10,0,342,341,1,0,0,0,343,346,1,0,0,0,344,342,1,0,0,0,344,
-        345,1,0,0,0,345,347,1,0,0,0,346,344,1,0,0,0,347,349,5,49,0,0,348,
+        345,1,0,0,0,345,347,1,0,0,0,346,344,1,0,0,0,347,349,5,45,0,0,348,
         295,1,0,0,0,348,298,1,0,0,0,348,301,1,0,0,0,348,310,1,0,0,0,348,
         321,1,0,0,0,348,327,1,0,0,0,348,335,1,0,0,0,348,337,1,0,0,0,348,
         339,1,0,0,0,348,340,1,0,0,0,349,55,1,0,0,0,350,352,5,18,0,0,351,
         353,3,64,32,0,352,351,1,0,0,0,352,353,1,0,0,0,353,354,1,0,0,0,354,
-        355,5,43,0,0,355,57,1,0,0,0,356,357,5,23,0,0,357,358,5,50,0,0,358,
-        359,3,64,32,0,359,360,5,51,0,0,360,59,1,0,0,0,361,364,3,22,11,0,
+        355,5,41,0,0,355,57,1,0,0,0,356,357,5,21,0,0,357,358,5,46,0,0,358,
+        359,3,64,32,0,359,360,5,47,0,0,360,59,1,0,0,0,361,364,3,22,11,0,
         362,364,3,64,32,0,363,361,1,0,0,0,363,362,1,0,0,0,364,61,1,0,0,0,
-        365,366,3,64,32,0,366,63,1,0,0,0,367,371,3,66,33,0,368,371,3,78,
-        39,0,369,371,3,96,48,0,370,367,1,0,0,0,370,368,1,0,0,0,370,369,1,
+        365,366,3,64,32,0,366,63,1,0,0,0,367,371,3,96,48,0,368,371,3,66,
+        33,0,369,371,3,78,39,0,370,367,1,0,0,0,370,368,1,0,0,0,370,369,1,
         0,0,0,371,65,1,0,0,0,372,373,3,72,36,0,373,374,3,68,34,0,374,67,
-        1,0,0,0,375,376,5,24,0,0,376,377,3,70,35,0,377,69,1,0,0,0,378,381,
-        3,78,39,0,379,381,3,96,48,0,380,378,1,0,0,0,380,379,1,0,0,0,381,
+        1,0,0,0,375,376,5,22,0,0,376,377,3,70,35,0,377,69,1,0,0,0,378,381,
+        3,96,48,0,379,381,3,78,39,0,380,378,1,0,0,0,380,379,1,0,0,0,381,
         71,1,0,0,0,382,385,3,74,37,0,383,385,3,76,38,0,384,382,1,0,0,0,384,
-        383,1,0,0,0,385,73,1,0,0,0,386,391,5,67,0,0,387,388,5,41,0,0,388,
-        390,5,67,0,0,389,387,1,0,0,0,390,393,1,0,0,0,391,389,1,0,0,0,391,
-        392,1,0,0,0,392,75,1,0,0,0,393,391,1,0,0,0,394,395,5,67,0,0,395,
-        396,5,52,0,0,396,397,5,62,0,0,397,398,5,53,0,0,398,77,1,0,0,0,399,
-        405,3,80,40,0,400,401,5,45,0,0,401,402,3,64,32,0,402,403,5,44,0,
+        383,1,0,0,0,385,73,1,0,0,0,386,391,5,63,0,0,387,388,5,39,0,0,388,
+        390,5,63,0,0,389,387,1,0,0,0,390,393,1,0,0,0,391,389,1,0,0,0,391,
+        392,1,0,0,0,392,75,1,0,0,0,393,391,1,0,0,0,394,395,5,63,0,0,395,
+        396,5,48,0,0,396,397,5,58,0,0,397,398,5,49,0,0,398,77,1,0,0,0,399,
+        405,3,80,40,0,400,401,5,43,0,0,401,402,3,64,32,0,402,403,5,42,0,
         0,403,404,3,64,32,0,404,406,1,0,0,0,405,400,1,0,0,0,405,406,1,0,
-        0,0,406,79,1,0,0,0,407,412,3,82,41,0,408,409,5,32,0,0,409,411,3,
+        0,0,406,79,1,0,0,0,407,412,3,82,41,0,408,409,5,30,0,0,409,411,3,
         82,41,0,410,408,1,0,0,0,411,414,1,0,0,0,412,410,1,0,0,0,412,413,
         1,0,0,0,413,81,1,0,0,0,414,412,1,0,0,0,415,420,3,84,42,0,416,417,
-        5,33,0,0,417,419,3,84,42,0,418,416,1,0,0,0,419,422,1,0,0,0,420,418,
+        5,31,0,0,417,419,3,84,42,0,418,416,1,0,0,0,419,422,1,0,0,0,420,418,
         1,0,0,0,420,421,1,0,0,0,421,83,1,0,0,0,422,420,1,0,0,0,423,430,3,
-        86,43,0,424,425,5,35,0,0,425,429,3,86,43,0,426,427,5,36,0,0,427,
+        86,43,0,424,425,5,33,0,0,425,429,3,86,43,0,426,427,5,34,0,0,427,
         429,3,86,43,0,428,424,1,0,0,0,428,426,1,0,0,0,429,432,1,0,0,0,430,
         428,1,0,0,0,430,431,1,0,0,0,431,85,1,0,0,0,432,430,1,0,0,0,433,444,
-        3,88,44,0,434,435,5,37,0,0,435,443,3,88,44,0,436,437,5,38,0,0,437,
-        443,3,88,44,0,438,439,5,39,0,0,439,443,3,88,44,0,440,441,5,40,0,
+        3,88,44,0,434,435,5,35,0,0,435,443,3,88,44,0,436,437,5,36,0,0,437,
+        443,3,88,44,0,438,439,5,37,0,0,439,443,3,88,44,0,440,441,5,38,0,
         0,441,443,3,88,44,0,442,434,1,0,0,0,442,436,1,0,0,0,442,438,1,0,
         0,0,442,440,1,0,0,0,443,446,1,0,0,0,444,442,1,0,0,0,444,445,1,0,
-        0,0,445,87,1,0,0,0,446,444,1,0,0,0,447,454,3,90,45,0,448,449,5,25,
-        0,0,449,453,3,90,45,0,450,451,5,26,0,0,451,453,3,90,45,0,452,448,
+        0,0,445,87,1,0,0,0,446,444,1,0,0,0,447,454,3,90,45,0,448,449,5,23,
+        0,0,449,453,3,90,45,0,450,451,5,24,0,0,451,453,3,90,45,0,452,448,
         1,0,0,0,452,450,1,0,0,0,453,456,1,0,0,0,454,452,1,0,0,0,454,455,
         1,0,0,0,455,89,1,0,0,0,456,454,1,0,0,0,457,466,3,92,46,0,458,459,
-        5,27,0,0,459,465,3,92,46,0,460,461,5,28,0,0,461,465,3,92,46,0,462,
-        463,5,29,0,0,463,465,3,92,46,0,464,458,1,0,0,0,464,460,1,0,0,0,464,
+        5,25,0,0,459,465,3,92,46,0,460,461,5,26,0,0,461,465,3,92,46,0,462,
+        463,5,27,0,0,463,465,3,92,46,0,464,458,1,0,0,0,464,460,1,0,0,0,464,
         462,1,0,0,0,465,468,1,0,0,0,466,464,1,0,0,0,466,467,1,0,0,0,467,
         91,1,0,0,0,468,466,1,0,0,0,469,470,7,3,0,0,470,473,3,92,46,0,471,
         473,3,96,48,0,472,469,1,0,0,0,472,471,1,0,0,0,473,93,1,0,0,0,474,
-        475,7,4,0,0,475,95,1,0,0,0,476,522,3,94,47,0,477,482,5,67,0,0,478,
-        479,5,41,0,0,479,481,5,67,0,0,480,478,1,0,0,0,481,484,1,0,0,0,482,
+        475,7,4,0,0,475,95,1,0,0,0,476,522,3,94,47,0,477,482,5,63,0,0,478,
+        479,5,39,0,0,479,481,5,63,0,0,480,478,1,0,0,0,481,484,1,0,0,0,482,
         480,1,0,0,0,482,483,1,0,0,0,483,522,1,0,0,0,484,482,1,0,0,0,485,
-        522,5,9,0,0,486,522,5,8,0,0,487,488,5,50,0,0,488,489,3,64,32,0,489,
-        490,5,51,0,0,490,522,1,0,0,0,491,492,3,38,19,0,492,494,5,50,0,0,
+        522,5,9,0,0,486,522,5,8,0,0,487,488,5,46,0,0,488,489,3,64,32,0,489,
+        490,5,47,0,0,490,522,1,0,0,0,491,492,3,38,19,0,492,494,5,46,0,0,
         493,495,3,52,26,0,494,493,1,0,0,0,494,495,1,0,0,0,495,500,1,0,0,
-        0,496,497,5,42,0,0,497,499,3,52,26,0,498,496,1,0,0,0,499,502,1,0,
+        0,496,497,5,40,0,0,497,499,3,52,26,0,498,496,1,0,0,0,499,502,1,0,
         0,0,500,498,1,0,0,0,500,501,1,0,0,0,501,503,1,0,0,0,502,500,1,0,
-        0,0,503,504,5,51,0,0,504,522,1,0,0,0,505,506,5,34,0,0,506,522,3,
-        92,46,0,507,508,5,30,0,0,508,522,3,92,46,0,509,510,5,31,0,0,510,
+        0,0,503,504,5,47,0,0,504,522,1,0,0,0,505,506,5,32,0,0,506,522,3,
+        92,46,0,507,508,5,28,0,0,508,522,3,92,46,0,509,510,5,29,0,0,510,
         522,3,92,46,0,511,514,3,26,13,0,512,514,3,40,20,0,513,511,1,0,0,
-        0,513,512,1,0,0,0,514,515,1,0,0,0,515,517,5,50,0,0,516,518,3,64,
-        32,0,517,516,1,0,0,0,517,518,1,0,0,0,518,519,1,0,0,0,519,520,5,51,
+        0,513,512,1,0,0,0,514,515,1,0,0,0,515,517,5,46,0,0,516,518,3,64,
+        32,0,517,516,1,0,0,0,517,518,1,0,0,0,518,519,1,0,0,0,519,520,5,47,
         0,0,520,522,1,0,0,0,521,476,1,0,0,0,521,477,1,0,0,0,521,485,1,0,
         0,0,521,486,1,0,0,0,521,487,1,0,0,0,521,491,1,0,0,0,521,505,1,0,
         0,0,521,507,1,0,0,0,521,509,1,0,0,0,521,513,1,0,0,0,522,97,1,0,0,
@@ -216,27 +216,26 @@ class jcpParser ( Parser ):
                      "'private'", "'protected'", "'extends'", "'super'", 
                      "'this'", "'new '", "'if'", "'else'", "'for'", "'while'", 
                      "'do'", "'break'", "'continue'", "'return'", "'static'", 
-                     "'void'", "'true'", "'false'", "'System.out.println'", 
-                     "'='", "'+'", "'-'", "'*'", "'/'", "'%'", "'++'", "'--'", 
-                     "'||'", "'&&'", "'!'", "'=='", "'!='", "'<'", "'<='", 
-                     "'>'", "'>='", "'.'", "','", "';'", "':'", "'?'", "'\"'", 
-                     "'''", "'{'", "'}'", "'('", "')'", "'['", "']'", "'boolean'", 
-                     "'byte'", "'short'", "'long'", "'int'", "'char'", "'float'", 
-                     "'double'" ]
+                     "'void'", "'System.out.println'", "'='", "'+'", "'-'", 
+                     "'*'", "'/'", "'%'", "'++'", "'--'", "'||'", "'&&'", 
+                     "'!'", "'=='", "'!='", "'<'", "'<='", "'>'", "'>='", 
+                     "'.'", "','", "';'", "':'", "'?'", "'{'", "'}'", "'('", 
+                     "')'", "'['", "']'", "'boolean'", "'byte'", "'short'", 
+                     "'long'", "'int'", "'char'", "'float'", "'double'" ]
 
     symbolicNames = [ "<INVALID>", "PACKAGE", "IMPORT", "CLASS", "PUBLIC", 
                       "PRIVATE", "PROTECTED", "EXTENDS", "SUPER", "THIS", 
                       "NEW", "IF", "ELSE", "FOR", "WHILE", "DO", "BREAK", 
-                      "CONTINUE", "RETURN", "STATIC", "VOID", "TRUE", "FALSE", 
-                      "SOUT", "ASSIGN", "PLUS", "MINUS", "MULTIPLY", "DIVIDE", 
-                      "MOD", "INCREMENT", "DECREMENT", "OR", "AND", "NOT", 
-                      "EQUAL", "NOTEQUAL", "LESS", "LESSEQUAL", "GREATER", 
-                      "GREATEREQUAL", "DOT", "COMMA", "SEMI", "COLON", "QUESTION", 
-                      "QUOTE", "SQUOTE", "LCUR", "RCUR", "LPAR", "RPAR", 
-                      "LBRACK", "RBRACK", "BOOL", "BYTE", "SHORT", "LONG", 
-                      "INT", "CHAR", "FLOAT", "DOUBLE", "INT_LITERAL", "FLOAT_LITERAL", 
-                      "STRING_LITERAL", "CHAR_LITERAL", "BOOL_LITERAL", 
-                      "IDENTIFIER", "WS", "COMMENTSIMPLE", "COMMENTMULTI" ]
+                      "CONTINUE", "RETURN", "STATIC", "VOID", "SOUT", "ASSIGN", 
+                      "PLUS", "MINUS", "MULTIPLY", "DIVIDE", "MOD", "INCREMENT", 
+                      "DECREMENT", "OR", "AND", "NOT", "EQUAL", "NOTEQUAL", 
+                      "LESS", "LESSEQUAL", "GREATER", "GREATEREQUAL", "DOT", 
+                      "COMMA", "SEMI", "COLON", "QUESTION", "LCUR", "RCUR", 
+                      "LPAR", "RPAR", "LBRACK", "RBRACK", "BOOL", "BYTE", 
+                      "SHORT", "LONG", "INT", "CHAR", "FLOAT", "DOUBLE", 
+                      "INT_LITERAL", "FLOAT_LITERAL", "STRING_LITERAL", 
+                      "CHAR_LITERAL", "BOOL_LITERAL", "IDENTIFIER", "WS", 
+                      "COMMENTSIMPLE", "COMMENTMULTI" ]
 
     RULE_start = 0
     RULE_packageDec = 1
@@ -322,56 +321,52 @@ class jcpParser ( Parser ):
     RETURN=18
     STATIC=19
     VOID=20
-    TRUE=21
-    FALSE=22
-    SOUT=23
-    ASSIGN=24
-    PLUS=25
-    MINUS=26
-    MULTIPLY=27
-    DIVIDE=28
-    MOD=29
-    INCREMENT=30
-    DECREMENT=31
-    OR=32
-    AND=33
-    NOT=34
-    EQUAL=35
-    NOTEQUAL=36
-    LESS=37
-    LESSEQUAL=38
-    GREATER=39
-    GREATEREQUAL=40
-    DOT=41
-    COMMA=42
-    SEMI=43
-    COLON=44
-    QUESTION=45
-    QUOTE=46
-    SQUOTE=47
-    LCUR=48
-    RCUR=49
-    LPAR=50
-    RPAR=51
-    LBRACK=52
-    RBRACK=53
-    BOOL=54
-    BYTE=55
-    SHORT=56
-    LONG=57
-    INT=58
-    CHAR=59
-    FLOAT=60
-    DOUBLE=61
-    INT_LITERAL=62
-    FLOAT_LITERAL=63
-    STRING_LITERAL=64
-    CHAR_LITERAL=65
-    BOOL_LITERAL=66
-    IDENTIFIER=67
-    WS=68
-    COMMENTSIMPLE=69
-    COMMENTMULTI=70
+    SOUT=21
+    ASSIGN=22
+    PLUS=23
+    MINUS=24
+    MULTIPLY=25
+    DIVIDE=26
+    MOD=27
+    INCREMENT=28
+    DECREMENT=29
+    OR=30
+    AND=31
+    NOT=32
+    EQUAL=33
+    NOTEQUAL=34
+    LESS=35
+    LESSEQUAL=36
+    GREATER=37
+    GREATEREQUAL=38
+    DOT=39
+    COMMA=40
+    SEMI=41
+    COLON=42
+    QUESTION=43
+    LCUR=44
+    RCUR=45
+    LPAR=46
+    RPAR=47
+    LBRACK=48
+    RBRACK=49
+    BOOL=50
+    BYTE=51
+    SHORT=52
+    LONG=53
+    INT=54
+    CHAR=55
+    FLOAT=56
+    DOUBLE=57
+    INT_LITERAL=58
+    FLOAT_LITERAL=59
+    STRING_LITERAL=60
+    CHAR_LITERAL=61
+    BOOL_LITERAL=62
+    IDENTIFIER=63
+    WS=64
+    COMMENTSIMPLE=65
+    COMMENTMULTI=66
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -859,7 +854,7 @@ class jcpParser ( Parser ):
             self.state = 163
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while ((((_la - 4)) & ~0x3f) == 0 and ((1 << (_la - 4)) & ((1 << (jcpParser.PUBLIC - 4)) | (1 << (jcpParser.PRIVATE - 4)) | (1 << (jcpParser.PROTECTED - 4)) | (1 << (jcpParser.STATIC - 4)) | (1 << (jcpParser.VOID - 4)) | (1 << (jcpParser.BOOL - 4)) | (1 << (jcpParser.BYTE - 4)) | (1 << (jcpParser.SHORT - 4)) | (1 << (jcpParser.LONG - 4)) | (1 << (jcpParser.INT - 4)) | (1 << (jcpParser.CHAR - 4)) | (1 << (jcpParser.FLOAT - 4)) | (1 << (jcpParser.DOUBLE - 4)) | (1 << (jcpParser.IDENTIFIER - 4)))) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << jcpParser.PUBLIC) | (1 << jcpParser.PRIVATE) | (1 << jcpParser.PROTECTED) | (1 << jcpParser.STATIC) | (1 << jcpParser.VOID) | (1 << jcpParser.BOOL) | (1 << jcpParser.BYTE) | (1 << jcpParser.SHORT) | (1 << jcpParser.LONG) | (1 << jcpParser.INT) | (1 << jcpParser.CHAR) | (1 << jcpParser.FLOAT) | (1 << jcpParser.DOUBLE) | (1 << jcpParser.IDENTIFIER))) != 0):
                 self.state = 160
                 self.bodyDec()
                 self.state = 165
@@ -1075,7 +1070,7 @@ class jcpParser ( Parser ):
             self.state = 188
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while ((((_la - 8)) & ~0x3f) == 0 and ((1 << (_la - 8)) & ((1 << (jcpParser.SUPER - 8)) | (1 << (jcpParser.THIS - 8)) | (1 << (jcpParser.IF - 8)) | (1 << (jcpParser.FOR - 8)) | (1 << (jcpParser.WHILE - 8)) | (1 << (jcpParser.DO - 8)) | (1 << (jcpParser.BREAK - 8)) | (1 << (jcpParser.CONTINUE - 8)) | (1 << (jcpParser.RETURN - 8)) | (1 << (jcpParser.VOID - 8)) | (1 << (jcpParser.SOUT - 8)) | (1 << (jcpParser.MINUS - 8)) | (1 << (jcpParser.INCREMENT - 8)) | (1 << (jcpParser.DECREMENT - 8)) | (1 << (jcpParser.NOT - 8)) | (1 << (jcpParser.LCUR - 8)) | (1 << (jcpParser.LPAR - 8)) | (1 << (jcpParser.BOOL - 8)) | (1 << (jcpParser.BYTE - 8)) | (1 << (jcpParser.SHORT - 8)) | (1 << (jcpParser.LONG - 8)) | (1 << (jcpParser.INT - 8)) | (1 << (jcpParser.CHAR - 8)) | (1 << (jcpParser.FLOAT - 8)) | (1 << (jcpParser.DOUBLE - 8)) | (1 << (jcpParser.INT_LITERAL - 8)) | (1 << (jcpParser.FLOAT_LITERAL - 8)) | (1 << (jcpParser.STRING_LITERAL - 8)) | (1 << (jcpParser.CHAR_LITERAL - 8)) | (1 << (jcpParser.BOOL_LITERAL - 8)) | (1 << (jcpParser.IDENTIFIER - 8)))) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << jcpParser.SUPER) | (1 << jcpParser.THIS) | (1 << jcpParser.IF) | (1 << jcpParser.FOR) | (1 << jcpParser.WHILE) | (1 << jcpParser.DO) | (1 << jcpParser.BREAK) | (1 << jcpParser.CONTINUE) | (1 << jcpParser.RETURN) | (1 << jcpParser.VOID) | (1 << jcpParser.SOUT) | (1 << jcpParser.MINUS) | (1 << jcpParser.INCREMENT) | (1 << jcpParser.DECREMENT) | (1 << jcpParser.NOT) | (1 << jcpParser.LCUR) | (1 << jcpParser.LPAR) | (1 << jcpParser.BOOL) | (1 << jcpParser.BYTE) | (1 << jcpParser.SHORT) | (1 << jcpParser.LONG) | (1 << jcpParser.INT) | (1 << jcpParser.CHAR) | (1 << jcpParser.FLOAT) | (1 << jcpParser.DOUBLE) | (1 << jcpParser.INT_LITERAL) | (1 << jcpParser.FLOAT_LITERAL) | (1 << jcpParser.STRING_LITERAL) | (1 << jcpParser.CHAR_LITERAL) | (1 << jcpParser.BOOL_LITERAL) | (1 << jcpParser.IDENTIFIER))) != 0):
                 self.state = 185
                 self.blockDec()
                 self.state = 190
@@ -1822,7 +1817,7 @@ class jcpParser ( Parser ):
             self.state = 245
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if ((((_la - 20)) & ~0x3f) == 0 and ((1 << (_la - 20)) & ((1 << (jcpParser.VOID - 20)) | (1 << (jcpParser.BOOL - 20)) | (1 << (jcpParser.BYTE - 20)) | (1 << (jcpParser.SHORT - 20)) | (1 << (jcpParser.LONG - 20)) | (1 << (jcpParser.INT - 20)) | (1 << (jcpParser.CHAR - 20)) | (1 << (jcpParser.FLOAT - 20)) | (1 << (jcpParser.DOUBLE - 20)) | (1 << (jcpParser.IDENTIFIER - 20)))) != 0):
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << jcpParser.VOID) | (1 << jcpParser.BOOL) | (1 << jcpParser.BYTE) | (1 << jcpParser.SHORT) | (1 << jcpParser.LONG) | (1 << jcpParser.INT) | (1 << jcpParser.CHAR) | (1 << jcpParser.FLOAT) | (1 << jcpParser.DOUBLE) | (1 << jcpParser.IDENTIFIER))) != 0):
                 self.state = 244
                 self.parameter()
 
@@ -1978,7 +1973,7 @@ class jcpParser ( Parser ):
             self.state = 272
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while ((((_la - 8)) & ~0x3f) == 0 and ((1 << (_la - 8)) & ((1 << (jcpParser.SUPER - 8)) | (1 << (jcpParser.THIS - 8)) | (1 << (jcpParser.IF - 8)) | (1 << (jcpParser.FOR - 8)) | (1 << (jcpParser.WHILE - 8)) | (1 << (jcpParser.DO - 8)) | (1 << (jcpParser.BREAK - 8)) | (1 << (jcpParser.CONTINUE - 8)) | (1 << (jcpParser.RETURN - 8)) | (1 << (jcpParser.VOID - 8)) | (1 << (jcpParser.SOUT - 8)) | (1 << (jcpParser.MINUS - 8)) | (1 << (jcpParser.INCREMENT - 8)) | (1 << (jcpParser.DECREMENT - 8)) | (1 << (jcpParser.NOT - 8)) | (1 << (jcpParser.LCUR - 8)) | (1 << (jcpParser.LPAR - 8)) | (1 << (jcpParser.BOOL - 8)) | (1 << (jcpParser.BYTE - 8)) | (1 << (jcpParser.SHORT - 8)) | (1 << (jcpParser.LONG - 8)) | (1 << (jcpParser.INT - 8)) | (1 << (jcpParser.CHAR - 8)) | (1 << (jcpParser.FLOAT - 8)) | (1 << (jcpParser.DOUBLE - 8)) | (1 << (jcpParser.INT_LITERAL - 8)) | (1 << (jcpParser.FLOAT_LITERAL - 8)) | (1 << (jcpParser.STRING_LITERAL - 8)) | (1 << (jcpParser.CHAR_LITERAL - 8)) | (1 << (jcpParser.BOOL_LITERAL - 8)) | (1 << (jcpParser.IDENTIFIER - 8)))) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << jcpParser.SUPER) | (1 << jcpParser.THIS) | (1 << jcpParser.IF) | (1 << jcpParser.FOR) | (1 << jcpParser.WHILE) | (1 << jcpParser.DO) | (1 << jcpParser.BREAK) | (1 << jcpParser.CONTINUE) | (1 << jcpParser.RETURN) | (1 << jcpParser.VOID) | (1 << jcpParser.SOUT) | (1 << jcpParser.MINUS) | (1 << jcpParser.INCREMENT) | (1 << jcpParser.DECREMENT) | (1 << jcpParser.NOT) | (1 << jcpParser.LCUR) | (1 << jcpParser.LPAR) | (1 << jcpParser.BOOL) | (1 << jcpParser.BYTE) | (1 << jcpParser.SHORT) | (1 << jcpParser.LONG) | (1 << jcpParser.INT) | (1 << jcpParser.CHAR) | (1 << jcpParser.FLOAT) | (1 << jcpParser.DOUBLE) | (1 << jcpParser.INT_LITERAL) | (1 << jcpParser.FLOAT_LITERAL) | (1 << jcpParser.STRING_LITERAL) | (1 << jcpParser.CHAR_LITERAL) | (1 << jcpParser.BOOL_LITERAL) | (1 << jcpParser.IDENTIFIER))) != 0):
                 self.state = 269
                 self.blockDec()
                 self.state = 274
@@ -2053,7 +2048,7 @@ class jcpParser ( Parser ):
             self.state = 280
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if ((((_la - 62)) & ~0x3f) == 0 and ((1 << (_la - 62)) & ((1 << (jcpParser.INT_LITERAL - 62)) | (1 << (jcpParser.FLOAT_LITERAL - 62)) | (1 << (jcpParser.STRING_LITERAL - 62)) | (1 << (jcpParser.CHAR_LITERAL - 62)) | (1 << (jcpParser.BOOL_LITERAL - 62)) | (1 << (jcpParser.IDENTIFIER - 62)))) != 0):
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << jcpParser.INT_LITERAL) | (1 << jcpParser.FLOAT_LITERAL) | (1 << jcpParser.STRING_LITERAL) | (1 << jcpParser.CHAR_LITERAL) | (1 << jcpParser.BOOL_LITERAL) | (1 << jcpParser.IDENTIFIER))) != 0):
                 self.state = 279
                 self.argument()
 
@@ -2285,7 +2280,7 @@ class jcpParser ( Parser ):
                 self.state = 313
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if ((((_la - 8)) & ~0x3f) == 0 and ((1 << (_la - 8)) & ((1 << (jcpParser.SUPER - 8)) | (1 << (jcpParser.THIS - 8)) | (1 << (jcpParser.VOID - 8)) | (1 << (jcpParser.MINUS - 8)) | (1 << (jcpParser.INCREMENT - 8)) | (1 << (jcpParser.DECREMENT - 8)) | (1 << (jcpParser.NOT - 8)) | (1 << (jcpParser.LPAR - 8)) | (1 << (jcpParser.BOOL - 8)) | (1 << (jcpParser.BYTE - 8)) | (1 << (jcpParser.SHORT - 8)) | (1 << (jcpParser.LONG - 8)) | (1 << (jcpParser.INT - 8)) | (1 << (jcpParser.CHAR - 8)) | (1 << (jcpParser.FLOAT - 8)) | (1 << (jcpParser.DOUBLE - 8)) | (1 << (jcpParser.INT_LITERAL - 8)) | (1 << (jcpParser.FLOAT_LITERAL - 8)) | (1 << (jcpParser.STRING_LITERAL - 8)) | (1 << (jcpParser.CHAR_LITERAL - 8)) | (1 << (jcpParser.BOOL_LITERAL - 8)) | (1 << (jcpParser.IDENTIFIER - 8)))) != 0):
+                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << jcpParser.SUPER) | (1 << jcpParser.THIS) | (1 << jcpParser.VOID) | (1 << jcpParser.MINUS) | (1 << jcpParser.INCREMENT) | (1 << jcpParser.DECREMENT) | (1 << jcpParser.NOT) | (1 << jcpParser.LPAR) | (1 << jcpParser.BOOL) | (1 << jcpParser.BYTE) | (1 << jcpParser.SHORT) | (1 << jcpParser.LONG) | (1 << jcpParser.INT) | (1 << jcpParser.CHAR) | (1 << jcpParser.FLOAT) | (1 << jcpParser.DOUBLE) | (1 << jcpParser.INT_LITERAL) | (1 << jcpParser.FLOAT_LITERAL) | (1 << jcpParser.STRING_LITERAL) | (1 << jcpParser.CHAR_LITERAL) | (1 << jcpParser.BOOL_LITERAL) | (1 << jcpParser.IDENTIFIER))) != 0):
                     self.state = 312
                     self.forInit()
 
@@ -2295,7 +2290,7 @@ class jcpParser ( Parser ):
                 self.state = 317
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if ((((_la - 8)) & ~0x3f) == 0 and ((1 << (_la - 8)) & ((1 << (jcpParser.SUPER - 8)) | (1 << (jcpParser.THIS - 8)) | (1 << (jcpParser.VOID - 8)) | (1 << (jcpParser.MINUS - 8)) | (1 << (jcpParser.INCREMENT - 8)) | (1 << (jcpParser.DECREMENT - 8)) | (1 << (jcpParser.NOT - 8)) | (1 << (jcpParser.LPAR - 8)) | (1 << (jcpParser.BOOL - 8)) | (1 << (jcpParser.BYTE - 8)) | (1 << (jcpParser.SHORT - 8)) | (1 << (jcpParser.LONG - 8)) | (1 << (jcpParser.INT - 8)) | (1 << (jcpParser.CHAR - 8)) | (1 << (jcpParser.FLOAT - 8)) | (1 << (jcpParser.DOUBLE - 8)) | (1 << (jcpParser.INT_LITERAL - 8)) | (1 << (jcpParser.FLOAT_LITERAL - 8)) | (1 << (jcpParser.STRING_LITERAL - 8)) | (1 << (jcpParser.CHAR_LITERAL - 8)) | (1 << (jcpParser.BOOL_LITERAL - 8)) | (1 << (jcpParser.IDENTIFIER - 8)))) != 0):
+                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << jcpParser.SUPER) | (1 << jcpParser.THIS) | (1 << jcpParser.VOID) | (1 << jcpParser.MINUS) | (1 << jcpParser.INCREMENT) | (1 << jcpParser.DECREMENT) | (1 << jcpParser.NOT) | (1 << jcpParser.LPAR) | (1 << jcpParser.BOOL) | (1 << jcpParser.BYTE) | (1 << jcpParser.SHORT) | (1 << jcpParser.LONG) | (1 << jcpParser.INT) | (1 << jcpParser.CHAR) | (1 << jcpParser.FLOAT) | (1 << jcpParser.DOUBLE) | (1 << jcpParser.INT_LITERAL) | (1 << jcpParser.FLOAT_LITERAL) | (1 << jcpParser.STRING_LITERAL) | (1 << jcpParser.CHAR_LITERAL) | (1 << jcpParser.BOOL_LITERAL) | (1 << jcpParser.IDENTIFIER))) != 0):
                     self.state = 316
                     self.forUpdate()
 
@@ -2361,7 +2356,7 @@ class jcpParser ( Parser ):
                 self.state = 344
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while ((((_la - 8)) & ~0x3f) == 0 and ((1 << (_la - 8)) & ((1 << (jcpParser.SUPER - 8)) | (1 << (jcpParser.THIS - 8)) | (1 << (jcpParser.IF - 8)) | (1 << (jcpParser.FOR - 8)) | (1 << (jcpParser.WHILE - 8)) | (1 << (jcpParser.DO - 8)) | (1 << (jcpParser.BREAK - 8)) | (1 << (jcpParser.CONTINUE - 8)) | (1 << (jcpParser.RETURN - 8)) | (1 << (jcpParser.VOID - 8)) | (1 << (jcpParser.SOUT - 8)) | (1 << (jcpParser.MINUS - 8)) | (1 << (jcpParser.INCREMENT - 8)) | (1 << (jcpParser.DECREMENT - 8)) | (1 << (jcpParser.NOT - 8)) | (1 << (jcpParser.LCUR - 8)) | (1 << (jcpParser.LPAR - 8)) | (1 << (jcpParser.BOOL - 8)) | (1 << (jcpParser.BYTE - 8)) | (1 << (jcpParser.SHORT - 8)) | (1 << (jcpParser.LONG - 8)) | (1 << (jcpParser.INT - 8)) | (1 << (jcpParser.CHAR - 8)) | (1 << (jcpParser.FLOAT - 8)) | (1 << (jcpParser.DOUBLE - 8)) | (1 << (jcpParser.INT_LITERAL - 8)) | (1 << (jcpParser.FLOAT_LITERAL - 8)) | (1 << (jcpParser.STRING_LITERAL - 8)) | (1 << (jcpParser.CHAR_LITERAL - 8)) | (1 << (jcpParser.BOOL_LITERAL - 8)) | (1 << (jcpParser.IDENTIFIER - 8)))) != 0):
+                while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << jcpParser.SUPER) | (1 << jcpParser.THIS) | (1 << jcpParser.IF) | (1 << jcpParser.FOR) | (1 << jcpParser.WHILE) | (1 << jcpParser.DO) | (1 << jcpParser.BREAK) | (1 << jcpParser.CONTINUE) | (1 << jcpParser.RETURN) | (1 << jcpParser.VOID) | (1 << jcpParser.SOUT) | (1 << jcpParser.MINUS) | (1 << jcpParser.INCREMENT) | (1 << jcpParser.DECREMENT) | (1 << jcpParser.NOT) | (1 << jcpParser.LCUR) | (1 << jcpParser.LPAR) | (1 << jcpParser.BOOL) | (1 << jcpParser.BYTE) | (1 << jcpParser.SHORT) | (1 << jcpParser.LONG) | (1 << jcpParser.INT) | (1 << jcpParser.CHAR) | (1 << jcpParser.FLOAT) | (1 << jcpParser.DOUBLE) | (1 << jcpParser.INT_LITERAL) | (1 << jcpParser.FLOAT_LITERAL) | (1 << jcpParser.STRING_LITERAL) | (1 << jcpParser.CHAR_LITERAL) | (1 << jcpParser.BOOL_LITERAL) | (1 << jcpParser.IDENTIFIER))) != 0):
                     self.state = 341
                     self.blockDec()
                     self.state = 346
@@ -2426,7 +2421,7 @@ class jcpParser ( Parser ):
             self.state = 352
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if ((((_la - 8)) & ~0x3f) == 0 and ((1 << (_la - 8)) & ((1 << (jcpParser.SUPER - 8)) | (1 << (jcpParser.THIS - 8)) | (1 << (jcpParser.VOID - 8)) | (1 << (jcpParser.MINUS - 8)) | (1 << (jcpParser.INCREMENT - 8)) | (1 << (jcpParser.DECREMENT - 8)) | (1 << (jcpParser.NOT - 8)) | (1 << (jcpParser.LPAR - 8)) | (1 << (jcpParser.BOOL - 8)) | (1 << (jcpParser.BYTE - 8)) | (1 << (jcpParser.SHORT - 8)) | (1 << (jcpParser.LONG - 8)) | (1 << (jcpParser.INT - 8)) | (1 << (jcpParser.CHAR - 8)) | (1 << (jcpParser.FLOAT - 8)) | (1 << (jcpParser.DOUBLE - 8)) | (1 << (jcpParser.INT_LITERAL - 8)) | (1 << (jcpParser.FLOAT_LITERAL - 8)) | (1 << (jcpParser.STRING_LITERAL - 8)) | (1 << (jcpParser.CHAR_LITERAL - 8)) | (1 << (jcpParser.BOOL_LITERAL - 8)) | (1 << (jcpParser.IDENTIFIER - 8)))) != 0):
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << jcpParser.SUPER) | (1 << jcpParser.THIS) | (1 << jcpParser.VOID) | (1 << jcpParser.MINUS) | (1 << jcpParser.INCREMENT) | (1 << jcpParser.DECREMENT) | (1 << jcpParser.NOT) | (1 << jcpParser.LPAR) | (1 << jcpParser.BOOL) | (1 << jcpParser.BYTE) | (1 << jcpParser.SHORT) | (1 << jcpParser.LONG) | (1 << jcpParser.INT) | (1 << jcpParser.CHAR) | (1 << jcpParser.FLOAT) | (1 << jcpParser.DOUBLE) | (1 << jcpParser.INT_LITERAL) | (1 << jcpParser.FLOAT_LITERAL) | (1 << jcpParser.STRING_LITERAL) | (1 << jcpParser.CHAR_LITERAL) | (1 << jcpParser.BOOL_LITERAL) | (1 << jcpParser.IDENTIFIER))) != 0):
                 self.state = 351
                 self.expression()
 
@@ -2607,16 +2602,16 @@ class jcpParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
+        def primaryExpression(self):
+            return self.getTypedRuleContext(jcpParser.PrimaryExpressionContext,0)
+
+
         def assignment(self):
             return self.getTypedRuleContext(jcpParser.AssignmentContext,0)
 
 
         def conditionalExpression(self):
             return self.getTypedRuleContext(jcpParser.ConditionalExpressionContext,0)
-
-
-        def primaryExpression(self):
-            return self.getTypedRuleContext(jcpParser.PrimaryExpressionContext,0)
 
 
         def getRuleIndex(self):
@@ -2644,19 +2639,19 @@ class jcpParser ( Parser ):
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 367
-                self.assignment()
+                self.primaryExpression()
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 368
-                self.conditionalExpression()
+                self.assignment()
                 pass
 
             elif la_ == 3:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 369
-                self.primaryExpression()
+                self.conditionalExpression()
                 pass
 
 
@@ -2771,12 +2766,12 @@ class jcpParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def conditionalExpression(self):
-            return self.getTypedRuleContext(jcpParser.ConditionalExpressionContext,0)
-
-
         def primaryExpression(self):
             return self.getTypedRuleContext(jcpParser.PrimaryExpressionContext,0)
+
+
+        def conditionalExpression(self):
+            return self.getTypedRuleContext(jcpParser.ConditionalExpressionContext,0)
 
 
         def getRuleIndex(self):
@@ -2804,13 +2799,13 @@ class jcpParser ( Parser ):
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 378
-                self.conditionalExpression()
+                self.primaryExpression()
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 379
-                self.primaryExpression()
+                self.conditionalExpression()
                 pass
 
 
@@ -3689,7 +3684,7 @@ class jcpParser ( Parser ):
             self.enterOuterAlt(localctx, 1)
             self.state = 474
             _la = self._input.LA(1)
-            if not(((((_la - 62)) & ~0x3f) == 0 and ((1 << (_la - 62)) & ((1 << (jcpParser.INT_LITERAL - 62)) | (1 << (jcpParser.FLOAT_LITERAL - 62)) | (1 << (jcpParser.STRING_LITERAL - 62)) | (1 << (jcpParser.CHAR_LITERAL - 62)) | (1 << (jcpParser.BOOL_LITERAL - 62)))) != 0)):
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << jcpParser.INT_LITERAL) | (1 << jcpParser.FLOAT_LITERAL) | (1 << jcpParser.STRING_LITERAL) | (1 << jcpParser.CHAR_LITERAL) | (1 << jcpParser.BOOL_LITERAL))) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -3858,7 +3853,7 @@ class jcpParser ( Parser ):
                 self.state = 494
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if ((((_la - 62)) & ~0x3f) == 0 and ((1 << (_la - 62)) & ((1 << (jcpParser.INT_LITERAL - 62)) | (1 << (jcpParser.FLOAT_LITERAL - 62)) | (1 << (jcpParser.STRING_LITERAL - 62)) | (1 << (jcpParser.CHAR_LITERAL - 62)) | (1 << (jcpParser.BOOL_LITERAL - 62)) | (1 << (jcpParser.IDENTIFIER - 62)))) != 0):
+                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << jcpParser.INT_LITERAL) | (1 << jcpParser.FLOAT_LITERAL) | (1 << jcpParser.STRING_LITERAL) | (1 << jcpParser.CHAR_LITERAL) | (1 << jcpParser.BOOL_LITERAL) | (1 << jcpParser.IDENTIFIER))) != 0):
                     self.state = 493
                     self.argument()
 
@@ -3924,7 +3919,7 @@ class jcpParser ( Parser ):
                 self.state = 517
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if ((((_la - 8)) & ~0x3f) == 0 and ((1 << (_la - 8)) & ((1 << (jcpParser.SUPER - 8)) | (1 << (jcpParser.THIS - 8)) | (1 << (jcpParser.VOID - 8)) | (1 << (jcpParser.MINUS - 8)) | (1 << (jcpParser.INCREMENT - 8)) | (1 << (jcpParser.DECREMENT - 8)) | (1 << (jcpParser.NOT - 8)) | (1 << (jcpParser.LPAR - 8)) | (1 << (jcpParser.BOOL - 8)) | (1 << (jcpParser.BYTE - 8)) | (1 << (jcpParser.SHORT - 8)) | (1 << (jcpParser.LONG - 8)) | (1 << (jcpParser.INT - 8)) | (1 << (jcpParser.CHAR - 8)) | (1 << (jcpParser.FLOAT - 8)) | (1 << (jcpParser.DOUBLE - 8)) | (1 << (jcpParser.INT_LITERAL - 8)) | (1 << (jcpParser.FLOAT_LITERAL - 8)) | (1 << (jcpParser.STRING_LITERAL - 8)) | (1 << (jcpParser.CHAR_LITERAL - 8)) | (1 << (jcpParser.BOOL_LITERAL - 8)) | (1 << (jcpParser.IDENTIFIER - 8)))) != 0):
+                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << jcpParser.SUPER) | (1 << jcpParser.THIS) | (1 << jcpParser.VOID) | (1 << jcpParser.MINUS) | (1 << jcpParser.INCREMENT) | (1 << jcpParser.DECREMENT) | (1 << jcpParser.NOT) | (1 << jcpParser.LPAR) | (1 << jcpParser.BOOL) | (1 << jcpParser.BYTE) | (1 << jcpParser.SHORT) | (1 << jcpParser.LONG) | (1 << jcpParser.INT) | (1 << jcpParser.CHAR) | (1 << jcpParser.FLOAT) | (1 << jcpParser.DOUBLE) | (1 << jcpParser.INT_LITERAL) | (1 << jcpParser.FLOAT_LITERAL) | (1 << jcpParser.STRING_LITERAL) | (1 << jcpParser.CHAR_LITERAL) | (1 << jcpParser.BOOL_LITERAL) | (1 << jcpParser.IDENTIFIER))) != 0):
                     self.state = 516
                     self.expression()
 

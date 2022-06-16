@@ -22,9 +22,9 @@ block: LCUR blockDec* RCUR;
 
 blockDec: localDec | statement;
 
-localDec: type IDENTIFIER assign SEMI;
+localDec: type IDENTIFIER assign? SEMI;
 
-memberDec: modifier localDec;
+memberDec: modifier? localDec;
 
 type: VOID | primitiveType | referenceType;
 
@@ -48,12 +48,12 @@ parameters: LPAR parameter? (COMMA parameter)* RPAR;
 
 parameter: type LBRACK? RBRACK? IDENTIFIER;
 
-constructorBody: LCUR constructorInvocation? statement* RCUR;
+constructorBody: LCUR constructorInvocation? blockDec* RCUR;
 
 constructorInvocation:
 	SUPER LPAR argument? (COMMA argument)* RPAR;
 
-argument: IDENTIFIER;
+argument: literal | IDENTIFIER;
 
 statement:
 	sout SEMI
@@ -130,18 +130,18 @@ multiplicativeExpression:
 	)*;
 
 unaryExpression:
-	(PLUS unaryExpression | MINUS unaryExpression) unaryExpression
-	| (NOT unaryExpression);
+	(NOT | MINUS) unaryExpression
+	| primaryExpression;
 
 literal: INT_LITERAL | FLOAT_LITERAL | STRING_LITERAL | BOOL_LITERAL | CHAR_LITERAL;
 
 primaryExpression:
 	literal
-	| IDENTIFIER
+	| IDENTIFIER (DOT IDENTIFIER)*
 	| THIS
 	| SUPER
 	| LPAR expression RPAR
-	| NEW classType LPAR argument? (COMMA argument)* RPAR
+	| classType LPAR argument? (COMMA argument)* RPAR
 	| NOT unaryExpression
 	| INCREMENT unaryExpression
 	| DECREMENT unaryExpression
@@ -157,7 +157,7 @@ PROTECTED: 'protected';
 EXTENDS: 'extends';
 SUPER: 'super';
 THIS: 'this';
-NEW: 'new ';
+NEW: 'new ' -> skip;
 IF: 'if';
 ELSE: 'else';
 FOR: 'for';
@@ -219,10 +219,13 @@ DOUBLE: 'double';
 
 fragment ESC : '\\"' | '\\\\' ;
 
-WS: [ \t\r\n]+ -> skip;
 INT_LITERAL: [0-9]+;
 FLOAT_LITERAL: [0-9]+'.'[0-9]+;
 STRING_LITERAL: '"' ( ESC | ~[\\"\r\n] )* '"';
 CHAR_LITERAL: SQUOTE [^SQUOTE] SQUOTE;
 BOOL_LITERAL: TRUE | FALSE;
 IDENTIFIER: [_a-zA-Z]+ [_a-zA-Z0-9]*;
+
+WS: [ \t\r\n]+ -> skip;
+COMMENTSIMPLE: '//' (~'\n')* -> skip;
+COMMENTMULTI: '/*' .*? '*/' -> skip;

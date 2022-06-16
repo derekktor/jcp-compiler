@@ -35,14 +35,20 @@ class Listener(jcpListener):
         self.tab-=1
 
     def enterMemberDec(self, ctx: jcpParser.MemberDecContext):
-        self.write(ctx.modifier().getText()+':\n')
-        self.write(ctx.type_().getText()+' '+ctx.IDENTIFIER().getText()+';\n')
+        if ctx.modifier() is not None:
+            self.write(ctx.modifier().getText()+':\n')
 
     def enterLocalDec(self, ctx: jcpParser.LocalDecContext):
-        self.write(ctx.type_().getText()+' '+ctx.IDENTIFIER().getText())
+        self.write(self.getTypeText(ctx.type_())+' '+ctx.IDENTIFIER().getText())
 
     def enterAssign(self, ctx: jcpParser.AssignContext):
         self.write(' = '+ctx.rightHandSide().getText())
+
+    def enterAssignment(self, ctx: jcpParser.AssignmentContext):
+        self.write(ctx.leftHandSide().getText())
+
+    def exitAssignment(self, ctx: jcpParser.AssignmentContext):
+        self.write(';\n')
     
     def exitLocalDec(self, ctx: jcpParser.LocalDecContext):
         self.write(';\n')
@@ -89,6 +95,16 @@ class Listener(jcpListener):
 
     def enterSout(self, ctx: jcpParser.SoutContext):
         self.write('std::cout << '+ctx.expression().getText()+' << std::endl;\n')
+
+    def enterConstructorDec(self, ctx: jcpParser.ConstructorDecContext):
+        if ctx.modifier() is not None:
+            self.write(ctx.modifier().getText()+ ':\n')
+        self.write(ctx.IDENTIFIER().getText())
+        self.tab+=1
+
+    def exitConstructorDec(self, ctx):
+        self.tab-=1
+        self.write('}\n')
 
     def exitStart(self, ctx: jcpParser.StartContext):
         self.write('\nint main() {\n')

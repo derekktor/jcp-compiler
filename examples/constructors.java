@@ -15,6 +15,7 @@ public class Main {
 
     public static void main(String[] args) {
         Main myCar = new Main(1969, "Mustang");
-        System.out.println(myCar.modelYear + " " + myCar.modelName);
+        System.out.println(myCar.modelYear);
+        System.out.println(myCar.modelName);
     }
 }

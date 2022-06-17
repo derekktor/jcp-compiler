@@ -98,15 +98,6 @@ class jcpListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by jcpParser#blockDec.
-    def enterBlockDec(self, ctx:jcpParser.BlockDecContext):
-        pass
-
-    # Exit a parse tree produced by jcpParser#blockDec.
-    def exitBlockDec(self, ctx:jcpParser.BlockDecContext):
-        pass
-
-
     # Enter a parse tree produced by jcpParser#localDec.
     def enterLocalDec(self, ctx:jcpParser.LocalDecContext):
         pass
@@ -122,6 +113,15 @@ class jcpListener(ParseTreeListener):
 
     # Exit a parse tree produced by jcpParser#memberDec.
     def exitMemberDec(self, ctx:jcpParser.MemberDecContext):
+        pass
+
+
+    # Enter a parse tree produced by jcpParser#arraySymbol.
+    def enterArraySymbol(self, ctx:jcpParser.ArraySymbolContext):
+        pass
+
+    # Exit a parse tree produced by jcpParser#arraySymbol.
+    def exitArraySymbol(self, ctx:jcpParser.ArraySymbolContext):
         pass
 
 
@@ -260,6 +260,15 @@ class jcpListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by jcpParser#localDecStatement.
+    def enterLocalDecStatement(self, ctx:jcpParser.LocalDecStatementContext):
+        pass
+
+    # Exit a parse tree produced by jcpParser#localDecStatement.
+    def exitLocalDecStatement(self, ctx:jcpParser.LocalDecStatementContext):
+        pass
+
+
     # Enter a parse tree produced by jcpParser#ifStatement.
     def enterIfStatement(self, ctx:jcpParser.IfStatementContext):
         pass
@@ -287,21 +296,12 @@ class jcpListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by jcpParser#returnStatement.
-    def enterReturnStatement(self, ctx:jcpParser.ReturnStatementContext):
+    # Enter a parse tree produced by jcpParser#forStatement.
+    def enterForStatement(self, ctx:jcpParser.ForStatementContext):
         pass
 
-    # Exit a parse tree produced by jcpParser#returnStatement.
-    def exitReturnStatement(self, ctx:jcpParser.ReturnStatementContext):
-        pass
-
-
-    # Enter a parse tree produced by jcpParser#sout.
-    def enterSout(self, ctx:jcpParser.SoutContext):
-        pass
-
-    # Exit a parse tree produced by jcpParser#sout.
-    def exitSout(self, ctx:jcpParser.SoutContext):
+    # Exit a parse tree produced by jcpParser#forStatement.
+    def exitForStatement(self, ctx:jcpParser.ForStatementContext):
         pass
 
 
@@ -320,6 +320,42 @@ class jcpListener(ParseTreeListener):
 
     # Exit a parse tree produced by jcpParser#forUpdate.
     def exitForUpdate(self, ctx:jcpParser.ForUpdateContext):
+        pass
+
+
+    # Enter a parse tree produced by jcpParser#forCondition.
+    def enterForCondition(self, ctx:jcpParser.ForConditionContext):
+        pass
+
+    # Exit a parse tree produced by jcpParser#forCondition.
+    def exitForCondition(self, ctx:jcpParser.ForConditionContext):
+        pass
+
+
+    # Enter a parse tree produced by jcpParser#expressionStatement.
+    def enterExpressionStatement(self, ctx:jcpParser.ExpressionStatementContext):
+        pass
+
+    # Exit a parse tree produced by jcpParser#expressionStatement.
+    def exitExpressionStatement(self, ctx:jcpParser.ExpressionStatementContext):
+        pass
+
+
+    # Enter a parse tree produced by jcpParser#returnStatement.
+    def enterReturnStatement(self, ctx:jcpParser.ReturnStatementContext):
+        pass
+
+    # Exit a parse tree produced by jcpParser#returnStatement.
+    def exitReturnStatement(self, ctx:jcpParser.ReturnStatementContext):
+        pass
+
+
+    # Enter a parse tree produced by jcpParser#sout.
+    def enterSout(self, ctx:jcpParser.SoutContext):
+        pass
+
+    # Exit a parse tree produced by jcpParser#sout.
+    def exitSout(self, ctx:jcpParser.SoutContext):
         pass
 
 
@@ -356,6 +392,24 @@ class jcpListener(ParseTreeListener):
 
     # Exit a parse tree produced by jcpParser#rightHandSide.
     def exitRightHandSide(self, ctx:jcpParser.RightHandSideContext):
+        pass
+
+
+    # Enter a parse tree produced by jcpParser#generalExpression.
+    def enterGeneralExpression(self, ctx:jcpParser.GeneralExpressionContext):
+        pass
+
+    # Exit a parse tree produced by jcpParser#generalExpression.
+    def exitGeneralExpression(self, ctx:jcpParser.GeneralExpressionContext):
+        pass
+
+
+    # Enter a parse tree produced by jcpParser#arrayRightHandSide.
+    def enterArrayRightHandSide(self, ctx:jcpParser.ArrayRightHandSideContext):
+        pass
+
+    # Exit a parse tree produced by jcpParser#arrayRightHandSide.
+    def exitArrayRightHandSide(self, ctx:jcpParser.ArrayRightHandSideContext):
         pass
 
 

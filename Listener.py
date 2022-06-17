@@ -38,20 +38,19 @@ class Listener(jcpListener):
         if ctx.modifier() is not None:
             self.write(ctx.modifier().getText()+':\n')
 
-    def enterLocalDec(self, ctx: jcpParser.LocalDecContext):
+    def getLocalDec(self, ctx: jcpParser.LocalDecContext):
         self.write(self.getTypeText(ctx.type_())+' '+ctx.IDENTIFIER().getText())
+        if ctx.arraySymbol() is not None:
+            self.write('[]')
 
-    def enterAssign(self, ctx: jcpParser.AssignContext):
-        self.write(' = '+ctx.rightHandSide().getText())
+    def enterLocalDecStatement(self, ctx: jcpParser.LocalDecStatementContext):
+        self.getLocalDec(ctx.localDec())
+        if ctx.localDec().assign() is not None:
+            self.write(' = '+ctx.localDec().assign().rightHandSide().getText())
+        self.write(';\n')
 
     def enterAssignment(self, ctx: jcpParser.AssignmentContext):
-        self.write(ctx.leftHandSide().getText())
-
-    def exitAssignment(self, ctx: jcpParser.AssignmentContext):
-        self.write(';\n')
-    
-    def exitLocalDec(self, ctx: jcpParser.LocalDecContext):
-        self.write(';\n')
+        self.write(ctx.leftHandSide().getText() +' = '+ctx.assign().rightHandSide().getText()+';\n')
 
     def getTypeText(self, ctx: jcpParser.TypeContext):
         if(ctx.getText()=='String'):
@@ -69,11 +68,11 @@ class Listener(jcpListener):
         self.write(self.getTypeText(ctx.type_())+' '+ctx.IDENTIFIER().getText())
         self.tab+=1
 
-    def printParameter(self, parameter):
+    def printParameter(self, parameter: jcpParser.ParameterContext):
         self.write(self.getTypeText(parameter.type_()))
         self.write(' '+parameter.IDENTIFIER().getText())
-        if parameter.LBRACK() is not None: self.write('[')
-        if parameter.RBRACK() is not None: self.write(']')
+        if parameter.arraySymbol() is not None:
+            self.write('[]')
 
     def enterParameters(self, ctx: jcpParser.ParametersContext):
         self.write('(')
@@ -87,10 +86,6 @@ class Listener(jcpListener):
     def exitMethodDec(self, ctx: jcpParser.MethodDecContext):
         self.tab-=1
         self.write('}\n')
-    
-    # def enterStatement(self, ctx: jcpParser.StatementContext):
-    #     self.write(ctx.getText())
-    #     self.write('\n')
 
     def enterReturnStatement(self, ctx: jcpParser.ReturnStatementContext):
         self.write('return '+ctx.expression().getText()+';\n')  
@@ -121,6 +116,31 @@ class Listener(jcpListener):
         self.tab+=1
     
     def exitElseStatement(self, ctx: jcpParser.ElseStatementContext):
+        self.tab-=1
+        self.write('}\n')
+
+    def enterExpressionStatement(self, ctx: jcpParser.ExpressionStatementContext):
+        self.write(ctx.expression().getText()+';\n')
+
+    def enterForStatement(self, ctx: jcpParser.ForStatementContext):
+        self.write('for(')
+        if(ctx.forInit() is not None):
+            if(ctx.forInit().localDec() is not None):
+                self.getLocalDec(ctx.forInit().localDec())
+                if ctx.forInit().localDec().assign() is not None:
+                    self.write(' = '+ctx.forInit().localDec().assign().rightHandSide().getText())
+            else:
+                self.write(ctx.forInit().expression().getText())
+        self.write('; ')
+        if(ctx.forCondition() is not None):
+            self.write(ctx.forCondition().expression().getText())
+        self.write('; ')
+        if(ctx.forUpdate() is not None):
+            self.write(ctx.forUpdate().expression().getText())
+        self.write(') {\n')
+        self.tab+=1
+
+    def exitForStatement(self, ctx: jcpParser.ForStatementContext):
         self.tab-=1
         self.write('}\n')
 

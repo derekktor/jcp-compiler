@@ -16,15 +16,15 @@ body: LCUR bodyDec* RCUR;
 
 bodyDec: memberDec | constructorDec | methodDec;
 
-methodDec: modifier? STATIC? type IDENTIFIER parameters block;
+methodDec: modifier? STATIC? type arraySymbol? IDENTIFIER parameters block;
 
-block: LCUR blockDec* RCUR;
+block: LCUR statement* RCUR;
 
-blockDec: localDec | statement;
-
-localDec: type IDENTIFIER assign? SEMI;
+localDec: type arraySymbol? IDENTIFIER assign?;
 
 memberDec: modifier? localDec;
+
+arraySymbol: LBRACK RBRACK;
 
 type: VOID | primitiveType | referenceType;
 
@@ -46,9 +46,9 @@ constructorDec: modifier IDENTIFIER parameters constructorBody;
 
 parameters: LPAR parameter? (COMMA parameter)* RPAR;
 
-parameter: type LBRACK? RBRACK? IDENTIFIER;
+parameter: type arraySymbol? IDENTIFIER;
 
-constructorBody: LCUR constructorInvocation? blockDec* RCUR;
+constructorBody: LCUR constructorInvocation? statement* RCUR;
 
 constructorInvocation:
 	SUPER LPAR argument? (COMMA argument)* RPAR;
@@ -56,49 +56,61 @@ constructorInvocation:
 argument: literal | IDENTIFIER;
 
 statement:
-	sout SEMI
-	| expression SEMI
+	sout
+	| localDecStatement
+	| expressionStatement
 	| ifStatement
 	| ifElseStatement
-	| FOR LPAR forInit? SEMI forUpdate? RPAR statement
+	| forStatement
 	| WHILE LPAR expression RPAR statement
 	| DO statement WHILE LPAR expression RPAR SEMI
 	| BREAK SEMI
 	| CONTINUE SEMI
 	| returnStatement
-	| LCUR blockDec* RCUR;
+	| LCUR statement* RCUR;
+
+localDecStatement: localDec SEMI;
 
 ifStatement: IF LPAR expression RPAR statement;
 elseStatement: ELSE statement;
 ifElseStatement: ifStatement elseStatement;
 
+forStatement: FOR LPAR forInit? SEMI forCondition? SEMI forUpdate? RPAR statement;
+
+forInit: localDec | expression;
+forUpdate: expression;
+forCondition: expression;
+
+expressionStatement: expression SEMI;
+
 returnStatement:
 	RETURN expression? SEMI;
 
-sout: SOUT LPAR expression RPAR;
-
-forInit: localDec | expression;
-
-forUpdate: expression;
+sout: SOUT LPAR expression RPAR SEMI;
 
 expression: 
-	primaryExpression
-	| assignment 
-	| conditionalExpression;
+	generalExpression
+	| assignment;
 
 assignment: leftHandSide assign;
 
 assign: ASSIGN rightHandSide;
 
 rightHandSide:
+	generalExpression
+	| arrayRightHandSide;
+
+generalExpression:
 	primaryExpression
 	| conditionalExpression;
+
+arrayRightHandSide: LCUR generalExpression (COMMA generalExpression)* RCUR;
 
 leftHandSide: fieldAccess | arrayAccess;
 
 fieldAccess: IDENTIFIER (DOT IDENTIFIER)*;
 
-arrayAccess: IDENTIFIER LBRACK INT_LITERAL RBRACK;
+arrayAccess: IDENTIFIER LBRACK (INT_LITERAL | IDENTIFIER) RBRACK;
 
 conditionalExpression:
 	orExpression (QUESTION expression COLON expression)?;
@@ -149,8 +161,12 @@ primaryExpression:
 	| classType LPAR argument? (COMMA argument)* RPAR
 	| NOT unaryExpression
 	| INCREMENT unaryExpression
+	| primaryExpression INCREMENT
 	| DECREMENT unaryExpression
-	| (type | classAccess) LPAR expression? RPAR;
+	| primaryExpression DECREMENT
+	| (type | classAccess) arraySymbol? LPAR expression? RPAR
+	| fieldAccess
+	| arrayAccess;
 
 // Tokens
 PACKAGE: 'package';

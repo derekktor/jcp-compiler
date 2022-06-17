@@ -1,6 +1,6 @@
 from antlr4 import *
 from utils.jcpLexer import jcpLexer
-from utils.jcpParser import jcpParser
+from Parser import Parser
 from Listener import Listener
 import sys
 import subprocess
@@ -15,7 +15,7 @@ def main():
         lines = f.read()
     lexer = jcpLexer(InputStream(lines))
     stream = CommonTokenStream(lexer)
-    parser = jcpParser(stream)
+    parser = Parser(stream)
     tree = parser.start()
     sys.stdout = open('out.cpp', "w")
     printer = Listener(sys.stdout)

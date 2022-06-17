@@ -521,6 +521,15 @@ class jcpListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by jcpParser#lenght.
+    def enterLenght(self, ctx:jcpParser.LenghtContext):
+        pass
+
+    # Exit a parse tree produced by jcpParser#lenght.
+    def exitLenght(self, ctx:jcpParser.LenghtContext):
+        pass
+
+
     # Enter a parse tree produced by jcpParser#primaryExpression.
     def enterPrimaryExpression(self, ctx:jcpParser.PrimaryExpressionContext):
         pass

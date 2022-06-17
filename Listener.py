@@ -1,5 +1,5 @@
 from utils.jcpListener import jcpListener
-from utils.jcpParser import jcpParser
+from Parser import Parser as jcpParser
 
 class Listener(jcpListener):
     def __init__(self, output):

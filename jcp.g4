@@ -152,6 +152,8 @@ unaryExpression:
 
 literal: INT_LITERAL | FLOAT_LITERAL | STRING_LITERAL | BOOL_LITERAL | CHAR_LITERAL;
 
+lenght: fieldAccess DOT LENGHT;
+
 primaryExpression:
 	literal
 	| IDENTIFIER (DOT IDENTIFIER)*
@@ -166,7 +168,8 @@ primaryExpression:
 	| primaryExpression DECREMENT
 	| (type | classAccess) arraySymbol? LPAR expression? RPAR
 	| fieldAccess
-	| arrayAccess;
+	| arrayAccess
+	| lenght;
 
 // Tokens
 PACKAGE: 'package';
@@ -189,6 +192,7 @@ CONTINUE: 'continue';
 RETURN: 'return';
 STATIC: 'static';
 VOID: 'void';
+LENGHT: 'length';
 
 SOUT: 'System.out.println';
 

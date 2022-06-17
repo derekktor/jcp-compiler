@@ -144,6 +144,27 @@ class Listener(jcpListener):
         self.tab-=1
         self.write('}\n')
 
+    def enterWhileStatement(self, ctx: jcpParser.WhileStatementContext):
+        self.write('while('+ctx.expression().getText()+') {\n')
+        self.tab+=1
+    
+    def exitWhileStatement(self, ctx: jcpParser.WhileStatementContext):
+        self.tab-=1
+        self.write('}\n')
+
+    def enterForInCollectionStatement(self, ctx: jcpParser.ForInCollectionStatementContext):
+        self.write('for(')
+        self.getLocalDec(ctx.localDec())
+        self.write(' : ')
+        self.write(ctx.expression().getText())
+        self.write(') {\n')
+        self.tab+=1
+
+    def exitForInCollectionStatement(self, ctx: jcpParser.ForInCollectionStatementContext):
+        self.tab-=1
+        self.write('}\n')
+
+
     def exitStart(self, ctx: jcpParser.StartContext):
         self.write('\nint main() {\n')
         self.write('\tMain::main({});\n')

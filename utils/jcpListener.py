@@ -332,6 +332,24 @@ class jcpListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by jcpParser#forInCollectionStatement.
+    def enterForInCollectionStatement(self, ctx:jcpParser.ForInCollectionStatementContext):
+        pass
+
+    # Exit a parse tree produced by jcpParser#forInCollectionStatement.
+    def exitForInCollectionStatement(self, ctx:jcpParser.ForInCollectionStatementContext):
+        pass
+
+
+    # Enter a parse tree produced by jcpParser#whileStatement.
+    def enterWhileStatement(self, ctx:jcpParser.WhileStatementContext):
+        pass
+
+    # Exit a parse tree produced by jcpParser#whileStatement.
+    def exitWhileStatement(self, ctx:jcpParser.WhileStatementContext):
+        pass
+
+
     # Enter a parse tree produced by jcpParser#expressionStatement.
     def enterExpressionStatement(self, ctx:jcpParser.ExpressionStatementContext):
         pass

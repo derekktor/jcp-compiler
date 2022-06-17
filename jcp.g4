@@ -62,7 +62,8 @@ statement:
 	| ifStatement
 	| ifElseStatement
 	| forStatement
-	| WHILE LPAR expression RPAR statement
+	| forInCollectionStatement
+	| whileStatement
 	| DO statement WHILE LPAR expression RPAR SEMI
 	| BREAK SEMI
 	| CONTINUE SEMI
@@ -76,10 +77,13 @@ elseStatement: ELSE statement;
 ifElseStatement: ifStatement elseStatement;
 
 forStatement: FOR LPAR forInit? SEMI forCondition? SEMI forUpdate? RPAR statement;
-
 forInit: localDec | expression;
 forUpdate: expression;
 forCondition: expression;
+
+forInCollectionStatement: FOR LPAR localDec COLON expression RPAR statement;
+
+whileStatement: WHILE LPAR expression RPAR statement;
 
 expressionStatement: expression SEMI;
 

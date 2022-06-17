@@ -91,7 +91,7 @@ class Listener(jcpListener):
         self.write('return '+ctx.expression().getText()+';\n')  
 
     def enterSout(self, ctx: jcpParser.SoutContext):
-        self.write('std::cout << '+ctx.expression().getText()+' << std::endl;\n')
+        self.write('std::cout << ('+ctx.expression().getText()+') << std::endl;\n')
 
     def enterConstructorDec(self, ctx: jcpParser.ConstructorDecContext):
         if ctx.modifier() is not None:

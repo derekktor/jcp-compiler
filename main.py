@@ -9,7 +9,7 @@ def main():
     dir = "examples/"
     files = ["comments", "constructors", "dataTypes", "helloWorld", "ifElse", "import", "loops", "operators", "stringVariables", "switch"]
 
-    path = str(dir + files[0] + ".java");
+    path = str(dir + files[9] + ".java");
 
     with open(path) as f:
         lines = f.read()

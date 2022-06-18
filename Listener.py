@@ -164,8 +164,30 @@ class Listener(jcpListener):
         self.tab-=1
         self.write('}\n')
 
+    def enterSwitchStatement(self, ctx: jcpParser.SwitchStatementContext):
+        self.write('switch('+ctx.expression().getText()+') {\n')
+        self.tab+=1
+
+    def enterSwitchCase(self, ctx: jcpParser.SwitchCaseContext):
+        self.write('case '+ctx.expression().getText()+':\n')
+        self.tab+=1
+    
+    def exitSwitchCase(self, ctx: jcpParser.SwitchCaseContext):
+        self.write('break;\n')
+        self.tab-=1
+
+    def enterDefaultCase(self, ctx: jcpParser.DefaultCaseContext):
+        self.write('default:\n')
+        self.tab+=1
+
+    def exitDefaultCase(self, ctx: jcpParser.DefaultCaseContext):
+        self.tab-=1
+    
+    def exitSwitchStatement(self, ctx: jcpParser.SwitchStatementContext):
+        self.tab-=1
+        self.write('}\n')
 
     def exitStart(self, ctx: jcpParser.StartContext):
         self.write('\nint main() {\n')
-        self.write('\tMain::main({});\n')
+        self.write('\tMain::main(NULL);\n')
         self.write('\treturn 0;\n}\n')

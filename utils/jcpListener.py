@@ -350,6 +350,33 @@ class jcpListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by jcpParser#switchStatement.
+    def enterSwitchStatement(self, ctx:jcpParser.SwitchStatementContext):
+        pass
+
+    # Exit a parse tree produced by jcpParser#switchStatement.
+    def exitSwitchStatement(self, ctx:jcpParser.SwitchStatementContext):
+        pass
+
+
+    # Enter a parse tree produced by jcpParser#switchCase.
+    def enterSwitchCase(self, ctx:jcpParser.SwitchCaseContext):
+        pass
+
+    # Exit a parse tree produced by jcpParser#switchCase.
+    def exitSwitchCase(self, ctx:jcpParser.SwitchCaseContext):
+        pass
+
+
+    # Enter a parse tree produced by jcpParser#defaultCase.
+    def enterDefaultCase(self, ctx:jcpParser.DefaultCaseContext):
+        pass
+
+    # Exit a parse tree produced by jcpParser#defaultCase.
+    def exitDefaultCase(self, ctx:jcpParser.DefaultCaseContext):
+        pass
+
+
     # Enter a parse tree produced by jcpParser#expressionStatement.
     def enterExpressionStatement(self, ctx:jcpParser.ExpressionStatementContext):
         pass

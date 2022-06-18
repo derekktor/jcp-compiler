@@ -64,6 +64,7 @@ statement:
 	| forStatement
 	| forInCollectionStatement
 	| whileStatement
+	| switchStatement
 	| DO statement WHILE LPAR expression RPAR SEMI
 	| BREAK SEMI
 	| CONTINUE SEMI
@@ -84,6 +85,10 @@ forCondition: expression;
 forInCollectionStatement: FOR LPAR localDec COLON expression RPAR statement;
 
 whileStatement: WHILE LPAR expression RPAR statement;
+
+switchStatement: SWITCH LPAR expression RPAR LCUR switchCase* defaultCase? RCUR;
+switchCase: CASE expression COLON statement+ BREAK SEMI;
+defaultCase: DEFAULT COLON statement+;
 
 expressionStatement: expression SEMI;
 
@@ -197,6 +202,9 @@ RETURN: 'return';
 STATIC: 'static';
 VOID: 'void';
 LENGHT: 'length';
+SWITCH: 'switch';
+CASE: 'case';
+DEFAULT: 'default';
 
 SOUT: 'System.out.println';
 

@@ -148,18 +148,10 @@ Install Python ANTLR runtime
 conda install antlr4-python3-runtime
 ```
 
-Aliases
-
-```
-alias antlr4='java -jar /usr/local/lib/antlr-4.10.1-complete.jar'
-alias antlr4py='java -jar /usr/local/lib/antlr-4.10.1-complete.jar -Dlanguage=Python3 "$@"'
-alias grun='java org.antlr.v4.gui.TestRig'
-```
-
 Create antlr files in **utils** directory
 
 ```
-antlr4py jcp.g4 -o utils
+java -jar /usr/local/lib/antlr-4.10.1-complete.jar -Dlanguage=Python3 "$@" jcp.g4 -o utils
 ```
 
 Run `main.py`

@@ -7,9 +7,9 @@ import subprocess
 
 def main():
     dir = "examples/"
-    files = ["comments", "constructors", "dataTypes", "helloWorld", "ifElse", "import", "loops", "operators", "stringVariables", "switch"]
+    files = ["comments", "constructors", "dataTypes", "helloWorld", "ifElse", "loops", "operators", "stringVariables", "switch"]
 
-    path = str(dir + files[1] + ".java");
+    path = str(dir + files[5] + ".java");
 
     with open(path) as f:
         lines = f.read()

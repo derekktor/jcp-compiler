@@ -22,7 +22,7 @@ block: LCUR statement* RCUR;
 
 localDec: type arraySymbol? IDENTIFIER assign?;
 
-memberDec: modifier? localDec;
+memberDec: modifier? localDec SEMI;
 
 arraySymbol: LBRACK RBRACK;
 

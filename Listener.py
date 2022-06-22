@@ -37,6 +37,8 @@ class Listener(jcpListener):
     def enterMemberDec(self, ctx: jcpParser.MemberDecContext):
         if ctx.modifier() is not None:
             self.write(ctx.modifier().getText()+':\n')
+        self.getLocalDec(ctx.localDec())
+        self.write(';\n')
 
     def getLocalDec(self, ctx: jcpParser.LocalDecContext):
         self.write(self.getTypeText(ctx.type_())+' '+ctx.IDENTIFIER().getText())

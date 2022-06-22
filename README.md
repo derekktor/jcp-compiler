@@ -184,8 +184,8 @@ Create antlr files in **utils** directory
 java -jar /usr/local/lib/antlr-4.10.1-complete.jar -Dlanguage=Python3 "$@" jcp.g4 -o utils
 ```
 
-Run `main.py`
+Run script `run.sh`
 
 ```
-python3 main.py
+./run.sh
 ```
